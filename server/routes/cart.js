@@ -32,7 +32,9 @@ module.exports = function createCartRouter({ db, requireAuth, requireVerifiedUse
   });
 
   router.delete('/:gameId', requireAuth, async (req, res) => {
-    await db.prepare('DELETE FROM cart_items WHERE user_id = ? AND game_id = ?').run(req.user.id, req.params.gameId);
+    const gameId = parseInt(req.params.gameId);
+    if (!gameId || isNaN(gameId)) return res.status(400).json({ error: 'Invalid game ID.' });
+    await db.prepare('DELETE FROM cart_items WHERE user_id = ? AND game_id = ?').run(req.user.id, gameId);
     res.json({ success: true });
   });
 

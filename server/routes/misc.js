@@ -45,15 +45,17 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
 
   router.patch('/library/:gameId', requireAuth, async (req, res) => {
     try {
-      const entry = await db.prepare('SELECT id FROM library WHERE user_id = ? AND game_id = ?').get(req.user.id, req.params.gameId);
+      const gameId = parseInt(req.params.gameId);
+      if (!gameId || isNaN(gameId)) return res.status(400).json({ error: 'Invalid game ID.' });
+      const entry = await db.prepare('SELECT id FROM library WHERE user_id = ? AND game_id = ?').get(req.user.id, gameId);
       if (!entry) return res.status(404).json({ error: 'Game not in library.' });
       const { installed, play_time } = req.body;
       if (installed !== undefined)
-        await db.prepare("UPDATE library SET installed = ?, last_played = datetime('now') WHERE user_id = ? AND game_id = ?").run(installed ? 1 : 0, req.user.id, req.params.gameId);
+        await db.prepare("UPDATE library SET installed = ?, last_played = datetime('now') WHERE user_id = ? AND game_id = ?").run(installed ? 1 : 0, req.user.id, gameId);
       if (play_time !== undefined) {
         const mins = parseInt(play_time);
         if (isNaN(mins) || mins < 0 || mins > 1440) return res.status(400).json({ error: 'play_time must be 0–1440.' });
-        await db.prepare("UPDATE library SET play_time = play_time + ?, last_played = datetime('now') WHERE user_id = ? AND game_id = ?").run(mins, req.user.id, req.params.gameId);
+        await db.prepare("UPDATE library SET play_time = play_time + ?, last_played = datetime('now') WHERE user_id = ? AND game_id = ?").run(mins, req.user.id, gameId);
       }
       res.json({ success: true });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
@@ -78,7 +80,7 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
       const game_id = parseInt(req.body?.game_id);
       const reviewTitle = String(req.body?.title || '').trim();
       const reviewBody = String(req.body?.body || '').trim();
-      const rating = parseFloat(req.body?.rating);
+      const rating = parseInt(req.body?.rating);
       if (!game_id || isNaN(game_id) || game_id < 1) return res.status(400).json({ error: 'game_id must be a positive integer.' });
       if (isNaN(rating) || rating < 1 || rating > 5) return res.status(400).json({ error: 'Rating must be 1–5.' });
       const owned = await db.prepare('SELECT 1 as v FROM library WHERE user_id = ? AND game_id = ?').get(req.user.id, game_id);
@@ -97,7 +99,9 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
 
   router.get('/reviews/:gameId', async (req, res) => {
     try {
-      const reviews = await db.prepare('SELECT r.*, u.username, u.display_name, u.avatar_url FROM reviews r JOIN users u ON r.user_id = u.id WHERE r.game_id = ? ORDER BY r.created_at DESC').all(req.params.gameId);
+      const gameId = parseInt(req.params.gameId);
+      if (!gameId || isNaN(gameId)) return res.status(400).json({ error: 'Invalid game ID.' });
+      const reviews = await db.prepare('SELECT r.*, u.username, u.display_name, u.avatar_url FROM reviews r JOIN users u ON r.user_id = u.id WHERE r.game_id = ? ORDER BY r.created_at DESC').all(gameId);
       res.json({ reviews });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
   });
@@ -174,7 +178,7 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
       const o = await db.prepare('SELECT COUNT(*) as c FROM orders').get();
       const gr = await db.prepare('SELECT COUNT(*) as c FROM groups').get();
       res.json({ games: g.c, users: u.c, orders: o.c, groups: gr.c });
-    } catch { res.json({ games: 100, users: 0, orders: 0, groups: 0 }); }
+    } catch (err) { console.error(err); res.status(500).json({ error: 'Failed to fetch stats.' }); }
   });
 
   // ── Health ─────────────────────────────────────────────

@@ -482,4 +482,4 @@ async function startServer(port = Number(process.env.PORT || PORT)) {
   return server;
 }
 
-module.exports = { app, startServer };
+module.exports = { app, startServer, seedGames };

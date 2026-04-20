@@ -8,7 +8,7 @@ process.env.DB_PRIMARY = process.env.DB_PRIMARY || 'sqlite';
 process.env.DB_SYNC_ON_STARTUP = process.env.DB_SYNC_ON_STARTUP || 'false';
 process.env.USE_SQL_SERVER = process.env.USE_SQL_SERVER || 'false';
 
-const { app } = require('../index');
+const { app, seedGames } = require('../index');
 const { initialize, db } = require('../db');
 
 const unique = Date.now().toString(36);
@@ -23,6 +23,7 @@ let authToken = '';
 
 test('initialize database for tests', async () => {
   await initialize();
+  await seedGames();
   const row = await db.prepare('SELECT 1 as ok').get();
   assert.equal(Number(row.ok), 1);
 });
