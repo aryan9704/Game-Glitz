@@ -46,7 +46,7 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
   router.patch('/library/:gameId', requireAuth, async (req, res) => {
     try {
       const gameId = parseInt(req.params.gameId);
-      if (!gameId || isNaN(gameId)) return res.status(400).json({ error: 'Invalid game ID.' });
+      if (isNaN(gameId) || gameId < 1) return res.status(400).json({ error: 'Invalid game ID.' });
       const entry = await db.prepare('SELECT id FROM library WHERE user_id = ? AND game_id = ?').get(req.user.id, gameId);
       if (!entry) return res.status(404).json({ error: 'Game not in library.' });
       const { installed, play_time } = req.body;
@@ -100,7 +100,7 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
   router.get('/reviews/:gameId', async (req, res) => {
     try {
       const gameId = parseInt(req.params.gameId);
-      if (!gameId || isNaN(gameId)) return res.status(400).json({ error: 'Invalid game ID.' });
+      if (isNaN(gameId) || gameId < 1) return res.status(400).json({ error: 'Invalid game ID.' });
       const reviews = await db.prepare('SELECT r.*, u.username, u.display_name, u.avatar_url FROM reviews r JOIN users u ON r.user_id = u.id WHERE r.game_id = ? ORDER BY r.created_at DESC').all(gameId);
       res.json({ reviews });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
