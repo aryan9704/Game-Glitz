@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Glitz — Your Ultimate Gaming Store</title>
+  <meta name="description" content="Shop the best video games, consoles, and accessories at Game Glitz. Explore thousands of titles across all platforms." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="brand-icon">🎮</div>
+          <span class="brand-name">Game<span>Glitz</span></span>
+        </a>
+
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="products.html" class="nav-link">Games</a></li>
+          <li><a href="products.html?category=consoles" class="nav-link">Consoles</a></li>
+          <li><a href="products.html?category=accessories" class="nav-link">Accessories</a></li>
+          <li><a href="products.html?sale=true" class="nav-link">Deals 🔥</a></li>
+        </ul>
+
+        <div class="navbar-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="navSearch" placeholder="Search games, consoles…" />
+        </div>
+
+        <div class="navbar-actions">
+          <button class="icon-btn" id="cartBtn" title="Cart" aria-label="Open cart">
+            🛒
+            <span class="badge-count" id="cartCount">0</span>
+          </button>
+          <button class="icon-btn" title="Wishlist" aria-label="Wishlist">❤️</button>
+          <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="products.html" class="nav-link">Games</a></li>
+      <li><a href="products.html?category=consoles" class="nav-link">Consoles</a></li>
+      <li><a href="products.html?category=accessories" class="nav-link">Accessories</a></li>
+      <li><a href="products.html?sale=true" class="nav-link">Deals 🔥</a></li>
+    </ul>
+    <input type="text" class="mobile-search" placeholder="Search games, consoles…" />
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">New Arrivals Just Dropped</p>
+          <h1 class="hero-title">
+            Level Up Your<br />
+            <span class="gradient-text">Gaming Experience</span>
+          </h1>
+          <p class="hero-description">
+            Discover thousands of games across all platforms. Exclusive deals,
+            instant delivery, and a passion for gaming — all in one store.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary btn-lg">🕹️ Shop Now</a>
+            <a href="products.html?sale=true" class="btn btn-outline btn-lg">🔥 View Deals</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="number">5,000+</div>
+              <div class="label">Games</div>
+            </div>
+            <div class="hero-stat">
+              <div class="number">200+</div>
+              <div class="label">Consoles</div>
+            </div>
+            <div class="hero-stat">
+              <div class="number">50K+</div>
+              <div class="label">Happy Gamers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card" onclick="window.location='products.html'">
+            <div class="game-placeholder">🌌</div>
+            <div class="hero-card-body">
+              <div class="hero-card-title">Stellar Odyssey: Reborn</div>
+              <div class="hero-card-meta">
+                <span class="hero-card-price">$59.99</span>
+                <span class="hero-card-rating">⭐ 4.9</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card" onclick="window.location='products.html'">
+            <div class="game-placeholder" style="background: linear-gradient(135deg, #0d2a1a, #1a0d2e);">⚔️</div>
+            <div class="hero-card-body">
+              <div class="hero-card-title">Dragon's Wrath</div>
+              <div class="hero-card-meta">
+                <span class="hero-card-price">$49.99</span>
+                <span class="hero-card-rating">⭐ 4.7</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card" onclick="window.location='products.html'">
+            <div class="game-placeholder" style="background: linear-gradient(135deg, #1a0a0a, #2e1a0d);">🏎️</div>
+            <div class="hero-card-body">
+              <div class="hero-card-title">Turbo Rush 2025</div>
+              <div class="hero-card-meta">
+                <span class="hero-card-price">$39.99</span>
+                <span class="hero-card-rating">⭐ 4.5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES STRIP ===== -->
+  <div class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <strong>Instant Delivery</strong>
+            <span>Digital games in seconds</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-text">
+            <strong>Secure Payments</strong>
+            <span>256-bit SSL encryption</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎁</div>
+          <div class="feature-text">
+            <strong>Rewards Program</strong>
+            <span>Earn Glitz Points on every order</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💬</div>
+          <div class="feature-text">
+            <strong>24/7 Support</strong>
+            <span>Gamer support, always online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Browse by Category</h2>
+          <p class="section-subtitle">Find exactly what you're looking for</p>
+        </div>
+      </div>
+      <div class="categories-grid">
+        <a href="products.html?category=action" class="category-card">
+          <div class="category-icon">⚔️</div>
+          <div class="category-name">Action</div>
+          <div class="category-count">842 titles</div>
+        </a>
+        <a href="products.html?category=rpg" class="category-card">
+          <div class="category-icon">🧙</div>
+          <div class="category-name">RPG</div>
+          <div class="category-count">615 titles</div>
+        </a>
+        <a href="products.html?category=sports" class="category-card">
+          <div class="category-icon">⚽</div>
+          <div class="category-name">Sports</div>
+          <div class="category-count">320 titles</div>
+        </a>
+        <a href="products.html?category=racing" class="category-card">
+          <div class="category-icon">🏎️</div>
+          <div class="category-name">Racing</div>
+          <div class="category-count">218 titles</div>
+        </a>
+        <a href="products.html?category=shooter" class="category-card">
+          <div class="category-icon">🎯</div>
+          <div class="category-name">Shooter</div>
+          <div class="category-count">490 titles</div>
+        </a>
+        <a href="products.html?category=strategy" class="category-card">
+          <div class="category-icon">🏰</div>
+          <div class="category-name">Strategy</div>
+          <div class="category-count">375 titles</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED GAMES ===== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Featured Games</h2>
+          <p class="section-subtitle">Hand-picked by our team of gamers</p>
+        </div>
+        <a href="products.html" class="btn btn-outline btn-sm">View All →</a>
+      </div>
+      <div class="products-grid" id="featuredGames"></div>
+    </div>
+  </section>
+
+  <!-- ===== DEALS BANNER ===== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="deals-banner">
+        <div class="deals-banner-content">
+          <span class="eyebrow">⚡ Flash Sale</span>
+          <h2>Weekend Mega Sale<br />Up to 70% OFF</h2>
+          <p>Massive discounts on hundreds of top titles. Don't miss out — these deals expire soon!</p>
+          <div class="countdown">
+            <div class="countdown-unit">
+              <span class="countdown-number" id="cd-hours">08</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-number" id="cd-minutes">45</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-number" id="cd-seconds">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+          <a href="products.html?sale=true" class="btn btn-accent btn-lg">🔥 Shop the Sale</a>
+        </div>
+        <div class="deals-visual">🎮</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEW RELEASES ===== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">New Releases</h2>
+          <p class="section-subtitle">Fresh titles just in</p>
+        </div>
+        <a href="products.html?sort=new" class="btn btn-outline btn-sm">View All →</a>
+      </div>
+      <div class="products-grid" id="newReleases"></div>
+    </div>
+  </section>
+
+  <!-- ===== PLATFORMS ===== -->
+  <section class="section" style="background: var(--bg-card); padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="section-title">Shop by Platform</h2>
+        <p class="section-subtitle">Games for every console and PC</p>
+      </div>
+      <div class="platforms-row" style="justify-content: center;">
+        <a href="products.html?platform=ps5" class="platform-btn">
+          <span class="platform-icon">🎮</span>PlayStation 5
+        </a>
+        <a href="products.html?platform=xbox" class="platform-btn">
+          <span class="platform-icon">🟢</span>Xbox Series X
+        </a>
+        <a href="products.html?platform=switch" class="platform-btn">
+          <span class="platform-icon">🔴</span>Nintendo Switch
+        </a>
+        <a href="products.html?platform=pc" class="platform-btn">
+          <span class="platform-icon">💻</span>PC / Steam
+        </a>
+        <a href="products.html?platform=mobile" class="platform-btn">
+          <span class="platform-icon">📱</span>Mobile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <div class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <h2>🎮 Stay in the Game</h2>
+        <p>Subscribe for exclusive deals, new release alerts, and gaming tips delivered to your inbox.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Enter your email…" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-brand">
+            <div class="brand-icon">🎮</div>
+            <span class="brand-name">Game<span>Glitz</span></span>
+          </a>
+          <p>Your one-stop destination for all things gaming. Top titles, best prices, and a community that loves games as much as you do.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Twitter">🐦</a>
+            <a href="#" class="social-link" title="Discord">💬</a>
+            <a href="#" class="social-link" title="YouTube">▶️</a>
+            <a href="#" class="social-link" title="Twitch">🟣</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">All Games</a></li>
+            <li><a href="products.html?category=action">Action Games</a></li>
+            <li><a href="products.html?category=rpg">RPG Games</a></li>
+            <li><a href="products.html?category=sports">Sports Games</a></li>
+            <li><a href="products.html?sale=true">Deals &amp; Sales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Order Tracking</a></li>
+            <li><a href="#">Returns &amp; Refunds</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Live Chat</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Game Glitz</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Game Glitz. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 Your Cart <span id="cartItemCount" style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;"></span></h3>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Shipping</span>
+          <span style="color: var(--success);">Free</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-block" style="margin-bottom: 10px;">Proceed to Checkout →</a>
+      <button onclick="closeCart()" class="btn btn-outline btn-block">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+  <script>
+    // Render featured games
+    renderProducts(getFeaturedGames(), document.getElementById('featuredGames'));
+    renderProducts(getNewReleases(), document.getElementById('newReleases'));
+
+    // Countdown timer
+    startCountdown(8 * 3600 + 45 * 60);
+
+    // Nav search redirect
+    document.getElementById('navSearch').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && this.value.trim()) {
+        window.location.href = 'products.html?search=' + encodeURIComponent(this.value.trim());
+      }
+    });
+  </script>
+</body>
+</html>

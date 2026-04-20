@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games Catalog — Game Glitz</title>
+  <meta name="description" content="Browse thousands of games across all genres and platforms at Game Glitz." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">
+          <div class="brand-icon">🎮</div>
+          <span class="brand-name">Game<span>Glitz</span></span>
+        </a>
+
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link active">Games</a></li>
+          <li><a href="products.html?category=consoles" class="nav-link">Consoles</a></li>
+          <li><a href="products.html?category=accessories" class="nav-link">Accessories</a></li>
+          <li><a href="products.html?sale=true" class="nav-link">Deals 🔥</a></li>
+        </ul>
+
+        <div class="navbar-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="navSearch" placeholder="Search games, consoles…" />
+        </div>
+
+        <div class="navbar-actions">
+          <button class="icon-btn" id="cartBtn" title="Cart" aria-label="Open cart">
+            🛒
+            <span class="badge-count" id="cartCount">0</span>
+          </button>
+          <button class="icon-btn" title="Wishlist" aria-label="Wishlist">❤️</button>
+          <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="products.html" class="nav-link active">Games</a></li>
+      <li><a href="products.html?category=consoles" class="nav-link">Consoles</a></li>
+      <li><a href="products.html?category=accessories" class="nav-link">Accessories</a></li>
+      <li><a href="products.html?sale=true" class="nav-link">Deals 🔥</a></li>
+    </ul>
+    <input type="text" class="mobile-search" id="mobileSearch" placeholder="Search games, consoles…" />
+  </div>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="page-header">
+    <div class="container">
+      <h1>🕹️ Games Catalog</h1>
+      <p>Discover your next favourite game from our massive library</p>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCTS LAYOUT ===== -->
+  <div class="container">
+    <div class="products-layout">
+
+      <!-- SIDEBAR FILTERS -->
+      <aside class="filters-sidebar">
+
+        <div class="filter-section">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+            <h4 style="margin:0;">Filters</h4>
+            <button id="clearFilters" style="background:none; border:none; color:var(--primary-light); font-size:0.8rem; cursor:pointer; font-weight:600;">Clear All</button>
+          </div>
+          <input type="text" id="pageSearch" class="search-input" style="width:100%; border-radius:var(--radius-sm); padding: 10px 14px; font-size:0.9rem;" placeholder="Search games…" />
+        </div>
+
+        <div class="filter-section">
+          <h4>Genre</h4>
+          <div class="filter-option" data-genre="action">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              ⚔️ Action
+            </label>
+            <span class="filter-count">842</span>
+          </div>
+          <div class="filter-option" data-genre="rpg">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🧙 RPG
+            </label>
+            <span class="filter-count">615</span>
+          </div>
+          <div class="filter-option" data-genre="shooter">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🎯 Shooter
+            </label>
+            <span class="filter-count">490</span>
+          </div>
+          <div class="filter-option" data-genre="strategy">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🏰 Strategy
+            </label>
+            <span class="filter-count">375</span>
+          </div>
+          <div class="filter-option" data-genre="sports">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              ⚽ Sports
+            </label>
+            <span class="filter-count">320</span>
+          </div>
+          <div class="filter-option" data-genre="racing">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🏎️ Racing
+            </label>
+            <span class="filter-count">218</span>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Platform</h4>
+          <div class="filter-option" data-platform="PS5">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🎮 PlayStation 5
+            </label>
+            <span class="filter-count">380</span>
+          </div>
+          <div class="filter-option" data-platform="Xbox">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🟢 Xbox Series X
+            </label>
+            <span class="filter-count">340</span>
+          </div>
+          <div class="filter-option" data-platform="Switch">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              🔴 Nintendo Switch
+            </label>
+            <span class="filter-count">290</span>
+          </div>
+          <div class="filter-option" data-platform="PC">
+            <label class="filter-label">
+              <div class="filter-checkbox">✓</div>
+              💻 PC / Steam
+            </label>
+            <span class="filter-count">620</span>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4>Max Price</h4>
+          <div class="price-range">
+            <input type="range" id="priceSlider" class="price-slider" min="0" max="100" value="100" step="5" />
+            <div class="price-labels">
+              <span>$0</span>
+              <span id="priceLabel">$100</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- MAIN PRODUCTS -->
+      <main class="products-main">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <span id="resultsCount">Loading…</span>
+          </div>
+          <div class="toolbar-right">
+            <select id="sortSelect" class="sort-select">
+              <option value="featured">Featured</option>
+              <option value="new">Newest First</option>
+              <option value="rating">Top Rated</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-brand">
+            <div class="brand-icon">🎮</div>
+            <span class="brand-name">Game<span>Glitz</span></span>
+          </a>
+          <p>Your one-stop destination for all things gaming.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">💬</a>
+            <a href="#" class="social-link">▶️</a>
+            <a href="#" class="social-link">🟣</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">All Games</a></li>
+            <li><a href="products.html?sale=true">Deals &amp; Sales</a></li>
+            <li><a href="products.html?sort=new">New Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Game Glitz. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 Your Cart <span id="cartItemCount" style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;"></span></h3>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Shipping</span>
+          <span style="color: var(--success);">Free</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+      </div>
+      <a href="cart.html" class="btn btn-primary btn-block" style="margin-bottom: 10px;">Proceed to Checkout →</a>
+      <button onclick="closeCart()" class="btn btn-outline btn-block">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+  <script>
+    // Nav search
+    document.getElementById('navSearch').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && this.value.trim()) {
+        window.location.href = 'products.html?search=' + encodeURIComponent(this.value.trim());
+      }
+    });
+  </script>
+</body>
+</html>
