@@ -64,12 +64,13 @@ module.exports = function createCartRouter({ db, requireAuth, requireVerifiedUse
       })();
       const u = await db.prepare('SELECT * FROM users WHERE id = ?').get(uid);
       let xp = u.xp, lv = u.level;
-      while (xp >= lv * 100) { xp -= lv * 100; lv++; }
+      const MAX_LEVEL = 100;
+      while (xp >= lv * 100 && lv < MAX_LEVEL) { xp -= lv * 100; lv++; }
       if (lv !== u.level) await db.prepare('UPDATE users SET level = ?, xp = ? WHERE id = ?').run(lv, xp, uid);
       await db.prepare('INSERT INTO notifications (id, user_id, type, title, body) VALUES (?, ?, ?, ?, ?)').run(uuid(), uid, 'order', 'Order Confirmed!', `Order ${orderId} — ${items.length} game(s) for $${total.toFixed(2)}`);
       const finalUser  = await db.prepare('SELECT * FROM users WHERE id = ?').get(uid);
       const orderItems = items.map(g => ({ title: g.title, image: g.image, slug: g.slug, price_paid: effectivePrice(g) }));
-      const { password_hash, tfa_secret, failed_login_count, locked_until, ...safeUser } = finalUser;
+      const { password_hash, tfa_secret, failed_login_count, locked_until, is_admin, ...safeUser } = finalUser;
       res.json({ order: { id: orderId, items: orderItems, total, savings, status: 'completed' }, user: safeUser });
     } catch (err) {
       if (err.code === 'INSUFFICIENT_BALANCE') return res.status(400).json({ error: `Insufficient balance ($${err.available.toFixed(2)} available, $${err.required.toFixed(2)} required).` });

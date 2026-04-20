@@ -63,11 +63,16 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
   router.get('/orders', requireAuth, async (req, res) => {
     try {
       const orders = await db.prepare('SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC').all(req.user.id);
-      const result = [];
-      for (const o of orders) {
-        const items = await db.prepare('SELECT oi.price_paid, g.title, g.image, g.slug FROM order_items oi JOIN games g ON oi.game_id = g.id WHERE oi.order_id = ?').all(o.id);
-        result.push({ ...o, items });
+      if (!orders.length) return res.json({ orders: [] });
+      const placeholders = orders.map(() => '?').join(',');
+      const orderIds = orders.map(o => o.id);
+      const allItems = await db.prepare(`SELECT oi.order_id, oi.price_paid, g.title, g.image, g.slug FROM order_items oi JOIN games g ON oi.game_id = g.id WHERE oi.order_id IN (${placeholders})`).all(...orderIds);
+      const itemsByOrder = new Map();
+      for (const item of allItems) {
+        if (!itemsByOrder.has(item.order_id)) itemsByOrder.set(item.order_id, []);
+        itemsByOrder.get(item.order_id).push({ price_paid: item.price_paid, title: item.title, image: item.image, slug: item.slug });
       }
+      const result = orders.map(o => ({ ...o, items: itemsByOrder.get(o.id) || [] }));
       res.json({ orders: result });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
   });
@@ -150,8 +155,17 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
 
   router.post('/notifications/read', requireAuth, async (req, res) => {
     const { ids } = req.body;
-    if (ids === 'all') { await db.prepare('UPDATE notifications SET "read" = 1 WHERE user_id = ?').run(req.user.id); }
-    else if (Array.isArray(ids)) { for (const id of ids) await db.prepare('UPDATE notifications SET "read" = 1 WHERE id = ? AND user_id = ?').run(id, req.user.id); }
+    if (ids === 'all') {
+      await db.prepare('UPDATE notifications SET "read" = 1 WHERE user_id = ?').run(req.user.id);
+    } else if (Array.isArray(ids)) {
+      if (ids.length > 100) return res.status(400).json({ error: 'Too many notification IDs (max 100).' });
+      for (const id of ids) {
+        if (typeof id !== 'string' || id.length > 50) continue;
+        await db.prepare('UPDATE notifications SET "read" = 1 WHERE id = ? AND user_id = ?').run(id, req.user.id);
+      }
+    } else {
+      return res.status(400).json({ error: 'ids must be an array of notification IDs or "all".' });
+    }
     res.json({ success: true });
   });
 
@@ -211,7 +225,7 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
       if (message.length > 5000) return res.status(400).json({ error: 'Message too long.' });
       const ticketId = 'TKT-' + Date.now().toString(36).toUpperCase();
       const userId = req.user ? req.user.id : null;
-      await db.prepare('INSERT INTO support_tickets (id, user_id, email, subject, message) VALUES (?, ?, ?, ?, ?)').run(ticketId, userId, email.toLowerCase(), subject, message);
+      await db.prepare('INSERT INTO support_tickets (id, user_id, email, category, subject, message) VALUES (?, ?, ?, ?, ?, ?)').run(ticketId, userId, email.toLowerCase(), category, subject, message);
       if (userId) await db.prepare('INSERT INTO notifications (id, user_id, type, title, body) VALUES (?, ?, ?, ?, ?)').run(uuid(), userId, 'support', `Support ticket ${ticketId}`, `Category: ${category} — ${subject}`);
       await auditLog('support_ticket', { userId, target: `ticket:${ticketId}`, meta: { category, email }, ip: req.ip });
       res.json({ success: true, ticket_id: ticketId, message: 'Your request has been received.' });
@@ -231,6 +245,14 @@ module.exports = function createMiscRouter({ db, requireAuth, optionalAuth, requ
       await auditLog('support_chat', { userId: req.user?.id || null, target: 'chat_session', meta: { messagePreview: message.slice(0, 120) }, ip: req.ip });
       res.json({ ok: true, reply });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
+  });
+
+  // ── User Support Tickets (view own tickets) ────────────
+  router.get('/support/tickets', requireAuth, async (req, res) => {
+    try {
+      const tickets = await db.prepare('SELECT id, category, subject, message, status, created_at FROM support_tickets WHERE user_id = ? ORDER BY created_at DESC LIMIT 50').all(req.user.id);
+      res.json({ tickets });
+    } catch (err) { console.error(err); res.status(500).json({ error: 'Failed to fetch tickets.' }); }
   });
 
   return router;

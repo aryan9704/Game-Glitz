@@ -7,12 +7,20 @@ module.exports = function createCommunityRouter({ db, requireAuth, optionalAuth,
   router.get('/groups', async (req, res) => {
     try {
       const { search, limit = 20, offset = 0 } = req.query;
+      if (search && String(search).length > 200) return res.status(400).json({ error: 'Search query too long.' });
       let q = 'SELECT g.*, u.username as owner_username FROM groups g JOIN users u ON g.owner_id = u.id WHERE g.is_public = 1';
-      const p = [];
-      if (search) { q += ' AND (g.name LIKE ? OR g.description LIKE ?)'; p.push(`%${search}%`, `%${search}%`); }
+      let qCount = 'SELECT COUNT(*) as count FROM groups g WHERE g.is_public = 1';
+      const p = [], pCount = [];
+      if (search) {
+        q += ' AND (g.name LIKE ? OR g.description LIKE ?)'; p.push(`%${search}%`, `%${search}%`);
+        qCount += ' AND (g.name LIKE ? OR g.description LIKE ?)'; pCount.push(`%${search}%`, `%${search}%`);
+      }
       q += ' ORDER BY g.member_count DESC LIMIT ? OFFSET ?';
-      p.push(Math.max(1, Math.min(100, parseInt(limit) || 20)), Math.max(0, parseInt(offset) || 0));
-      res.json({ groups: await db.prepare(q).all(...p) });
+      const limitN = Math.max(1, Math.min(100, parseInt(limit) || 20));
+      const offsetN = Math.max(0, Math.min(10000, parseInt(offset) || 0));
+      p.push(limitN, offsetN);
+      const [groups, totalRow] = await Promise.all([db.prepare(q).all(...p), db.prepare(qCount).get(...pCount)]);
+      res.json({ groups, total: totalRow.count, limit: limitN, offset: offsetN });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
   });
 
@@ -38,7 +46,11 @@ module.exports = function createCommunityRouter({ db, requireAuth, optionalAuth,
       if (!name || name.length < 3) return res.status(400).json({ error: 'Group name must be at least 3 characters.' });
       if (name.length > 100) return res.status(400).json({ error: 'Group name must be 100 characters or fewer.' });
       if (description && String(description).length > 500) return res.status(400).json({ error: 'Group description must be 500 characters or fewer.' });
-      const id = uuid(), slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || `group-${Date.now().toString(36)}`;
+      const id = uuid();
+      let slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || `group-${Date.now().toString(36)}`;
+      // Handle slug collision by appending a short suffix
+      const existingSlug = await db.prepare('SELECT id FROM groups WHERE slug = ?').get(slug);
+      if (existingSlug) slug = `${slug}-${Date.now().toString(36).slice(-4)}`;
       await db.transaction(async () => {
         await db.prepare('INSERT INTO groups (id, name, slug, description, owner_id) VALUES (?, ?, ?, ?, ?)').run(id, name, slug, description || '', req.user.id);
         await db.prepare('INSERT INTO group_members (group_id, user_id, role) VALUES (?, ?, ?)').run(id, req.user.id, 'owner');
@@ -84,12 +96,16 @@ module.exports = function createCommunityRouter({ db, requireAuth, optionalAuth,
     try {
       const { group_id, game_id, limit = 20, offset = 0 } = req.query;
       let q = 'SELECT p.*, u.username, u.display_name, u.avatar_url FROM posts p JOIN users u ON p.user_id = u.id WHERE 1=1';
-      const pp = [];
-      if (group_id) { q += ' AND p.group_id = ?'; pp.push(group_id); }
-      if (game_id)  { q += ' AND p.game_id = ?';  pp.push(game_id); }
+      let qCount = 'SELECT COUNT(*) as count FROM posts p WHERE 1=1';
+      const pp = [], ppCount = [];
+      if (group_id) { q += ' AND p.group_id = ?'; qCount += ' AND p.group_id = ?'; pp.push(group_id); ppCount.push(group_id); }
+      if (game_id)  { q += ' AND p.game_id = ?';  qCount += ' AND p.game_id = ?';  pp.push(game_id);  ppCount.push(game_id); }
       q += ' ORDER BY p.pinned DESC, p.created_at DESC LIMIT ? OFFSET ?';
-      pp.push(Math.max(1, Math.min(100, parseInt(limit) || 20)), Math.max(0, parseInt(offset) || 0));
-      res.json({ posts: await db.prepare(q).all(...pp) });
+      const limitN = Math.max(1, Math.min(100, parseInt(limit) || 20));
+      const offsetN = Math.max(0, Math.min(10000, parseInt(offset) || 0));
+      pp.push(limitN, offsetN);
+      const [posts, totalRow] = await Promise.all([db.prepare(q).all(...pp), db.prepare(qCount).get(...ppCount)]);
+      res.json({ posts, total: totalRow.count, limit: limitN, offset: offsetN });
     } catch (err) { console.error(err); res.status(500).json({ error: 'Failed.' }); }
   });
 

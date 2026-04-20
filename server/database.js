@@ -366,12 +366,19 @@ function createDatabase() {
       id         TEXT PRIMARY KEY,
       user_id    TEXT REFERENCES users(id) ON DELETE SET NULL,
       email      TEXT NOT NULL,
+      category   TEXT DEFAULT NULL,
       subject    TEXT NOT NULL,
       message    TEXT NOT NULL,
       status     TEXT DEFAULT 'open',
       created_at TEXT DEFAULT (datetime('now'))
     )
   `);
+
+  // Migration: add category column if missing
+  const ticketColumns = db.prepare('PRAGMA table_info(support_tickets)').all().map(col => col.name);
+  if (!ticketColumns.includes('category')) {
+    try { db.exec('ALTER TABLE support_tickets ADD COLUMN category TEXT DEFAULT NULL'); } catch { /* already exists */ }
+  }
 
   // PASSWORD RESET + EMAIL VERIFICATION TOKENS
   db.exec(`

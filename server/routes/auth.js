@@ -154,8 +154,8 @@ module.exports = function createAuthRouter({
       if (!zb.ok) return res.status(400).json({ error: `Email address appears undeliverable (${zb.status}). Use a different address.` });
 
       if (password.length < 8) return res.status(400).json({ error: 'Password must be at least 8 characters.' });
-      if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password))
-        return res.status(400).json({ error: 'Password must contain uppercase, lowercase, and a number.' });
+      if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password))
+        return res.status(400).json({ error: 'Password must contain uppercase, lowercase, a number, and a special character.' });
 
       let normalizedPhone = null;
       if (phone) {
@@ -470,8 +470,8 @@ module.exports = function createAuthRouter({
       if (!current_password || !new_password) return res.status(400).json({ error: 'current_password and new_password are required.' });
       const user = await db.prepare('SELECT * FROM users WHERE id = ?').get(req.user.id);
       if (!bcrypt.compareSync(current_password, user.password_hash)) return res.status(401).json({ error: 'Current password is incorrect.' });
-      if (new_password.length < 8 || !/[A-Z]/.test(new_password) || !/[a-z]/.test(new_password) || !/\d/.test(new_password))
-        return res.status(400).json({ error: 'New password must be at least 8 chars with uppercase, lowercase, and a number.' });
+      if (new_password.length < 8 || !/[A-Z]/.test(new_password) || !/[a-z]/.test(new_password) || !/\d/.test(new_password) || !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(new_password))
+        return res.status(400).json({ error: 'New password must be at least 8 chars with uppercase, lowercase, a number, and a special character.' });
       await db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(bcrypt.hashSync(new_password, BCRYPT_ROUNDS), req.user.id);
       await db.prepare('DELETE FROM sessions WHERE user_id = ?').run(req.user.id);
       await auditLog('change_password', { userId: req.user.id, meta: { userAgent: (req.headers['user-agent'] || '').slice(0, 120) }, ip: req.ip });
@@ -544,8 +544,8 @@ module.exports = function createAuthRouter({
     try {
       const { token, password } = req.body || {};
       if (!token || !password) return res.status(400).json({ error: 'Token and password are required.' });
-      if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password))
-        return res.status(400).json({ error: 'Password must be at least 8 chars with uppercase, lowercase, and a number.' });
+      if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password))
+        return res.status(400).json({ error: 'Password must be at least 8 chars with uppercase, lowercase, a number, and a special character.' });
       const h = hashToken(String(token));
       const row = await db.prepare("SELECT * FROM password_reset_tokens WHERE token_hash = ? AND used_at IS NULL AND expires_at > datetime('now')").get(h);
       if (!row) return res.status(400).json({ error: 'Reset link is invalid or expired.' });

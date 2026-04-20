@@ -131,7 +131,7 @@ async function createSession(user, req, { rememberMe = false } = {}) {
 
 function safe(user) {
   if (!user) return null;
-  const { password_hash, tfa_secret, failed_login_count, locked_until, ...rest } = user;
+  const { password_hash, tfa_secret, failed_login_count, locked_until, is_admin, ...rest } = user;
   return rest;
 }
 

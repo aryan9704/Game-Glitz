@@ -13,7 +13,10 @@ module.exports = function createGamesRouter({ db, optionalAuth }) {
     try {
       const { search, genre, platform, price, sort, featured, trending, free, sale, limit = 50, offset = 0 } = req.query;
       const limitN = Math.max(1, Math.min(200, parseInt(limit) || 50));
-      const offsetN = Math.max(0, parseInt(offset) || 0);
+      const offsetN = Math.max(0, Math.min(10000, parseInt(offset) || 0));
+      if (search && String(search).length > 200) return res.status(400).json({ error: 'Search query too long (max 200 characters).' });
+      if (genre && String(genre).length > 100) return res.status(400).json({ error: 'Genre filter too long.' });
+      if (platform && String(platform).length > 100) return res.status(400).json({ error: 'Platform filter too long.' });
       let q = 'SELECT * FROM games WHERE 1=1';
       let qCount = 'SELECT COUNT(*) as count FROM games WHERE 1=1';
       const p = [], pCount = [];
