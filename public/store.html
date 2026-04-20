@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/store.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/store.html">
+  <meta property="og:title" content="Store — Game Glitz">
+  <meta property="og:description" content="Browse 100+ games across all platforms and genres">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Store — Game Glitz">
+  <meta name="twitter:description" content="Browse 100+ games across all platforms and genres">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="description" content="Browse and buy the best games on GameGlitz — your premium gaming store.">
+  <title>Store — GameGlitz</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "GameGlitz Store — Featured Games",
+    "description": "Browse and buy the best games on GameGlitz — your premium gaming store.",
+    "url": "https://gameglitz.com/store.html",
+    "numberOfItems": 10,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Cyberpunk 2077: Ultimate Edition", "url": "https://gameglitz.com/store.html?id=1"},
+      {"@type": "ListItem", "position": 2, "name": "Grand Theft Auto V", "url": "https://gameglitz.com/store.html?id=2"},
+      {"@type": "ListItem", "position": 3, "name": "Grand Theft Auto VI", "url": "https://gameglitz.com/store.html?id=3"},
+      {"@type": "ListItem", "position": 4, "name": "Elden Ring", "url": "https://gameglitz.com/store.html?id=4"},
+      {"@type": "ListItem", "position": 5, "name": "Red Dead Redemption 2", "url": "https://gameglitz.com/store.html?id=5"},
+      {"@type": "ListItem", "position": 6, "name": "God of War Ragnarök", "url": "https://gameglitz.com/store.html?id=6"},
+      {"@type": "ListItem", "position": 7, "name": "God of War (2018)", "url": "https://gameglitz.com/store.html?id=7"},
+      {"@type": "ListItem", "position": 8, "name": "Spider-Man Remastered", "url": "https://gameglitz.com/store.html?id=8"},
+      {"@type": "ListItem", "position": 9, "name": "Spider-Man: Miles Morales", "url": "https://gameglitz.com/store.html?id=9"},
+      {"@type": "ListItem", "position": 10, "name": "Starfield", "url": "https://gameglitz.com/store.html?id=10"}
+    ]
+  }
+  </script>
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/store.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+
+<!-- Nav injected by nav.js -->
+<header id="glitz-nav"></header>
+
+<main class="store-page" id="main-content">
+  <!-- Visually-hidden H1 for screen readers / SEO — the visible title is inside the JS carousel -->
+  <h1 class="sr-only">GameGlitz Store — Browse &amp; Buy Games</h1>
+
+  <!-- ══ 1. HERO CAROUSEL ══ -->
+  <section class="hero-carousel" id="store-hero" aria-label="Featured games" data-particles>
+    <!-- 3D Floating Orbs -->
+    <div class="floating-orb floating-orb-purple ggs-c14e92dafc" aria-hidden="true"></div>
+    <div class="floating-orb floating-orb-cyan ggs-b8796e3e30" aria-hidden="true"></div>
+    <!-- Slides injected by JS -->
+    <button type="button" class="carousel-prev" id="carouselPrev" aria-label="Previous">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="carousel-next" id="carouselNext" aria-label="Next">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
+  </section>
+
+  <!-- ══ 2. FILTER BAR ══ -->
+  <div class="store-filter-bar" id="filterBar" data-reveal="down">
+    <div class="filter-bar-inner">
+      <div class="filter-search-wrap">
+        <svg class="filter-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" class="filter-search" id="searchInput" placeholder="Search games..." autocomplete="off" aria-label="Search games">
+      </div>
+
+      <select class="filter-select" id="priceFilter" aria-label="Filter by price">
+        <option value="">Any Price</option>
+        <option value="free">Free</option>
+        <option value="u10">Under $10</option>
+        <option value="u20">Under $20</option>
+        <option value="u30">Under $30</option>
+        <option value="30-60">$30–$60</option>
+        <option value="60p">$60+</option>
+      </select>
+
+      <select class="filter-select" id="sortFilter" aria-label="Sort games">
+        <option value="">Popular</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+        <option value="newest">Newest</option>
+        <option value="name">Name A–Z</option>
+      </select>
+
+      <button type="button" class="filter-sale-btn" id="saleToggle" aria-pressed="false">
+        🏷 On Sale
+      </button>
+
+      <span class="filter-results-count" id="resultsCount" aria-live="polite"></span>
+    </div>
+    <!-- Genre + Platform chip row (rendered by JS) -->
+    <div class="filter-chip-row" id="filterChipRow" role="group" aria-label="Genre and platform filters"></div>
+    <div class="smart-path-row" id="smartPathRow" data-reveal data-glow>
+      <div class="smart-path-copy">
+        <div class="smart-path-label">Smart Routes</div>
+        <h3 class="smart-path-title">Jump into a browsing lane that already knows the vibe.</h3>
+        <p class="smart-path-note" id="smartPathNote">
+          Start with a curated route for campaigns, squads, cozy sessions, or deal hunting, then refine from there without losing momentum.
+        </p>
+      </div>
+      <div class="smart-path-track" id="smartPathTrack" role="group" aria-label="Curated discovery paths"></div>
+    </div>
+  </div>
+
+  <!-- ══ STORE CONTENT ══ -->
+  <div class="store-content">
+
+    <!-- ── Deals Section ── -->
+    <div class="section-header" data-reveal id="deals">
+      <h2 class="section-title">🔥 <span>Hot Deals</span></h2>
+      <a class="section-link" id="seeAllDealsLink" href="store.html?filter=sale" data-csp-onclick="event.preventDefault();document.getElementById('saleToggle')?.click();document.getElementById('filterBar')?.scrollIntoView({behavior:'smooth'});">See All Deals →</a>
+    </div>
+    <div class="deals-track" id="dealsTrack" data-reveal></div>
+
+    <!-- Gift Cards Section -->
+    <div class="section-header ggs-c1105bdfb8" data-reveal>
+      <h2 class="section-title" id="giftcards">🎁 <span>Gift Cards</span></h2>
+      <p class="ggs-c566891d3a">Give the gift of gaming — coming soon in multiple denominations.</p>
+    </div>
+    <div class="ggs-b59e6e86e6" data-reveal>
+      <div class="ggs-259247e1c6">🎁</div>
+      <h3 class="ggs-5fdea6b7d6">Gift Cards Coming Soon</h3>
+      <p class="ggs-428cf0dbfb">
+        Gift card support is under development. Once available, you'll be able to purchase and redeem
+        cards in $10, $25, $50, and $100 denominations.
+      </p>
+    </div>
+
+    <!-- Subscriptions Section -->
+    <div class="section-header ggs-e214730593" data-reveal>
+      <h2 class="section-title" id="subscriptions">⭐ <span>Subscription Plans</span></h2>
+      <p class="ggs-c566891d3a">Unlock premium features, exclusive deals, and more.</p>
+    </div>
+    <div class="ggs-184f5e98c8" data-stagger>
+      <div class="ggs-e6d585c6a2" data-glow>
+        <div class="ggs-5d3337ef28">Free</div>
+        <div class="ggs-413cc3ae0f">$0<span class="ggs-aa487edbae">/mo</span></div>
+        <p class="ggs-a2d4544037">Basic access to the platform</p>
+        <ul class="ggs-423f6a8fef">
+          <li>✓ Browse & purchase games</li>
+          <li>✓ Basic community access</li>
+          <li>✓ Wishlist & library</li>
+          <li class="ggs-5872de20d5">✕ No exclusive deals</li>
+        </ul>
+        <div class="ggs-ad6a0ed7d9">Current Plan</div>
+      </div>
+      <div class="ggs-6c654877f5" data-glow>
+        <div class="ggs-fa2353b6b7">MOST POPULAR</div>
+        <div class="ggs-c9a7427a4d">Glitz Plus</div>
+        <div class="ggs-413cc3ae0f">$9.99<span class="ggs-aa487edbae">/mo</span></div>
+        <p class="ggs-a2d4544037">For the regular gamer</p>
+        <ul class="ggs-423f6a8fef">
+          <li>✓ Everything in Free</li>
+          <li>✓ 10% off all purchases</li>
+          <li>✓ Early access to sales</li>
+          <li>✓ Cloud saves</li>
+          <li>✓ Priority support</li>
+        </ul>
+        <a href="pricing.html" class="btn-primary ggs-4fdc25c89c">View Details</a>
+      </div>
+      <div class="ggs-27e20e1320" data-glow>
+        <div class="ggs-31ebac5e08">Glitz Ultimate</div>
+        <div class="ggs-413cc3ae0f">$19.99<span class="ggs-aa487edbae">/mo</span></div>
+        <p class="ggs-a2d4544037">The complete experience</p>
+        <ul class="ggs-423f6a8fef">
+          <li>✓ Everything in Plus</li>
+          <li>✓ 20% off all purchases</li>
+          <li>✓ Free monthly game</li>
+          <li>✓ Exclusive beta access</li>
+          <li>✓ VIP community badge</li>
+          <li>✓ 24/7 premium support</li>
+        </ul>
+        <a href="pricing.html" class="btn-primary ggs-7c1f138d6f">View Details</a>
+      </div>
+    </div>
+
+    <!-- ── Categories ── -->
+    <div class="section-header" data-reveal>
+      <h2 class="section-title">Browse by <span>Genre</span></h2>
+    </div>
+    <div class="categories-grid" id="categoriesGrid" data-reveal></div>
+
+    <!-- ── Game Grid ── -->
+    <div class="section-header" data-reveal>
+      <h2 class="section-title" id="gridHeading">All <span>Games</span></h2>
+    </div>
+
+    <div class="game-grid" id="gameGrid" role="list" data-stagger data-spotlight></div>
+    <div class="no-results-state" id="noResultsState" aria-live="polite">
+      <div class="no-results-icon">🎮</div>
+      <div class="no-results-title">No games found</div>
+      <div class="no-results-sub">Try removing some filters or searching for something else.</div>
+      <button type="button" class="filter-clear-btn" data-csp-onclick="clearAllFilters()">Clear all filters</button>
+    </div>
+
+    <div class="load-more-wrap">
+      <button type="button" class="btn-load-more" id="loadMoreBtn">Load More Games</button>
+    </div>
+
+  </div><!-- /store-content -->
+
+</main><!-- /store-page -->
+
+<!-- Footer injected by engine.js -->
+<footer id="glitz-footer"></footer>
+
+<!-- ══ QUICK VIEW MODAL ══ -->
+<div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-label="Game details" aria-hidden="true">
+  <div class="modal-box" id="quickViewBox">
+    <button type="button" class="modal-close" id="quickViewClose" aria-label="Close">&times;</button>
+    <!-- content injected by JS -->
+  </div>
+</div>
+
+<!-- ══ CART PANEL ══ -->
+<div class="cart-panel-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+  <div class="cart-panel__header">
+    <h2 class="cart-panel__title">🛒 Your Cart</h2>
+    <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-panel__body" id="cartBody"></div>
+  <div class="cart-panel__footer" id="cartFooter"></div>
+</aside>
+
+<!-- ══ CHECKOUT SUCCESS MODAL ══ -->
+<div class="modal-overlay" id="storeCheckoutModal" role="dialog" aria-modal="true" aria-label="Checkout success" aria-hidden="true">
+  <div class="modal-box" id="storeCheckoutBox">
+    <button type="button" class="modal-close" id="storeCheckoutClose" aria-label="Close">&times;</button>
+    <div class="modal-body store-checkout-success" id="storeCheckoutBody"></div>
+  </div>
+</div>
+
+<!-- Floating Cart Button -->
+<button type="button" class="floating-cart-btn" id="floatingCartBtn" aria-label="Open cart">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+  <span class="float-badge" id="floatBadge">0</span>
+</button>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+
+<script src="js/pages/store-inline-1.js"></script>
+
+<script src="js/dynamic-bg.js"></script>
+<script src="js/pages/store-inline-2.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

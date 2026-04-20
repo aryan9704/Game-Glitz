@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://gameglitz.com/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/404.html">
+  <meta property="og:title" content="Page Not Found — Game Glitz">
+  <meta property="og:description" content="The page you're looking for doesn't exist">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page Not Found — Game Glitz">
+  <meta name="twitter:description" content="The page you're looking for doesn't exist">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <title>404 — Page Not Found · GameGlitz</title>
+  <meta name="description" content="Looks like you ventured into uncharted territory. Let's get you back on track.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+  
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/404.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+  <header id="glitz-nav" class="glass"></header>
+
+  <main class="page-404" id="main-content" data-particles>
+    <!-- Background -->
+    <div class="bg-mesh"></div>
+    <div class="geo-shapes" aria-hidden="true">
+      <div class="geo geo-1"></div>
+      <div class="geo geo-2"></div>
+      <div class="geo geo-3"></div>
+      <div class="geo geo-4"></div>
+      <div class="geo geo-5"></div>
+      <div class="geo geo-6"></div>
+      <div class="cube cube-1"></div>
+      <div class="cube cube-2"></div>
+      <div class="cube cube-3"></div>
+    </div>
+
+    <!-- 404 glitch -->
+    <div class="error-code" aria-label="404" data-glitch>404</div>
+
+    <!-- Content -->
+    <div class="error-content">
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-message">
+        Looks like you ventured into <span>uncharted territory.</span><br>
+        The page you're looking for doesn't exist, moved, or was deleted.
+      </p>
+
+      <!-- Search -->
+      <div class="search-wrapper">
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search for games, news, support..." aria-label="Search Game Glitz"
+          id="searchInput"
+          data-csp-onkeydown="handleSearch(event)"
+        >
+        <button type="button" class="search-btn" data-csp-onclick="doSearch()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Search
+        </button>
+      </div>
+
+      <!-- Quick links -->
+      <div class="quick-links">
+        <a href="index.html" class="quick-link primary" data-magnetic>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Go Home
+        </a>
+        <a href="store.html" class="quick-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Browse Store
+        </a>
+        <a href="support.html" class="quick-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+          Get Help
+        </a>
+      </div>
+
+      <div class="error-details">Error: <span>404</span> · <span id="errPath">path: /unknown</span></div>
+    </div>
+  </main>
+
+  <!-- Easter egg: respawn overlay -->
+  <div class="respawn-activated" id="respawnOverlay" role="dialog" aria-modal="true" aria-live="assertive" aria-label="Respawning" aria-hidden="true" tabindex="-1">
+    <div class="respawn-text">✦ RESPAWNING ✦</div>
+  </div>
+
+  <!-- Respawn hint -->
+  <div class="respawn-hint">
+    <span class="key-badge">ANY KEY</span>
+    Press any key to respawn
+  </div>
+
+  <footer id="glitz-footer"></footer>
+
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+  <script src="js/pages/404-inline-1.js"></script>
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

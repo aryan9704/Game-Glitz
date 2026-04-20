@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/developers.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/developers.html">
+  <meta property="og:title" content="Developers — Game Glitz">
+  <meta property="og:description" content="SDK docs, revenue model, and partnership programs">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Developers — Game Glitz">
+  <meta name="twitter:description" content="SDK docs, revenue model, and partnership programs">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <title>Build with GameGlitz — Developer Portal</title>
+  <meta name="description" content="Publish your game on GameGlitz. Analytics, revenue sharing, SDK access, and 50M+ players ready to discover your title.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+  
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/developers.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+  <header id="glitz-nav" class="glass"></header>
+
+  <!-- ── Hero ── -->
+  <main class="dev-hero" id="main-content" data-particles data-story-section="Welcome" data-depth-scene>
+    <div class="hero-bg"></div>
+    <div class="gg-hex-bg" aria-hidden="true"></div>
+    <div class="hero-scene" aria-hidden="true">
+      <div class="hero-orbit hero-orbit-a" data-parallax="0.12"></div>
+      <div class="hero-orbit hero-orbit-b" data-parallax="-0.08"></div>
+      <div class="hero-cube hero-cube-a" data-parallax="0.18"></div>
+      <div class="hero-cube hero-cube-b" data-parallax="0.1"></div>
+      <div class="hero-beacon" data-parallax="0.16"></div>
+      <div class="hero-haze" data-parallax="-0.06"></div>
+    </div>
+    <div class="code-grid" aria-hidden="true">
+      <div class="code-line ggs-82dd3c6e21">import { GameGlitz } from '@gameglitz/sdk';</div>
+      <div class="code-line ggs-4430d80e2e">const sdk = new GameGlitz({ apiKey: process.env.GG_KEY });</div>
+      <div class="code-line ggs-4bde54f7d3">await sdk.analytics.track('purchase', { gameId, userId, amount });</div>
+      <div class="code-line ggs-bede362cde">const beta = await sdk.beta.distribute({ buildId, testers: 500 });</div>
+      <div class="code-line ggs-424d41d97b">sdk.revenue.report({ period: 'monthly', currency: 'USD' });</div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag" data-reveal>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Developer Portal
+        </div>
+        <h1 class="hero-title" data-word-pop data-reveal data-reveal-delay="100">
+          <span class="line1"><span class="k-word ggs-95653d840d">Build</span> <span class="k-word ggs-68494bcb94">with</span></span><br>
+          <span class="line2"><span class="k-word ggs-91b419d81c">Game</span> <span class="k-word ggs-9283c8a7f7">Glitz</span></span>
+        </h1>
+        <p class="hero-sub" data-reveal data-reveal-delay="200">
+          The platform that puts developers first. Publish your game, reach 50M+ players, keep the revenue you deserve, and grow with powerful built-in tools.
+        </p>
+        <div class="hero-ctas" data-reveal data-reveal-delay="300">
+          <a href="#apply" class="btn-primary" data-magnetic>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            Apply Now — It's Free
+          </a>
+          <a href="#docs" class="btn-ghost" data-magnetic>View Docs</a>
+        </div>
+        <div class="hero-quickstats" data-reveal data-reveal-delay="400">
+          <div class="hero-quickstat glass-card" data-spotlight data-hover-lift="4">
+            <span class="hero-quickstat-value">48h</span>
+            <span class="hero-quickstat-label">Average onboarding review</span>
+          </div>
+          <div class="hero-quickstat glass-card" data-spotlight data-hover-lift="4">
+            <span class="hero-quickstat-value">4 SDKs</span>
+            <span class="hero-quickstat-label">Launch-ready integrations</span>
+          </div>
+          <div class="hero-quickstat glass-card" data-spotlight data-hover-lift="4">
+            <span class="hero-quickstat-value">24/7</span>
+            <span class="hero-quickstat-label">Live ops command tools</span>
+          </div>
+        </div>
+        <a href="#overview" class="hero-scroll-hint" data-reveal data-reveal-delay="500">
+          Explore the developer journey
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero-code-panel" data-reveal data-reveal-delay="400" data-reveal-extra="scale" data-tilt="7" data-glow data-spotlight>
+        <div class="code-panel-header">
+          <div class="code-dot ggs-a2dcaa1c26"></div>
+          <div class="code-dot ggs-f53c4f1761"></div>
+          <div class="code-dot ggs-648ba84efb"></div>
+          <span class="code-tab">gameglitz-sdk · quickstart.js</span>
+        </div>
+        <div class="code-panel-body">
+          <div><span class="code-comment">// 1. Install</span></div>
+          <div><span class="code-var">npm install </span><span class="code-string">@gameglitz/sdk</span></div>
+          <br>
+          <div><span class="code-comment">// 2. Initialize</span></div>
+          <div><span class="code-keyword">import</span> <span class="code-var">{ GameGlitz } </span><span class="code-keyword">from</span> <span class="code-string">'@gameglitz/sdk'</span><span class="code-var">;</span></div>
+          <br>
+          <div><span class="code-keyword">const</span> <span class="code-var">gg </span><span class="code-keyword">= new</span> <span class="code-func">GameGlitz</span><span class="code-var">({</span></div>
+          <div>&nbsp;&nbsp;<span class="code-var">apiKey: </span><span class="code-string">'YOUR_API_KEY'</span><span class="code-var">,</span></div>
+          <div>&nbsp;&nbsp;<span class="code-var">gameId: </span><span class="code-string">'my-awesome-game'</span></div>
+          <div><span class="code-var">});</span></div>
+          <br>
+          <div><span class="code-comment">// 3. Track events</span></div>
+          <div><span class="code-keyword">await</span> <span class="code-var">gg.analytics.</span><span class="code-func">track</span><span class="code-var">(</span><span class="code-string">'level_complete'</span><span class="code-var">, {</span></div>
+          <div>&nbsp;&nbsp;<span class="code-var">level: </span><span class="code-num">42</span><span class="code-var">,</span></div>
+          <div>&nbsp;&nbsp;<span class="code-var">timeMs: </span><span class="code-num">180240</span></div>
+          <div><span class="code-var">});</span></div>
+          <br>
+          <div><span class="code-comment">// 4. Get paid 💰</span></div>
+          <div><span class="code-var">gg.revenue.</span><span class="code-func">withdraw</span><span class="code-var">();</span></div>
+        </div>
+      </div>
+    </div>
+  <div class="ggs-7c185a74b4" aria-hidden="true" data-float="medium" data-float-rotate></div>
+  <div class="ggs-c4c9d42057" aria-hidden="true" data-float="small"></div>
+  <div class="ggs-884c885199" aria-hidden="true" data-float="large"></div>
+  </main>
+
+  <!-- ── Stats ── -->
+  <div class="journey-shell">
+    <div class="journey-nav glass-card" data-reveal>
+      <div class="journey-nav-head">
+        <div>
+          <span class="journey-eyebrow">Smart navigation</span>
+          <span class="journey-summary-title" id="journey-summary-title">Portal overview</span>
+          <span class="journey-summary-copy" id="journey-summary-copy">Track the route from first build submission to launch, live ops, and long-tail revenue.</span>
+        </div>
+      </div>
+      <div class="journey-pills" aria-label="Developers page sections">
+        <a href="#overview" class="journey-pill is-active" data-journey-link="overview">Overview</a>
+        <a href="#paths" class="journey-pill" data-journey-link="paths">Studio Paths</a>
+        <a href="#features" class="journey-pill" data-journey-link="features">Toolkit</a>
+        <a href="#launch-path" class="journey-pill" data-journey-link="launch-path">Launch Flow</a>
+        <a href="#story-world" class="journey-pill" data-journey-link="story-world">Story Mode</a>
+        <a href="#revenue" class="journey-pill" data-journey-link="revenue">Revenue</a>
+        <a href="#docs" class="journey-pill" data-journey-link="docs">Docs</a>
+        <a href="#stories" class="journey-pill" data-journey-link="stories">Studios</a>
+        <a href="#plans" class="journey-pill" data-journey-link="plans">Plans</a>
+        <a href="#apply" class="journey-pill" data-journey-link="apply">Apply</a>
+      </div>
+      <div class="journey-progress" aria-hidden="true">
+        <span class="journey-progress-bar" id="journey-progress-bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="stats-section" id="overview" data-section-id="overview" data-section-name="Portal overview" data-section-copy="See the partner momentum, player reach, and publishing scale before you dive into the build stack.">
+    <div class="stats-inner">
+      <div class="stats-grid" data-stagger>
+        <div class="stat-card" data-reveal data-spotlight data-hover-lift="5">
+          <div class="stat-icon">🎮</div>
+          <div class="stat-value" data-counter="10000" data-suffix="K+">10K+</div>
+          <div class="stat-label">Games Published</div>
+        </div>
+        <div class="stat-card" data-reveal data-spotlight data-hover-lift="5" data-reveal-delay="200">
+          <div class="stat-icon">💰</div>
+          <div class="stat-value">$500M+</div>
+          <div class="stat-label">Revenue Shared with Developers</div>
+        </div>
+        <div class="stat-card" data-reveal data-spotlight data-hover-lift="5" data-reveal-delay="400">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value">50M+</div>
+          <div class="stat-label">Players Reached</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section persona-section" id="paths" data-section-id="paths" data-section-name="Studio paths" data-section-copy="Pick the kind of studio you are building and the page will spotlight the most relevant systems below." data-section-accent="violet">
+    <div class="section-tag" data-reveal>Studio Selection</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">Choose the lane that matches your build</h2>
+    <p class="section-sub" data-reveal data-reveal-delay="200">These path cards tune the page for your team. Use them to spotlight the right tools, docs, and plans without losing the full portal context.</p>
+    <div class="persona-grid" data-stagger>
+      <button type="button" class="glass-card persona-card is-active" data-persona-filter="all" aria-pressed="true" data-reveal data-magnetic>
+        <span class="persona-label">All systems online</span>
+        <div class="persona-title">Full portal view</div>
+        <p class="persona-copy">Keep every feature visible while you scout the entire GameGlitz stack from launch setup to enterprise scale.</p>
+        <div class="persona-tags">
+          <span class="persona-chipline">Complete toolkit</span>
+          <span class="persona-chipline">Cross-team view</span>
+        </div>
+      </button>
+      <button type="button" class="glass-card persona-card" data-persona-filter="indie" aria-pressed="false" data-reveal data-reveal-delay="100" data-magnetic>
+        <span class="persona-label">Fastest route</span>
+        <div class="persona-title">Indie launch</div>
+        <p class="persona-copy">Focus on setup speed, beta feedback, affordable tooling, and the shortest path from build upload to store page.</p>
+        <div class="persona-tags">
+          <span class="persona-chipline">SDK quickstart</span>
+          <span class="persona-chipline">Playtests</span>
+        </div>
+      </button>
+      <button type="button" class="glass-card persona-card" data-persona-filter="multiplayer" aria-pressed="false" data-reveal data-reveal-delay="200" data-magnetic>
+        <span class="persona-label">Crew systems</span>
+        <div class="persona-title">Multiplayer / live</div>
+        <p class="persona-copy">Highlight community loops, stress testing, cadence tools, and launch coordination for always-on player ecosystems.</p>
+        <div class="persona-tags">
+          <span class="persona-chipline">Community tools</span>
+          <span class="persona-chipline">Load testing</span>
+        </div>
+      </button>
+      <button type="button" class="glass-card persona-card" data-persona-filter="enterprise" aria-pressed="false" data-reveal data-reveal-delay="300" data-magnetic>
+        <span class="persona-label">Scale command</span>
+        <div class="persona-title">Enterprise ops</div>
+        <p class="persona-copy">Surface the analytics, revenue, security, and partner support layers built for studios running at global scale.</p>
+        <div class="persona-tags">
+          <span class="persona-chipline">Account management</span>
+          <span class="persona-chipline">Revenue controls</span>
+        </div>
+      </button>
+    </div>
+    <p class="persona-status" id="persona-status" data-reveal data-reveal-delay="400">Full portal view is active. Choose a studio lane to spotlight the tools and plans that fit your team.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── Developer Features ── -->
+  <section class="section" id="features" data-section-id="features" data-section-name="Shipping toolkit" data-section-copy="This is the operating system behind discovery, telemetry, community, and monetization." data-section-accent="cyan">
+    <div class="section-tag" data-reveal>What You Get</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">Everything you need to ship and grow</h2>
+    <p class="section-sub" data-reveal data-reveal-delay="200">Powerful tools built for developers who ship. From first commit to first million players, we've got you covered.</p>
+    <div class="features-grid" data-stagger data-glow>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-glow data-spotlight data-hover-lift="6" data-persona="liveops enterprise">
+        <div class="feature-icon ggs-e38b48e205">📊</div>
+        <div class="feature-name">Analytics Dashboard</div>
+        <div class="feature-desc">Real-time data on player behavior, retention, session length, funnel conversion, and crash reporting. Heatmaps included.</div>
+      </div>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-reveal-delay="100" data-glow data-spotlight data-hover-lift="6" data-persona="indie enterprise liveops">
+        <div class="feature-icon ggs-bd9b90f9bc">💳</div>
+        <div class="feature-name">Revenue Reports</div>
+        <div class="feature-desc">Detailed breakdowns by region, platform, and time period. One-click CSV export. Monthly payouts with transparent fee breakdown.</div>
+      </div>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-reveal-delay="200" data-glow data-spotlight data-hover-lift="6" data-persona="liveops enterprise">
+        <div class="feature-icon ggs-a98ba335e3">🧪</div>
+        <div class="feature-name">A/B Testing</div>
+        <div class="feature-desc">Run experiments on pricing, tutorial flows, UI variants, and onboarding. Statistical significance tracked automatically.</div>
+      </div>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-glow data-spotlight data-hover-lift="6" data-persona="multiplayer liveops">
+        <div class="feature-icon ggs-09a2e8559c">🏘️</div>
+        <div class="feature-name">Community Tools</div>
+        <div class="feature-desc">Pre-built forums, Discord integration, announcement system, and patch note publishing. Get your community active from day one.</div>
+      </div>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-reveal-delay="100" data-glow data-spotlight data-hover-lift="6" data-persona="indie multiplayer">
+        <div class="feature-icon ggs-c77762839a">⚡</div>
+        <div class="feature-name">SDK Access</div>
+        <div class="feature-desc">Available for Unity, Unreal Engine 5, Godot, and custom engines. Full API with webhooks, OAuth, and rate-limited endpoints.</div>
+      </div>
+      <div class="glass-card feature-card" data-tilt="6" data-reveal data-reveal-delay="200" data-glow data-spotlight data-hover-lift="6" data-persona="indie multiplayer liveops">
+        <div class="feature-icon ggs-593d311ceb">🚀</div>
+        <div class="feature-name">Beta Distribution</div>
+        <div class="feature-desc">Gate early access, invite playtesters, collect structured feedback, and iterate before your public launch. Supports up to 50K beta users.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── How to Publish ── -->
+  <section class="section" id="launch-path" data-section-id="launch-path" data-section-name="Launch flow" data-section-copy="A clean four-step route from application to release keeps the path readable and low-friction." data-section-accent="ember">
+    <div class="section-tag" data-reveal>Simple Process</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">From idea to live in four steps</h2>
+    <p class="section-sub" data-reveal data-reveal-delay="200">Our streamlined publishing process gets you live fast, with dedicated support at every stage.</p>
+    <div class="glass-card ggs-6982440012" data-reveal>
+      <div class="process-steps">
+        <div class="process-step" data-spotlight data-hover-lift="4">
+          <div class="step-num">1</div>
+          <div class="step-name">Apply</div>
+          <div class="step-desc">Submit your developer application. Takes 5 minutes. We review within 48 hours.</div>
+        </div>
+        <div class="process-step" data-spotlight data-hover-lift="4">
+          <div class="step-num">2</div>
+          <div class="step-name">Submit</div>
+          <div class="step-desc">Upload your build, set your pricing, write your store page. Use our page builder or import from Steam.</div>
+        </div>
+        <div class="process-step" data-spotlight data-hover-lift="4">
+          <div class="step-num">3</div>
+          <div class="step-name">Review</div>
+          <div class="step-desc">Our team checks for quality, content compliance, and security. Average review time: 3 business days.</div>
+        </div>
+        <div class="process-step" data-spotlight data-hover-lift="4">
+          <div class="step-num">4</div>
+          <div class="step-name">Launch</div>
+          <div class="step-desc">Go live to 50M+ players. Your dashboard activates immediately with real-time analytics.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="story-world" data-section-id="story-world" data-section-name="Story mode" data-section-copy="Scroll through the three operating phases that turn a prototype into a durable business." data-section-accent="violet">
+    <div class="storyline-layout">
+      <div class="storyline-intro" data-reveal>
+        <div class="section-tag">Scroll Story</div>
+        <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">A launch arc built like a live campaign</h2>
+        <p class="section-sub ggs-ef0b7a1148" data-reveal data-reveal-delay="200">The portal is organized like a progression system: instrument the build, power the launch window, then scale into a long-running command center.</p>
+        <div class="storyline-meter" aria-hidden="true">
+          <span class="storyline-meter-fill" id="storyline-meter-fill"></span>
+        </div>
+        <span class="storyline-label" id="storyline-label">Prototype signal</span>
+        <p class="storyline-copy" id="storyline-copy">Wire in analytics, validation, and build distribution so your first playtest already behaves like a professional release.</p>
+      </div>
+      <div class="story-beats">
+        <article class="glass-card story-beat is-active" data-reveal data-tilt="5" data-glow data-story-label="Prototype signal" data-story-copy="Wire in analytics, validation, and build distribution so your first playtest already behaves like a professional release.">
+          <div class="story-beat-head">
+            <div>
+              <div class="story-beat-step">Phase 01</div>
+              <div class="story-beat-title">Instrument the build</div>
+              <p class="story-beat-desc">Start with SDK hooks, controlled beta access, and the dashboards you need to see friction before players ever touch the public storefront.</p>
+            </div>
+            <div class="story-beat-score">
+              <strong>+34%</strong>
+              <span>faster setup</span>
+            </div>
+          </div>
+          <ul class="story-beat-list">
+            <li><span>01</span> Ship telemetry into your dashboard from the first session.</li>
+            <li><span>02</span> Stage your onboarding flow with targeted beta cohorts.</li>
+            <li><span>03</span> Validate pricing and store copy before the public launch splash.</li>
+          </ul>
+        </article>
+        <article class="glass-card story-beat" data-reveal data-reveal-delay="100" data-tilt="5" data-glow data-story-label="Launch pulse" data-story-copy="During launch week the page shifts into visibility, community messaging, and rapid iteration so your team can react without losing momentum.">
+          <div class="story-beat-head">
+            <div>
+              <div class="story-beat-step">Phase 02</div>
+              <div class="story-beat-title">Own the launch pulse</div>
+              <p class="story-beat-desc">Move from silent prep into a controlled launch sequence with live feedback, community amplification, and patch-note-ready communication.</p>
+            </div>
+            <div class="story-beat-score">
+              <strong>96%</strong>
+              <span>day-one sentiment</span>
+            </div>
+          </div>
+          <ul class="story-beat-list">
+            <li><span>01</span> Trigger announcement waves and community posts from one control layer.</li>
+            <li><span>02</span> Watch retention, funnel drop-off, and crash spikes in real time.</li>
+            <li><span>03</span> Route players toward the right edition, region, and offer instantly.</li>
+          </ul>
+        </article>
+        <article class="glass-card story-beat" data-reveal data-reveal-delay="200" data-tilt="5" data-glow data-story-label="Scale command" data-story-copy="After launch, the same systems pivot into long-tail optimization: revenue, cohorts, live ops cadence, and partner support for global teams.">
+          <div class="story-beat-head">
+            <div>
+              <div class="story-beat-step">Phase 03</div>
+              <div class="story-beat-title">Scale into command mode</div>
+              <p class="story-beat-desc">Once your title has traction, the portal leans into monetization clarity, A/B testing, and enterprise-grade support with less dashboard hopping.</p>
+            </div>
+            <div class="story-beat-score">
+              <strong>90%</strong>
+              <span>enterprise share</span>
+            </div>
+          </div>
+          <ul class="story-beat-list">
+            <li><span>01</span> Compare regions, bundles, and offers without exporting endless sheets.</li>
+            <li><span>02</span> Run experiments on pricing, editions, and retention loops.</li>
+            <li><span>03</span> Unlock account-manager support when your operation reaches scale.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── Revenue Model ── -->
+  <section class="section" id="revenue" data-section-id="revenue" data-section-name="Revenue model" data-section-copy="The monetization story stays simple: transparent share, transparent payout cadence, transparent reporting." data-section-accent="cyan">
+    <div class="section-tag" data-reveal>Transparent Revenue</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">You keep what you earn</h2>
+    <div class="revenue-section" data-reveal>
+      <div class="revenue-visual">
+        <div class="pie-chart-wrapper">
+          <svg viewBox="0 0 200 200" width="200" height="200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(139,92,246,0.1)" stroke-width="20"/>
+            <!-- Developer share: 80% = 288deg -->
+            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#rev-grad)" stroke-width="20"
+              stroke-dasharray="452 565" stroke-dashoffset="141" stroke-linecap="round"/>
+            <!-- GG share: 20% = 72deg -->
+            <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(6,182,212,0.6)" stroke-width="20"
+              stroke-dasharray="113 565" stroke-dashoffset="-311" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="rev-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#6366F1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="pie-chart-label">
+            <div class="pie-center-num ggs-31d38dab26">80%</div>
+            <div class="pie-center-lbl">Yours</div>
+          </div>
+        </div>
+        <div class="share-legend">
+          <div class="legend-item"><div class="legend-dot ggs-83d2191460"></div><span class="legend-name">Developer Revenue Share</span><span class="legend-val">80%</span></div>
+          <div class="legend-item"><div class="legend-dot ggs-f44c2793e8"></div><span class="legend-name">GameGlitz Platform Fee</span><span class="legend-val">20%</span></div>
+          <div class="legend-item ggs-b161f07810"><div class="legend-dot ggs-1ffaf3b36c"></div><span class="legend-name">Enterprise Tier (>$1M)</span><span class="legend-val">90%</span></div>
+        </div>
+      </div>
+      <ul class="revenue-points">
+        <li class="revenue-point">
+          <div class="rp-icon">💸</div>
+          <div><div class="rp-title">80% Revenue Share — Always</div><div class="rp-desc">We never take more than 20%. Indie or studio, your revenue share stays at 80% from day one.</div></div>
+        </li>
+        <li class="revenue-point">
+          <div class="rp-icon ggs-bd9b90f9bc">📅</div>
+          <div><div class="rp-title">Monthly Payouts</div><div class="rp-desc">Get paid on the 15th of each month for the previous month's sales. No holding periods, no thresholds.</div></div>
+        </li>
+        <li class="revenue-point">
+          <div class="rp-icon ggs-a98ba335e3">🔍</div>
+          <div><div class="rp-title">Full Transparency</div><div class="rp-desc">Itemized reports show every transaction, refund, and fee. No hidden deductions, ever.</div></div>
+        </li>
+        <li class="revenue-point">
+          <div class="rp-icon ggs-09a2e8559c">🌍</div>
+          <div><div class="rp-title">Global Currency Support</div><div class="rp-desc">We handle tax, VAT, and currency conversion in 40+ countries. You get paid in USD, EUR, or GBP.</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── SDK Docs ── -->
+  <section class="section" id="docs" data-section-id="docs" data-section-name="SDK docs" data-section-copy="Filter the docs catalog by workflow and preview the path before you dive into a package." data-section-accent="cyan" data-story-section="Docs">
+    <div class="section-tag" data-reveal>Documentation</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">SDK & API References</h2>
+    <div class="glass-card docs-command" data-reveal data-reveal-delay="200">
+      <div class="doc-filter-group" role="toolbar" aria-label="Documentation filters">
+        <button type="button" class="doc-filter is-active" data-doc-filter="all" aria-pressed="true">All Docs</button>
+        <button type="button" class="doc-filter" data-doc-filter="engine" aria-pressed="false">Engine SDKs</button>
+        <button type="button" class="doc-filter" data-doc-filter="backend" aria-pressed="false">Backend APIs</button>
+        <button type="button" class="doc-filter" data-doc-filter="commerce" aria-pressed="false">Commerce</button>
+        <button type="button" class="doc-filter" data-doc-filter="security" aria-pressed="false">Security</button>
+      </div>
+      <div class="docs-preview" id="docs-preview" aria-live="polite">
+        <div class="docs-preview-label">Featured route</div>
+        <div class="docs-preview-title" id="docs-preview-title">Unity SDK</div>
+        <p class="docs-preview-copy" id="docs-preview-copy">Start with storefront hooks, event tracking, and entitlement sync for a fast engine-side integration path.</p>
+        <div class="docs-preview-meta">
+          <span id="docs-preview-tag">Engine SDK</span>
+          <span id="docs-preview-audience">Best for indie launch teams</span>
+        </div>
+      </div>
+    </div>
+    <div class="docs-grid" data-stagger data-glow>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-doc-type="engine" data-persona="indie multiplayer" data-doc-title="Unity SDK" data-doc-copy="Start with storefront hooks, event tracking, and entitlement sync for a fast engine-side integration path." data-doc-tag="Engine SDK" data-doc-audience="Best for indie launch teams">
+        <div class="doc-icon">🎮</div>
+        <div><div class="doc-name">Unity SDK</div><div class="doc-desc">v3.2.1 · UPM Package</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-reveal-delay="100" data-doc-type="engine" data-persona="multiplayer enterprise" data-doc-title="Unreal Engine 5" data-doc-copy="Ship native achievements, cloud saves, and multiplayer commerce hooks directly from your UE5 pipeline." data-doc-tag="Engine Plugin" data-doc-audience="Built for studio-scale launch pipelines">
+        <div class="doc-icon">🔵</div>
+        <div><div class="doc-name">Unreal Engine 5</div><div class="doc-desc">v2.1.0 · Plugin</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-reveal-delay="200" data-doc-type="engine" data-persona="indie multiplayer" data-doc-title="Godot 4 Plugin" data-doc-copy="A lightweight plugin path for fast prototypes, input instrumentation, and platform unlocks inside Godot." data-doc-tag="Engine Plugin" data-doc-audience="Great for lean prototyping teams">
+        <div class="doc-icon">🤖</div>
+        <div><div class="doc-name">Godot 4 Plugin</div><div class="doc-desc">v1.4.0 · GDScript</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-doc-type="backend" data-persona="enterprise liveops" data-doc-title="REST API" data-doc-copy="Power external tools, dashboards, entitlement checks, and operations automation with the platform API." data-doc-tag="OpenAPI Spec" data-doc-audience="Ideal for backend-heavy studios">
+        <div class="doc-icon">🔗</div>
+        <div><div class="doc-name">REST API</div><div class="doc-desc">OpenAPI 3.1 Spec</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-reveal-delay="100" data-doc-type="backend" data-persona="indie liveops" data-doc-title="JS / Node SDK" data-doc-copy="Handle storefront automation, webhook consumers, and analytics jobs with a TypeScript-friendly backend toolkit." data-doc-tag="TypeScript SDK" data-doc-audience="Perfect for web tooling and bots">
+        <div class="doc-icon">📦</div>
+        <div><div class="doc-name">JS / Node SDK</div><div class="doc-desc">npm · TypeScript</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-reveal-delay="200" data-doc-type="backend" data-persona="enterprise liveops" data-doc-title="Python SDK" data-doc-copy="Build data pipelines, reporting jobs, and experiment tooling around the GameGlitz commerce and analytics endpoints." data-doc-tag="Python SDK" data-doc-audience="Strong fit for analytics teams">
+        <div class="doc-icon">🐍</div>
+        <div><div class="doc-name">Python SDK</div><div class="doc-desc">pip · PyPI</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-doc-type="commerce" data-persona="multiplayer liveops enterprise" data-doc-title="Webhooks Guide" data-doc-copy="Listen for purchases, refunds, launches, and support-side events without polling the platform." data-doc-tag="Event Streams" data-doc-audience="Best for live operations teams">
+        <div class="doc-icon">⚓</div>
+        <div><div class="doc-name">Webhooks Guide</div><div class="doc-desc">Events & payloads</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+      <div class="glass-card doc-card" data-tilt="4" data-reveal data-reveal-delay="100" data-doc-type="security" data-persona="enterprise" data-doc-title="Auth & Security" data-doc-copy="Lock down partner access with OAuth, scoped keys, and a security model built for larger teams." data-doc-tag="Security" data-doc-audience="Recommended for enterprise partners">
+        <div class="doc-icon">🔐</div>
+        <div><div class="doc-name">Auth & Security</div><div class="doc-desc">OAuth 2.0 · API Keys</div></div>
+        <svg class="doc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── Success Stories ── -->
+  <section class="section" id="stories" data-section-id="stories" data-section-name="Studio proof" data-section-copy="Case studies show how different studio sizes use the same portal in distinct ways." data-section-accent="violet">
+    <div class="section-tag" data-reveal>Indie Spotlight</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">Success Stories</h2>
+    <div class="stories-grid" data-stagger>
+      <div class="glass-card story-card" data-tilt="5" data-reveal data-persona="indie" data-spotlight data-hover-lift="6">
+        <div class="story-avatar ggs-cadec7f9fa">🏔️</div>
+        <div class="story-name">Crystal Caverns Zero</div>
+        <div class="story-dev">Phantom Studio · Solo Developer</div>
+        <p class="story-quote">"GameGlitz gave me access to an audience I could never have built alone. The SDK took one afternoon to integrate, and the revenue dashboard is genuinely the clearest I've ever used."</p>
+        <div class="story-stats">
+          <div class="s-stat"><div class="s-stat-val">240K</div><div class="s-stat-lbl">Units Sold</div></div>
+          <div class="s-stat"><div class="s-stat-val">$1.2M</div><div class="s-stat-lbl">Revenue</div></div>
+          <div class="s-stat"><div class="s-stat-val">4.8★</div><div class="s-stat-lbl">Rating</div></div>
+        </div>
+      </div>
+      <div class="glass-card story-card" data-tilt="5" data-reveal data-reveal-delay="100" data-persona="multiplayer liveops" data-spotlight data-hover-lift="6">
+        <div class="story-avatar ggs-76f0ec5bd4">🌊</div>
+        <div class="story-name">Neon Breach</div>
+        <div class="story-dev">Voidwave Games · 5 Developers</div>
+        <p class="story-quote">"The beta distribution feature was a game-changer. We tested with 10,000 players before launch, fixed 40% of our top issues, and launched to a 96% positive review score on day one."</p>
+        <div class="story-stats">
+          <div class="s-stat"><div class="s-stat-val">890K</div><div class="s-stat-lbl">Units Sold</div></div>
+          <div class="s-stat"><div class="s-stat-val">$4.1M</div><div class="s-stat-lbl">Revenue</div></div>
+          <div class="s-stat"><div class="s-stat-val">4.9★</div><div class="s-stat-lbl">Rating</div></div>
+        </div>
+      </div>
+      <div class="glass-card story-card" data-tilt="5" data-reveal data-reveal-delay="200" data-persona="enterprise liveops" data-spotlight data-hover-lift="6">
+        <div class="story-avatar ggs-1ddfcae0fe">⚡</div>
+        <div class="story-name">Stellar Vanguard</div>
+        <div class="story-dev">Nexus Interactive · 18 Developers</div>
+        <p class="story-quote">"We moved from another platform to GameGlitz and saw a 34% increase in first-week sales. The A/B testing tools helped us find the right launch price in under two weeks."</p>
+        <div class="story-stats">
+          <div class="s-stat"><div class="s-stat-val">3.2M</div><div class="s-stat-lbl">Units Sold</div></div>
+          <div class="s-stat"><div class="s-stat-val">$28M</div><div class="s-stat-lbl">Revenue</div></div>
+          <div class="s-stat"><div class="s-stat-val">5.0★</div><div class="s-stat-lbl">Rating</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ── Partnership Tiers ── -->
+  <section class="section" id="plans" data-section-id="plans" data-section-name="Partnership plans" data-section-copy="Choose a lane that matches your scale now, then grow into the next tier without changing the page logic." data-section-accent="ember">
+    <div class="section-tag" data-reveal>Partnership</div>
+    <h2 class="section-title kinetic-title" data-reveal data-reveal-delay="100">Choose your plan</h2>
+    <div class="tiers-grid" data-stagger>
+      <div class="glass-card tier-card" data-reveal data-persona="indie" data-tier-name="Indie">
+        <div class="tier-name">Indie</div>
+        <div class="tier-price">Free</div>
+        <div class="tier-price-sub">Forever · 80% revenue share</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="tf-check">✓</span> Publish up to 3 games</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Core analytics dashboard</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> SDK access (all engines)</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Community forums</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Beta testing (500 users)</li>
+          <li class="tier-feature"><span class="tf-x">✗</span> <span class="ggs-e1549fdc20">A/B Testing</span></li>
+          <li class="tier-feature"><span class="tf-x">✗</span> <span class="ggs-e1549fdc20">Dedicated support</span></li>
+        </ul>
+        <button type="button" class="tier-btn tier-btn-outline" data-magnetic data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.success('Welcome! Redirecting to sign up...');setTimeout(function(){window.location.href='account.html'},1000)">Get Started Free</button>
+      </div>
+      <div class="glass-card tier-card featured" data-reveal data-reveal-delay="100" data-persona="multiplayer liveops" data-tier-name="Studio">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-name">Studio</div>
+        <div class="tier-price">$299<span class="ggs-33562e0354">/mo</span></div>
+        <div class="tier-price-sub">Per studio · 80% revenue share</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="tf-check">✓</span> Unlimited games</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Advanced analytics + heatmaps</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> SDK access (all engines)</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Full community suite</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Beta testing (10,000 users)</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> A/B Testing (5 experiments)</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Priority email support</li>
+        </ul>
+        <button type="button" class="tier-btn tier-btn-solid" data-magnetic data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.success('Studio trial activated! Redirecting...');setTimeout(function(){window.location.href='account.html'},1000)">Start Studio Trial</button>
+      </div>
+      <div class="glass-card tier-card" data-reveal data-reveal-delay="200" data-persona="enterprise" data-tier-name="Enterprise">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-price">Custom</div>
+        <div class="tier-price-sub">Revenue >$1M · 90% revenue share</div>
+        <ul class="tier-features">
+          <li class="tier-feature"><span class="tf-check">✓</span> Everything in Studio</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> 90% revenue share</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Dedicated account manager</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Custom contracts & SLA</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Beta testing (50,000 users)</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Unlimited A/B Testing</li>
+          <li class="tier-feature"><span class="tf-check">✓</span> Featured store placement</li>
+        </ul>
+        <button type="button" class="tier-btn tier-btn-outline" data-magnetic data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Our sales team will reach out within 24 hours.');else alert('Our sales team will reach out within 24 hours.')">Contact Sales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section" id="apply" data-section-id="apply" data-section-name="Apply now" data-section-copy="Finish the journey with a lightweight handoff that gets your studio into the pipeline quickly." data-story-section="Apply">
+    <div class="cta-section" data-reveal data-morph-blob>
+      <div class="cta-glow"></div>
+      <h2 class="cta-title kinetic-title">Ready to ship your game?</h2>
+      <p class="cta-sub">Join 10,000+ developers who chose GameGlitz. Free to start. No hidden fees.</p>
+      <div class="cta-form">
+        <input type="email" class="cta-input" placeholder="your@studio.com" aria-label="Studio email address">
+        <button type="button" class="btn-primary" data-magnetic data-csp-onclick="var inp=this.parentElement.querySelector('.cta-input');var email=inp?inp.value.trim():'';if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){if(window.GG&&GG.Toast)GG.Toast.error('Please enter a valid studio email.');return;}inp.value='';this.textContent='Applied ✓';this.disabled=true;this.style.opacity='0.6';if(window.GG&&GG.Toast)GG.Toast.success('Application submitted! We will contact you soon.')">Apply Now</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="glitz-footer"></footer>
+
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/dynamic-bg.js"></script>
+<script src="js/pages/developers-inline-1.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/news.html">
+  <meta property="og:title" content="News — Game Glitz">
+  <meta property="og:description" content="Latest gaming news, reviews, and announcements">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="News — Game Glitz">
+  <meta name="twitter:description" content="Latest gaming news, reviews, and announcements">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <title>News & Insights — GameGlitz</title>
+  <meta name="description" content="The latest gaming news, reviews, guides, dev diaries, and esports coverage from GameGlitz.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+  
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/news.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+  <header id="glitz-nav" class="glass"></header>
+
+  <!-- ── Hero ── -->
+  <section class="news-hero" id="main-content" data-particles>
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-tag" data-reveal>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+        News & Insights
+      </div>
+      <h1 class="hero-title" data-reveal data-reveal-delay="100">Gaming News<br>& Insights</h1>
+      <p class="hero-sub" data-reveal data-reveal-delay="200">Reviews, guides, industry news, dev diaries, and the deepest esports coverage on the internet.</p>
+    </div>
+  </section>
+
+  <!-- ── Main Content ── -->
+  <div class="news-layout">
+    <main>
+      <!-- Featured -->
+      <div class="featured-article" data-reveal>
+        <div class="featured-image">
+          <span class="ggs-e3cac8e040">🎮</span>
+          <div class="featured-image-overlay"></div>
+          <div class="featured-image-text">
+            <span class="featured-cat-badge cat-game-update">Game Update</span>
+            <h2 class="featured-title">Stellar Vanguard's Fractured Realms expansion redefines the open-world genre — a deep dive</h2>
+            <p class="featured-excerpt">Six months of development, 40 new zones, and the most ambitious narrative in the series. We played 60 hours before launch to bring you this review.</p>
+          </div>
+        </div>
+        <div class="featured-meta-row">
+          <div class="author-info">
+            <div class="author-avatar ggs-cadec7f9fa">AK</div>
+            <div>
+              <div class="author-name">Alex Kim</div>
+            </div>
+          </div>
+          <span class="meta-item">Feb 10, 2025</span>
+          <span class="meta-item">14 min read</span>
+          <span class="meta-item">👁 348K views</span>
+          <a href="news.html#featured" data-csp-onclick="window.GG&&GG.Toast?GG.Toast.info('Full article coming soon!'):null;return false;" class="read-btn">Read Article →</a>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="cat-filters" data-reveal="scale">
+        <button type="button" class="cat-filter active" data-csp-onclick="filterCat(this)">All</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Game Updates</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Industry News</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Reviews</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Guides</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Dev Diaries</button>
+        <button type="button" class="cat-filter" data-csp-onclick="filterCat(this)">Esports</button>
+      </div>
+
+      <!-- Grid of 12 articles -->
+      <div class="news-grid" data-stagger data-glow>
+
+        <article class="article-card" data-tilt="5" data-reveal data-glow>
+          <div class="article-image ggs-cadec7f9fa" data-image-reveal="center" role="img" aria-label="Arcane Siege season update artwork">
+            <span>🎮</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-game-update">Game Update</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Arcane Siege Season 3 patch overhauls the entire ability system</h3>
+            <p class="article-excerpt">The biggest mechanical overhaul since launch. Every ability redesigned, balance pass across 80 characters.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-cadec7f9fa">MR</div>
+                <span class="article-author-name">Maya R.</span>
+              </div>
+              <span class="read-time">8 min</span>
+              <span class="article-date">Feb 9</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="100" data-glow>
+          <div class="article-image ggs-7d666bd1be" data-image-reveal="center" role="img" aria-label="Gaming industry acquisition artwork">
+            <span>🏢</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-industry">Industry News</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Nexon acquires indie powerhouse StudioCraft in $1.2B deal</h3>
+            <p class="article-excerpt">The gaming world is reshaping fast. What this consolidation means for indie developers everywhere.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-7d666bd1be">JT</div>
+                <span class="article-author-name">Jake T.</span>
+              </div>
+              <span class="read-time">5 min</span>
+              <span class="article-date">Feb 8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="200" data-glow>
+          <div class="article-image ggs-b234022ebd" data-image-reveal="center" role="img" aria-label="Shadow Realm DLC review artwork">
+            <span>⭐</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-review">Review</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Shadow Realm DLC "Echoes of War" — Review: 9.4/10</h3>
+            <p class="article-excerpt">An emotionally devastating campaign paired with the smoothest combat the series has ever delivered.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-b234022ebd">SL</div>
+                <span class="article-author-name">Sara L.</span>
+              </div>
+              <span class="read-time">12 min</span>
+              <span class="article-date">Feb 8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-glow>
+          <div class="article-image ggs-9355a34868" data-image-reveal="center" role="img" aria-label="Stellar Vanguard ranked guide artwork">
+            <span>📖</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-guide">Guide</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">The complete beginner's guide to Stellar Vanguard ranked play</h3>
+            <p class="article-excerpt">From Bronze to Diamond — the definitive roadmap, with pro tips from top-100 players.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-9355a34868">DW</div>
+                <span class="article-author-name">Dan W.</span>
+              </div>
+              <span class="read-time">18 min</span>
+              <span class="article-date">Feb 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="100" data-glow>
+          <div class="article-image ggs-4e0713f674" data-image-reveal="center" role="img" aria-label="Neon Breach development diary artwork">
+            <span>🛠️</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-dev">Dev Diary</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Inside the making of Neon Breach: six years of iteration</h3>
+            <p class="article-excerpt">The Phantom Studio team walks us through the full development journey, including two complete restarts.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-4e0713f674">PH</div>
+                <span class="article-author-name">Phil H.</span>
+              </div>
+              <span class="read-time">10 min</span>
+              <span class="article-date">Feb 7</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="200" data-glow>
+          <div class="article-image ggs-9169f1061e" data-image-reveal="center" role="img" aria-label="GlitzCup esports match artwork">
+            <span>🏆</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-esports">Esports</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">GlitzCup QF: Void Nexus dominates with textbook aggression</h3>
+            <p class="article-excerpt">NeonX's support play set the stage for a 2-0 sweep that had analysts calling it the performance of the year.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-9169f1061e">RC</div>
+                <span class="article-author-name">Ryan C.</span>
+              </div>
+              <span class="read-time">6 min</span>
+              <span class="article-date">Feb 6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-glow>
+          <div class="article-image ggs-28fda8774c" data-image-reveal="center" role="img" aria-label="Arcane Siege crafting guide artwork">
+            <span>🎯</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-guide">Guide</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Mastering the new crafting system in Arcane Siege Season 3</h3>
+            <p class="article-excerpt">Hundreds of new recipes, resource routes, and hidden crafting stations — here's everything you need to know.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-28fda8774c">LM</div>
+                <span class="article-author-name">Leah M.</span>
+              </div>
+              <span class="read-time">15 min</span>
+              <span class="article-date">Feb 6</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="100" data-glow>
+          <div class="article-image ggs-4a553e150b" data-image-reveal="center" role="img" aria-label="Global game sales report artwork">
+            <span>💰</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-industry">Industry News</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Global game sales hit $250B in 2024 — mobile continues to lead</h3>
+            <p class="article-excerpt">Annual report reveals a record-breaking year for the industry, with PC gaming making a significant comeback.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-4a553e150b">BN</div>
+                <span class="article-author-name">Ben N.</span>
+              </div>
+              <span class="read-time">7 min</span>
+              <span class="article-date">Feb 5</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="200" data-glow>
+          <div class="article-image ggs-0cc93f621c" data-image-reveal="center" role="img" aria-label="Crystal Caverns Zero review artwork">
+            <span>🎭</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-review">Review</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Crystal Caverns Zero — Review: An indie triumph at 7.8/10</h3>
+            <p class="article-excerpt">A small team of five created one of the most creative puzzle-platformers in recent memory. Here's our breakdown.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-0cc93f621c">TK</div>
+                <span class="article-author-name">Tara K.</span>
+              </div>
+              <span class="read-time">9 min</span>
+              <span class="article-date">Feb 5</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-glow>
+          <div class="article-image ggs-6c88853f3a" data-image-reveal="center" role="img" aria-label="Shadow Realm AI development artwork">
+            <span>🔧</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-dev">Dev Diary</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">How we built Shadow Realm's AI enemy system from scratch</h3>
+            <p class="article-excerpt">Dark Horizon Studios' lead engineer explains the behavior tree architecture that makes enemies feel genuinely alive.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-6c88853f3a">GR</div>
+                <span class="article-author-name">Gio R.</span>
+              </div>
+              <span class="read-time">11 min</span>
+              <span class="article-date">Feb 4</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="100" data-glow>
+          <div class="article-image ggs-b1f3888f1f" data-image-reveal="center" role="img" aria-label="Fantasy esports announcement artwork">
+            <span>📡</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-esports">Esports</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Fantasy Esports is coming to GameGlitz — what we know so far</h3>
+            <p class="article-excerpt">Draft pro players, earn points from real match stats, and compete in weekly leagues with real prizes on the line.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-b1f3888f1f">NV</div>
+                <span class="article-author-name">Nat V.</span>
+              </div>
+              <span class="read-time">4 min</span>
+              <span class="article-date">Feb 4</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card" data-tilt="5" data-reveal data-reveal-delay="200" data-glow>
+          <div class="article-image ggs-38bd42cb8f" data-image-reveal="center" role="img" aria-label="Southeast Asian gaming market artwork">
+            <span>🌍</span>
+            <div class="article-image-overlay"></div>
+            <div class="article-cat-pos"><span class="featured-cat-badge cat-industry">Industry News</span></div>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">The rise of Southeast Asian gaming: a market finally having its moment</h3>
+            <p class="article-excerpt">Explosive growth in Vietnam, Indonesia, and the Philippines is reshaping how publishers plan global launches.</p>
+            <div class="article-footer">
+              <div class="article-author-sm">
+                <div class="author-avatar-sm ggs-38bd42cb8f">HP</div>
+                <span class="article-author-name">Hana P.</span>
+              </div>
+              <span class="read-time">9 min</span>
+              <span class="article-date">Feb 3</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrapper" data-reveal>
+        <button type="button" class="load-more-btn" data-csp-onclick="loadMore(this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Load More Articles
+        </button>
+      </div>
+
+      <!-- ── Press Releases ── -->
+      <div class="section-header ggs-e214730593" data-reveal>
+        <h2 class="section-title ggs-0b3f880d6c">Press <span class="ggs-f8ffbbd08b">Releases</span></h2>
+        <p class="ggs-c566891d3a">Official announcements from GameGlitz</p>
+      </div>
+      <div class="ggs-a55bca97d7" data-stagger>
+        <div class="ggs-c8bc2d3c5e" data-reveal data-glow data-csp-onmouseover="this.style.borderColor='var(--border-glow)';this.style.boxShadow='var(--shadow-glow)'" data-csp-onmouseout="this.style.borderColor='var(--border-default)';this.style.boxShadow='none'">
+          <div class="ggs-d780498cc8">📢</div>
+          <div class="ggs-59eddc679e">
+            <div class="ggs-96226e790d">
+              <span class="ggs-b2ee42a639">PRESS RELEASE</span>
+              <span class="ggs-95095d1eef">April 10, 2026</span>
+            </div>
+            <h3 class="ggs-8baaacc318">GameGlitz Surpasses 10 Million Registered Users Worldwide</h3>
+            <p class="ggs-5904b7fc24">GameGlitz today announced it has reached a major milestone with over 10 million registered users across 140 countries. The platform has seen 300% year-over-year growth, driven by its curated game catalog, community features, and competitive pricing. CEO Jordan Park stated: "We're building the gaming platform that players have been asking for — one that puts community and discovery first."</p>
+            <a class="ggs-af5198d75a" href="#" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Full press release coming soon.');return false;">Read Full Release →</a>
+          </div>
+        </div>
+
+        <div class="ggs-c8bc2d3c5e" data-reveal data-reveal-delay="100" data-glow data-csp-onmouseover="this.style.borderColor='var(--border-glow)';this.style.boxShadow='var(--shadow-glow)'" data-csp-onmouseout="this.style.borderColor='var(--border-default)';this.style.boxShadow='none'">
+          <div class="ggs-4be2d0c523">🤝</div>
+          <div class="ggs-59eddc679e">
+            <div class="ggs-96226e790d">
+              <span class="ggs-014be55446">PARTNERSHIP</span>
+              <span class="ggs-95095d1eef">March 28, 2026</span>
+            </div>
+            <h3 class="ggs-8baaacc318">GameGlitz Partners with Phantom Studios for Exclusive Launch of "Neon Breach 2"</h3>
+            <p class="ggs-5904b7fc24">GameGlitz and Phantom Studios have entered into a strategic partnership to exclusively launch "Neon Breach 2" on the GameGlitz platform. The sequel to the critically acclaimed cyberpunk RPG will offer GameGlitz users 48-hour early access, exclusive in-game cosmetics, and a behind-the-scenes developer documentary series leading up to the Q3 2026 launch.</p>
+            <a class="ggs-af5198d75a" href="#" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Full press release coming soon.');return false;">Read Full Release →</a>
+          </div>
+        </div>
+
+        <div class="ggs-c8bc2d3c5e" data-reveal data-reveal-delay="200" data-glow data-csp-onmouseover="this.style.borderColor='var(--border-glow)';this.style.boxShadow='var(--shadow-glow)'" data-csp-onmouseout="this.style.borderColor='var(--border-default)';this.style.boxShadow='none'">
+          <div class="ggs-de72245662">🏆</div>
+          <div class="ggs-59eddc679e">
+            <div class="ggs-96226e790d">
+              <span class="ggs-8b91001212">ESPORTS</span>
+              <span class="ggs-95095d1eef">March 15, 2026</span>
+            </div>
+            <h3 class="ggs-8baaacc318">GlitzCup 2026 World Championship Announced — $2M Prize Pool</h3>
+            <p class="ggs-5904b7fc24">GameGlitz is proud to announce the GlitzCup 2026 World Championship, featuring a record $2 million prize pool across three game titles. The tournament will run from June through September 2026, with regional qualifiers in North America, Europe, Asia-Pacific, and South America. The Grand Finals will be held live in Los Angeles at the Crypto.com Arena.</p>
+            <a class="ggs-af5198d75a" href="#" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Full press release coming soon.');return false;">Read Full Release →</a>
+          </div>
+        </div>
+
+        <div class="ggs-c8bc2d3c5e" data-reveal data-reveal-delay="300" data-glow data-csp-onmouseover="this.style.borderColor='var(--border-glow)';this.style.boxShadow='var(--shadow-glow)'" data-csp-onmouseout="this.style.borderColor='var(--border-default)';this.style.boxShadow='none'">
+          <div class="ggs-a3748ad752">🚀</div>
+          <div class="ggs-59eddc679e">
+            <div class="ggs-96226e790d">
+              <span class="ggs-a5a851a0ad">PRODUCT</span>
+              <span class="ggs-95095d1eef">February 22, 2026</span>
+            </div>
+            <h3 class="ggs-8baaacc318">GameGlitz Launches "Glitz Plus" and "Glitz Ultimate" Subscription Tiers</h3>
+            <p class="ggs-5904b7fc24">GameGlitz today launched two new subscription tiers designed to give players more value. Glitz Plus ($9.99/mo) offers 10% off all purchases, early access to sales, and cloud saves. Glitz Ultimate ($19.99/mo) adds a free monthly game, exclusive beta access, and VIP community badges. Both tiers include priority customer support.</p>
+            <a class="ggs-af5198d75a" href="pricing.html">View Plans →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Media Kit & Press Contact ── -->
+      <div class="section-header ggs-e214730593" data-reveal>
+        <h2 class="section-title ggs-0b3f880d6c">Media <span class="ggs-f8ffbbd08b">Kit & Contact</span></h2>
+        <p class="ggs-c566891d3a">Resources for press, media, and content creators</p>
+      </div>
+      <div class="ggs-184f5e98c8" data-stagger>
+        <div class="ggs-f5da4d6273" data-reveal data-glow>
+          <div class="ggs-764ac2251b">📦</div>
+          <h3 class="ggs-79f0abec05">Brand Assets</h3>
+          <p class="ggs-0053b86424">Logos, icons, color palette, typography, and brand guidelines for press and media usage.</p>
+          <button class="ggs-9b8092b1cf" type="button" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Media kit download coming soon!');else alert('Media kit download coming soon!')" data-csp-onmouseover="this.style.transform='translateY(-1px)'" data-csp-onmouseout="this.style.transform='none'">Download Kit (.zip)</button>
+        </div>
+
+        <div class="ggs-f4bada3b02" data-reveal data-reveal-delay="100" data-glow>
+          <div class="ggs-fdaf4ad425">📸</div>
+          <h3 class="ggs-79f0abec05">Screenshots & Media</h3>
+          <p class="ggs-0053b86424">High-resolution product screenshots, event photos, and promotional imagery for editorial use.</p>
+          <button class="ggs-2d4c30068d" type="button" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Media gallery coming soon!');else alert('Media gallery coming soon!')" data-csp-onmouseover="this.style.transform='translateY(-1px)'" data-csp-onmouseout="this.style.transform='none'">Browse Gallery</button>
+        </div>
+
+        <div class="ggs-58ef0884f3" data-reveal data-reveal-delay="200" data-glow>
+          <div class="ggs-b6955ec55c">📊</div>
+          <h3 class="ggs-79f0abec05">Fact Sheet</h3>
+          <p class="ggs-0053b86424">Key company stats, milestones, leadership bios, and platform metrics for quick reference.</p>
+          <button class="ggs-c819b4f7da" type="button" data-csp-onclick="if(window.GG&&GG.Toast)GG.Toast.info('Fact sheet coming soon!');else alert('Fact sheet coming soon!')" data-csp-onmouseover="this.style.transform='translateY(-1px)'" data-csp-onmouseout="this.style.transform='none'">View Fact Sheet</button>
+        </div>
+      </div>
+
+      <!-- Press Contact Card -->
+      <div class="ggs-ec3ecc7f62" data-reveal data-glow>
+        <h3 class="ggs-40f5f74a9f">Press & Media Inquiries</h3>
+        <p class="ggs-bc5d3fada9">For interview requests, review copies, partnership opportunities, or media inquiries, please contact our press team. We typically respond within 24 hours on business days.</p>
+        <div class="ggs-b46b94350b">
+          <div class="ggs-7e82f51e2d">
+            <span class="ggs-4ff818ffe1">📧</span>
+            <div class="ggs-6be0d8ba2c">
+              <div class="ggs-55540c1942">Email</div>
+              <div class="ggs-8f3cad5a70">press@gameglitz.com</div>
+            </div>
+          </div>
+          <div class="ggs-7e82f51e2d">
+            <span class="ggs-4ff818ffe1">🐦</span>
+            <div class="ggs-6be0d8ba2c">
+              <div class="ggs-55540c1942">Social</div>
+              <div class="ggs-8f3cad5a70">@GameGlitzPress</div>
+            </div>
+          </div>
+          <div class="ggs-7e82f51e2d">
+            <span class="ggs-4ff818ffe1">📞</span>
+            <div class="ggs-6be0d8ba2c">
+              <div class="ggs-55540c1942">Phone</div>
+              <div class="ggs-8f3cad5a70">+1 (415) 555-0192</div>
+            </div>
+          </div>
+        </div>
+        <p class="ggs-865c33f0ef">For general support, please visit our <a class="ggs-256b472521" href="support.html">Help Center</a> instead.</p>
+      </div>
+    </main>
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+      <!-- Popular -->
+      <div class="sidebar-widget" data-reveal>
+        <div class="widget-title">🔥 Popular This Week</div>
+        <ul class="popular-list">
+          <li class="popular-item">
+            <span class="popular-num">01</span>
+            <div>
+              <div class="popular-title">Stellar Vanguard Fractured Realms — deep dive review</div>
+              <div class="popular-date">Feb 10 · 348K views</div>
+            </div>
+          </li>
+          <li class="popular-item">
+            <span class="popular-num">02</span>
+            <div>
+              <div class="popular-title">Arcane Siege Season 3: full patch notes explained</div>
+              <div class="popular-date">Feb 9 · 214K views</div>
+            </div>
+          </li>
+          <li class="popular-item">
+            <span class="popular-num">03</span>
+            <div>
+              <div class="popular-title">Beginner's ranked guide to Stellar Vanguard</div>
+              <div class="popular-date">Feb 7 · 189K views</div>
+            </div>
+          </li>
+          <li class="popular-item">
+            <span class="popular-num">04</span>
+            <div>
+              <div class="popular-title">GlitzCup QF: Void Nexus dominates with aggression</div>
+              <div class="popular-date">Feb 6 · 142K views</div>
+            </div>
+          </li>
+          <li class="popular-item">
+            <span class="popular-num">05</span>
+            <div>
+              <div class="popular-title">How Shadow Realm built its enemy AI from scratch</div>
+              <div class="popular-date">Feb 4 · 98K views</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-widget" data-reveal data-reveal-delay="100">
+        <div class="widget-title">📬 Newsletter</div>
+        <p class="ggs-b3f23c0f6a">
+          The best gaming stories, delivered every Tuesday and Friday. No spam, ever.
+        </p>
+        <input type="email" class="newsletter-input" placeholder="your@email.com" aria-label="Email for newsletter">
+        <button type="button" class="newsletter-btn" data-csp-onclick="(function(btn){var inp=btn.previousElementSibling;var email=inp.value.trim();if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){if(window.GG&&GG.Toast)GG.Toast.error('Please enter a valid email.');else alert('Please enter a valid email.');return;}inp.value='';btn.textContent='Subscribed ✓';btn.disabled=true;btn.style.opacity='0.6';if(window.GG&&GG.Toast)GG.Toast.success('You are now subscribed!');else alert('Subscribed!');})(this)">Subscribe Free</button>
+        <div class="newsletter-sub">82,000+ subscribers · Unsubscribe anytime</div>
+      </div>
+
+      <!-- Social Feed -->
+      <div class="sidebar-widget" data-reveal data-reveal-delay="200">
+        <div class="widget-title">💬 Social Feed</div>
+        <div class="social-list">
+          <div class="social-item">
+            <div class="social-avatar">GG</div>
+            <div class="social-body">
+              <div class="social-user">@GameGlitz</div>
+              <div class="social-text">Void Nexus just secured their spot in the Grand Final! 🏆 What a performance from NeonX.</div>
+            </div>
+            <div class="social-time">2h</div>
+          </div>
+          <div class="social-item">
+            <div class="social-avatar ggs-4d8b4e088b">NX</div>
+            <div class="social-body">
+              <div class="social-user">@neonx_vn</div>
+              <div class="social-text">That 2-0 was for the whole team. Best QF run I've ever been part of. GF next! ⚡</div>
+            </div>
+            <div class="social-time">3h</div>
+          </div>
+          <div class="social-item">
+            <div class="social-avatar ggs-39fa487451">SV</div>
+            <div class="social-body">
+              <div class="social-user">@StellarVanguard</div>
+              <div class="social-text">Fractured Realms DLC drops Feb 21. Pre-load is live now — 48GB.</div>
+            </div>
+            <div class="social-time">5h</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer id="glitz-footer"></footer>
+
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+  <script src="js/pages/news-inline-1.js"></script>
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

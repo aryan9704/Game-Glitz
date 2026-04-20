@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /account.html
+Disallow: /reset-password.html
+Disallow: /api/
+
+Sitemap: https://gameglitz.com/sitemap.xml

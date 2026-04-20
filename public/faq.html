@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/faq.html">
+  <meta property="og:title" content="FAQ — Game Glitz">
+  <meta property="og:description" content="Frequently asked questions about Game Glitz">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ — Game Glitz">
+  <meta name="twitter:description" content="Frequently asked questions about Game Glitz">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <title>FAQ — GameGlitz Help Center</title>
+  <meta name="description" content="Find answers to common questions about GameGlitz — account, payments, subscriptions, technical support, and more.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "GameGlitz FAQ",
+    "url": "https://gameglitz.com/faq.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I create a GameGlitz account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Creating a GameGlitz account is free and takes less than 2 minutes. Visit account.html and click \"Create Account.\" You\u2019ll need a valid email address and to choose a unique username. You can also sign up using your Google, Discord, Steam, or Apple account for a faster registration experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I reset my password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to the login page and click \"Forgot Password.\" Enter the email address associated with your account and we\u2019ll send you a secure reset link within 2\u20133 minutes. If you don\u2019t receive the email, check your spam folder. Reset links expire after 24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I enable two-factor authentication (2FA)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We strongly recommend enabling 2FA on your account. Go to Account Settings \u2192 Security \u2192 Two-Factor Authentication and click \"Enable.\" We support authenticator apps (Google Authenticator, Authy, 1Password) as well as SMS verification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change my username?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Free accounts can change their username once every 30 days. Glitz Plus subscribers can change their username once every 14 days. Glitz Ultimate members have no cooldown and can change freely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My account has been compromised. What should I do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Act immediately: change your password right away from a trusted device, and revoke all active sessions via Account Settings \u2192 Security \u2192 Active Sessions \u2192 \"Log Out All Devices.\" Then submit a support ticket flagged as \"Compromised Account.\" Our trust and safety team responds within 1 hour, 24\/7."
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/faq.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+
+<header id="glitz-nav" class="glass"></header>
+
+<!-- ── Hero ── -->
+<main class="faq-hero" id="main-content" data-particles>
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-reveal>Help Center</div>
+    <h1 class="hero-title" data-reveal data-reveal-delay="100">Frequently Asked<br>Questions</h1>
+    <p class="hero-subtitle" data-reveal data-reveal-delay="200">Everything you need to know about GameGlitz. Can't find your answer? We're here to help.</p>
+    <div class="search-wrap" data-reveal data-reveal-delay="300">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" class="faq-search" id="faqSearch" placeholder="Search questions…" aria-label="Search frequently asked questions" autocomplete="off">
+      <span class="search-count" id="searchCount" aria-live="polite" aria-atomic="true"></span>
+    </div>
+  </div>
+</main>
+
+<!-- ── Main ── -->
+<div class="faq-main">
+  <!-- Sidebar category nav -->
+  <aside class="faq-cat-nav" data-reveal="scale">
+    <div class="cat-nav-title">Categories</div>
+    <ul class="cat-nav-list" id="catNav">
+      <li><button type="button" class="cat-nav-btn active" data-cat="all" data-csp-onclick="filterCat('all',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        All Topics <span class="cat-count" id="cnt-all">37</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="account" data-csp-onclick="filterCat('account',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Account & Security <span class="cat-count">6</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="payments" data-csp-onclick="filterCat('payments',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Purchases & Payments <span class="cat-count">6</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="subs" data-csp-onclick="filterCat('subs',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Subscriptions <span class="cat-count">5</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="tech" data-csp-onclick="filterCat('tech',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Technical Support <span class="cat-count">6</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="community" data-csp-onclick="filterCat('community',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Community <span class="cat-count">6</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="refunds" data-csp-onclick="filterCat('refunds',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+        Refunds <span class="cat-count">5</span>
+      </button></li>
+      <li><button type="button" class="cat-nav-btn" data-cat="downloads" data-csp-onclick="filterCat('downloads',this)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Downloads <span class="cat-count">3</span>
+      </button></li>
+    </ul>
+  </aside>
+
+  <!-- FAQ content -->
+  <div class="faq-content" id="faqContent">
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">🔍</div>
+      <h3>No results found</h3>
+      <p>Try different keywords or browse categories on the left.</p>
+    </div>
+
+    <!-- Account & Security -->
+    <div class="faq-category" data-cat="account" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-867a9acb80">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Account &amp; Security</div>
+          <div class="faq-cat-desc">Managing your profile, password, and keeping your account safe</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I create a GameGlitz account?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Creating a GameGlitz account is free and takes less than 2 minutes. Visit <a href="account.html">account.html</a> and click "Create Account." You'll need a valid email address and to choose a unique username.</p>
+            <p>You can also sign up using your Google, Discord, Steam, or Apple account for a faster registration experience — no password required for social sign-ins.</p>
+            <ul>
+              <li>Use a strong, unique password (minimum 8 characters)</li>
+              <li>Verify your email address after registration</li>
+              <li>Enable two-factor authentication for maximum security</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I reset my password?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Go to the <a href="account.html">login page</a> and click "Forgot Password." Enter the email address associated with your account and we'll send you a secure reset link within 2-3 minutes.</p>
+            <p>If you don't receive the email, check your spam folder. Reset links expire after 24 hours for security reasons. If you've lost access to your email, contact our support team for account recovery assistance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I enable two-factor authentication (2FA)?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>We strongly recommend enabling 2FA on your account. Go to Account Settings → Security → Two-Factor Authentication and click "Enable."</p>
+            <p>We support authenticator apps (Google Authenticator, Authy, 1Password) as well as SMS verification. Authenticator apps are significantly more secure than SMS. You'll also receive backup codes to store safely in case you lose access to your 2FA device.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I change my username?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! Free accounts can change their username once every 30 days. Glitz Plus subscribers can change their username once every 14 days. Glitz Ultimate members have no cooldown and can change freely.</p>
+            <p>Username changes take effect immediately across all GameGlitz products. Your old username will be available for others to claim 30 days after your change.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          My account has been compromised. What should I do?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Act immediately: change your password right away from a trusted device, and revoke all active sessions via Account Settings → Security → Active Sessions → "Log Out All Devices."</p>
+            <p>Then <a href="support.html">submit a support ticket</a> flagged as "Compromised Account." Our trust and safety team responds to these within 1 hour, 24/7. We'll help you recover any items or currency that may have been affected.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I delete my account?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>You can request account deletion from Account Settings → Settings → Danger Zone → "Delete Account." This begins a 30-day grace period during which you can cancel the deletion by logging back in.</p>
+            <p>Please note: account deletion is permanent. Your game library, achievements, and GlitzCoins will be lost and cannot be recovered. We recommend exporting your data first via Settings → Privacy → Download My Data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Purchases & Payments -->
+    <div class="faq-category" data-cat="payments" data-reveal="up" data-reveal-delay="100">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-cfb575dca8">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Purchases &amp; Payments</div>
+          <div class="faq-cat-desc">Buying games, payment methods, billing, and receipts</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          What payment methods does GameGlitz accept?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>We accept a wide range of payment methods including all major credit/debit cards (Visa, Mastercard, Amex, Discover), PayPal, Apple Pay, Google Pay, and GlitzCoins (our virtual currency).</p>
+            <p>In select regions we also support bank transfers, Klarna (buy now, pay later), and over 80 local payment methods including UPI, PIX, Paytm, and WeChat Pay.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Is my payment information secure?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz is designed with security best practices in mind. Payment card details are handled by a dedicated payment processor and are never stored on our servers. All connections are encrypted in transit.</p>
+            <p>For production deployments, a certified PCI-compliant payment processor (such as Stripe) would be integrated to handle all card transactions securely.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          I was charged but didn't receive my game. What do I do?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>First, wait 10-15 minutes — delivery can sometimes be delayed. Check your Library tab and your registered email for a confirmation receipt. Ensure you're logged into the correct account.</p>
+            <p>If the issue persists after 30 minutes, <a href="support.html">contact support</a> with your order confirmation number. We'll investigate and either deliver your purchase or issue a full refund, typically within 2 business hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I purchase games as a gift for someone else?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! On any game page, click "Buy as Gift" instead of the standard purchase button. You'll need the recipient's GameGlitz username or email. Gift codes can also be scheduled for delivery on a future date — perfect for birthdays.</p>
+            <p>Gift recipients have 90 days to redeem their gift. If not redeemed within 90 days, the gift code remains valid but the original buyer can contact support to extend the expiry.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Why was my payment declined?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Payment declines can happen for several reasons:</p>
+            <ul>
+              <li>Incorrect card details (number, expiry, or CVV)</li>
+              <li>Insufficient funds in the account</li>
+              <li>Your bank blocking international/online transactions</li>
+              <li>Your card not being activated for online purchases</li>
+              <li>Fraud prevention flags by your bank</li>
+            </ul>
+            <p>Try a different payment method or contact your bank. If declines persist, reach out to our <a href="support.html">payment support team</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="payments">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Do prices include taxes?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Pricing varies by region. In the European Union, prices shown include VAT. In the United States, applicable state sales tax is calculated and displayed at checkout. In other regions, tax is applied per local regulations.</p>
+            <p>Your receipt will always clearly show the base price and any applicable taxes separately. If you believe you've been incorrectly taxed, contact support with your order number.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscriptions -->
+    <div class="faq-category" data-cat="subs" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-32586f1b32">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Subscriptions</div>
+          <div class="faq-cat-desc">Glitz Plus, Glitz Ultimate, billing cycles, and plan management</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="subs">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          What's included in Glitz Plus vs Glitz Ultimate?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong class="ggs-dd1901c53a">Glitz Plus ($9.99/mo):</strong> Access to 200+ free-to-play games, 10% discount on all purchases, exclusive profile cosmetics, ad-free browsing, and priority customer support.</p>
+            <p><strong class="ggs-1d32fa31c5">Glitz Ultimate ($19.99/mo):</strong> Everything in Glitz Plus plus access to the full game vault (500+ titles), 20% discount, early access to new releases, exclusive tournament entry, dedicated account manager, and unlimited cloud saves.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="subs">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I cancel my subscription?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>You can cancel anytime from Account Settings → Subscriptions → Manage Plan → Cancel Subscription. Cancellation takes effect at the end of your current billing period — you retain full benefits until then.</p>
+            <p>We don't do dark patterns here. The cancel button is clearly visible and works immediately. No hoops to jump through.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="subs">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I pause my subscription instead of canceling?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! Glitz Plus and Glitz Ultimate subscribers can pause their subscription for up to 3 months per year. Go to Account Settings → Subscriptions → Pause Subscription and choose your pause duration (1, 2, or 3 months).</p>
+            <p>During a pause, you won't be billed and your subscription benefits are temporarily suspended. Your game library and all progress are preserved. The subscription automatically resumes at the end of your pause period.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="subs">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Is there a free trial for subscription plans?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>New GameGlitz accounts are eligible for a 7-day free trial of Glitz Plus. Glitz Ultimate free trials (also 7 days) are available during promotional periods or when referred by an existing Ultimate member.</p>
+            <p>Trials require a valid payment method on file but you won't be charged until the trial ends. Cancel anytime before the trial ends with no charge. Trial availability may vary by region.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="subs">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I share my subscription with family members?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Glitz Ultimate includes a Family Sharing feature allowing up to 5 family members (same household) to benefit from vault access and discounts. Each member must have their own GameGlitz account.</p>
+            <p>Glitz Plus is for individual use only. Family sharing must be configured from Account Settings → Family → Add Member. Members under 18 require parental approval.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Support -->
+    <div class="faq-category" data-cat="tech" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-2ee28581e9">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Technical Support</div>
+          <div class="faq-cat-desc">Download issues, performance, bugs, and platform compatibility</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Which platforms does GameGlitz support?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz is available on Windows (10/11), macOS (Ventura and later), iOS (16+), and Android (10+). Our web app works on all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
+            <p>A Linux desktop client (Ubuntu/Debian) is currently in beta. Console support (PlayStation, Xbox, Nintendo Switch) is in active development with announcements expected in 2025.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          A game isn't launching. How do I fix it?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Try these steps in order:</p>
+            <ul>
+              <li>Restart the GameGlitz desktop client</li>
+              <li>Verify game files: right-click the game in your library → "Verify Files"</li>
+              <li>Update your graphics drivers to the latest version</li>
+              <li>Check that your system meets the game's minimum requirements</li>
+              <li>Temporarily disable antivirus/firewall software</li>
+              <li>Reinstall the game if all else fails</li>
+            </ul>
+            <p>If the game still won't launch, <a href="support.html">submit a bug report</a> with your system info and we'll investigate within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          My download speed is very slow. What can I do?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz uses a global CDN with servers in 40+ locations. If speeds are low:</p>
+            <ul>
+              <li>Try changing your download region in Settings → Downloads → Server Region</li>
+              <li>Check if download throttling is enabled (Settings → Downloads → Bandwidth Limit)</li>
+              <li>Pause and resume the download to reconnect to a faster server</li>
+              <li>Check your internet connection with a speed test at speedtest.net</li>
+              <li>Downloads may be slower during peak hours (evenings in your region)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I report a bug or technical issue?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Use the in-app bug reporter (F12 shortcut on desktop) for quick reports with automatic system diagnostics attached. For detailed issues, visit <a href="support.html">support.html</a> and select "Bug Report."</p>
+            <p>Include your operating system, GameGlitz version, the specific steps to reproduce the bug, and any error messages. Screenshots or screen recordings are extremely helpful. Verified bugs are typically addressed within 72 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Are my game saves backed up to the cloud?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Free accounts get 1GB of cloud save storage. Glitz Plus subscribers get 10GB, and Glitz Ultimate subscribers get unlimited cloud saves. Cloud sync happens automatically when you exit a game.</p>
+            <p>You can view, manage, and restore save files from Account Settings → Cloud Saves. Saves are retained for 6 months after account deletion (excluding permanent deletion requests).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="tech">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          The GameGlitz app is crashing. How do I fix it?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>First, update to the latest version of the app — most crash issues are fixed in updates. Then try clearing the app cache (Settings → Storage → Clear Cache on mobile; or reinstalling on desktop).</p>
+            <p>If crashes continue, check our <a href="support.html#status">system status page</a> to see if there's an ongoing incident. You can also share crash logs from Settings → Help → Send Crash Report for our engineers to investigate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community Guidelines -->
+    <div class="faq-category" data-cat="community" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-24a5552f20">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Community Guidelines</div>
+          <div class="faq-cat-desc">Rules, bans, appeals, and community standards</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          What behavior is not allowed on GameGlitz?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz is committed to being a safe, welcoming space for all players. Prohibited behavior includes:</p>
+            <ul>
+              <li>Harassment, hate speech, or discrimination based on race, gender, sexuality, religion, or disability</li>
+              <li>Cheating, hacking, or using unauthorized third-party software in games</li>
+              <li>Sharing another person's private information (doxxing)</li>
+              <li>Spamming, scamming, or phishing attempts</li>
+              <li>Selling or trading accounts</li>
+              <li>Distributing illegal or harmful content</li>
+            </ul>
+            <p>See our full <a href="legal.html">Community Guidelines</a> for complete details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I report another user?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Click the three-dot menu on any user profile or message and select "Report." Choose the reason that best describes the violation and optionally add details. Reports are anonymous — the reported user won't know who filed them.</p>
+            <p>For urgent safety concerns (threats of violence, CSAM), use the "Urgent Safety Report" option which goes to a human moderator within 15 minutes, 24/7.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          I was banned. How do I appeal?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>If you believe your ban was issued in error, submit an appeal within 30 days at <a href="support.html">support.html</a> → "Account Appeal." Include your username, the date of ban, and a detailed explanation of why you believe the ban was unjust.</p>
+            <p>Our appeals team reviews all submissions within 5 business days. Bans issued for severe violations (illegal content, doxxing) are not eligible for appeal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How does GameGlitz handle cheating in competitive games?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz uses GlitzShield, our proprietary anti-cheat system, which runs alongside supported games to detect unauthorized software, memory manipulation, and statistical anomalies.</p>
+            <p>First-time offenders receive a 30-day competitive ban and loss of tournament earnings from affected matches. Repeat offenders receive permanent platform bans. We also coordinate with game developers to enforce their own anti-cheat policies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Are there age restrictions on GameGlitz?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>GameGlitz requires users to be at least 13 years old (or 16 in the EU under GDPR). Users under 18 require parental consent for purchasing and are automatically enrolled in a curated content filter that limits mature-rated games.</p>
+            <p>Parents can manage child accounts and set spending limits, screen time limits, and content restrictions from Account Settings → Family → Child Controls.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="community">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I block or mute another user?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>To block a user, go to their profile → three-dot menu → "Block [Username]." Blocked users cannot message you, view your profile, or join your game sessions. You can manage blocked users from Settings → Privacy → Blocked Users.</p>
+            <p>Muting silences a user's messages in community spaces without blocking them entirely. Both features are available from any profile or chat interface.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Refunds -->
+    <div class="faq-category" data-cat="refunds" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-c8a70d6164">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Refunds</div>
+          <div class="faq-cat-desc">Refund eligibility, timelines, and how to request</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="refunds">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          What is GameGlitz's refund policy?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>We offer a <strong>14-day, no-questions-asked refund policy</strong> for game purchases where you have played fewer than 2 hours. This is one of the most generous policies in the industry.</p>
+            <p>Additional refunds may be granted at our discretion for technical issues, fraudulent charges, or exceptional circumstances. See our full <a href="legal.html">Refund Policy</a> for complete terms.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="refunds">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I request a refund?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>To request a refund, submit a ticket via the <a href="support.html">Support page</a>. Include your order details and reason for the refund. Our team will review your request and respond by email.</p>
+            <p>Refunds are considered on a case-by-case basis. We recommend reaching out as soon as possible after purchase, and within the timeframe specified in our <a href="legal.html">Refund Policy</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="refunds">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How long do refunds take to process?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Once approved, refunds typically appear on your statement within 3-5 business days for credit/debit cards. PayPal refunds appear within 2-3 business days. GlitzCoins refunds are instant.</p>
+            <p>Processing times can vary based on your bank or payment provider. If you haven't received your refund after 7 business days, contact your bank and then reach out to our support team.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="refunds">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I get a refund on a subscription charge?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Subscription refunds are handled case-by-case. We offer refunds for accidental renewals if you contact us within 48 hours and haven't used the subscription benefits during that billing cycle.</p>
+            <p>We don't offer pro-rated refunds for partial months but we encourage you to cancel before your next billing date. To avoid unwanted renewals, you'll receive an email reminder 7 days before each renewal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="refunds">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          My refund was denied. What can I do?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>If your refund was denied and you believe this was an error, escalate by replying to the refund decision email or <a href="support.html">opening a new ticket</a> citing your original refund request number.</p>
+            <p>Escalated cases are reviewed by a senior support agent. If you're still unsatisfied after escalation, you have the right to dispute the charge with your bank or payment provider, and we'll cooperate fully with their investigation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Downloads -->
+    <div class="faq-category" data-cat="downloads" data-reveal="up">
+      <div class="faq-cat-header">
+        <div class="faq-cat-icon ggs-687b21fc9c">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div>
+          <div class="faq-cat-name">Downloads &amp; Installs</div>
+          <div class="faq-cat-desc">Managing your downloads, storage, and installations</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="downloads">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I change where games are installed?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes. Before downloading a game, you can select the installation drive/folder. Go to Settings → Downloads → Default Install Location to set a default. You can also add multiple drives and move games between them without re-downloading.</p>
+            <p>To move an already-installed game, right-click it in your Library → "Move Install Folder" and select the destination drive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="downloads">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          Can I download games on multiple devices?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes! You can install your purchased games on up to 5 devices simultaneously. The number of devices that can actively play at the same time depends on the specific game's license, but most single-player games allow simultaneous play on multiple devices linked to the same account.</p>
+            <p>Multiplayer licenses are typically single-user only (one active session at a time). Your game library is tied to your account, not any specific device.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="downloads">
+        <button type="button" class="faq-question" data-csp-onclick="toggleFAQ(this)">
+          How do I pre-download upcoming games?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>If you've pre-purchased a game, it will appear in your Library with a "Pre-download" option typically 72 hours before release. Click it to begin downloading so you can play at the moment the game unlocks.</p>
+            <p>Pre-download availability depends on the publisher's release configuration. Glitz Ultimate subscribers get pre-download access 24 hours earlier than other users for Glitz Ultimate-supported titles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Still Need Help ── -->
+<div class="help-cta" data-reveal>
+  <div class="help-cta-inner">
+    <div class="help-cta-text">
+      <h2>Still need help?</h2>
+      <p>Our support team is here to help. Submit a request and we'll get back to you as soon as possible.</p>
+    </div>
+    <div class="help-cta-btns">
+      <a href="support.html" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Contact Support
+      </a>
+      <a href="support.html#livechat" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Live Chat
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Quick Links ── -->
+<div class="contact-quicklinks">
+  <div class="quicklinks-inner">
+    <div class="quicklinks-title">Quick Links</div>
+    <div class="quicklinks-grid">
+      <a href="support.html" class="quicklink-card">
+        <div class="quicklink-icon">🎫</div>
+        <div class="quicklink-name">Submit Ticket</div>
+        <div class="quicklink-desc">Detailed help requests</div>
+      </a>
+      <a href="support.html#livechat" class="quicklink-card">
+        <div class="quicklink-icon">💬</div>
+        <div class="quicklink-name">Live Chat</div>
+        <div class="quicklink-desc">Real-time assistance</div>
+      </a>
+      <a href="account.html" class="quicklink-card">
+        <div class="quicklink-icon">👤</div>
+        <div class="quicklink-name">My Account</div>
+        <div class="quicklink-desc">Manage your profile</div>
+      </a>
+      <a href="legal.html" class="quicklink-card">
+        <div class="quicklink-icon">📋</div>
+        <div class="quicklink-name">Legal & Policies</div>
+        <div class="quicklink-desc">Terms, privacy, refunds</div>
+      </a>
+      <a href="support.html#status" class="quicklink-card">
+        <div class="quicklink-icon">🟢</div>
+        <div class="quicklink-name">System Status</div>
+        <div class="quicklink-desc">Check platform status</div>
+      </a>
+      <a href="community.html" class="quicklink-card">
+        <div class="quicklink-icon">🎮</div>
+        <div class="quicklink-name">Community</div>
+        <div class="quicklink-desc">Forums and discussions</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer id="glitz-footer"></footer>
+
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/pages/faq-inline-1.js"></script>
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

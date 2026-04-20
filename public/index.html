@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/index.html">
+  <meta property="og:title" content="Game Glitz — The Future of Gaming">
+  <meta property="og:description" content="Premium digital gaming store with 100+ games, esports, and community">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game Glitz — The Future of Gaming">
+  <meta name="twitter:description" content="Premium digital gaming store with 100+ games, esports, and community">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <title>GameGlitz — The Future of Gaming Starts Here</title>
+  <meta name="description" content="Premium gaming store with 100+ titles. Buy, wishlist, and explore the best games across all platforms." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/design-system.css" />
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css" />
+
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/premium.css">
+  <link rel="stylesheet" href="css/hero-v2.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Game Glitz",
+    "url": "https://gameglitz.com",
+    "description": "Premium digital gaming store with 100+ games, esports, and community",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://gameglitz.com/store.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/index.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+
+<!-- Custom Cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV PLACEHOLDER -->
+<header id="glitz-nav"></header>
+
+<!-- ════════════════════════════════════════════
+     1. HERO SECTION
+     ════════════════════════════════════════════ -->
+<main id="main-content" data-particles>
+  <!-- Atmospheric scene injected by premium.js + orbs for depth -->
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="floating-orb floating-orb-purple ggs-7faef053e1" aria-hidden="true"></div>
+  <div class="floating-orb floating-orb-cyan ggs-b2ddbf49e7" aria-hidden="true"></div>
+  <div class="aurora-bg" aria-hidden="true"></div>
+
+  <div class="hv3-wrap">
+    <div class="hv3-stack">
+
+      <!-- BIG ANIMATED LOGO (looping) -->
+
+      <div class="hv3-logo" aria-label="GameGlitz" role="img">
+        <div class="hv3-logo-halo" aria-hidden="true"></div>
+        <svg class="hv3-logo-svg" viewBox="0 0 560 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="hv3LogoGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#8B5CF6"/>
+              <stop offset="0.5" stop-color="#6366F1"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+            <linearGradient id="hv3AccentGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#22d3ee"/>
+              <stop offset="0.5" stop-color="#a78bfa"/>
+              <stop offset="1" stop-color="#f0abfc"/>
+            </linearGradient>
+            <filter id="hv3Glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Icon rounded square -->
+          <g class="hv3-logo-icon-group" filter="url(#hv3Glow)">
+            <rect class="hv3-logo-rect" x="15" y="15" width="100" height="100" rx="24" stroke="url(#hv3LogoGrad)" stroke-width="4"/>
+            <path class="hv3-logo-bolt" d="M49 35h24l-9 18h15l-30 30 9-21h-15l6-27z" fill="url(#hv3LogoGrad)"/>
+          </g>
+
+          <!-- Wordmark -->
+          <text y="92" font-family="Outfit, Inter, system-ui, sans-serif" font-weight="900" font-size="84" letter-spacing="-3">
+            <tspan class="hv3-logo-text" x="140" fill="#ffffff">Game</tspan><tspan class="hv3-logo-accent" fill="url(#hv3AccentGrad)">Glitz</tspan>
+          </text>
+
+          <!-- Sparkles (loop twinkle) -->
+          <circle class="hv3-logo-spark hv3-logo-spark--1" cx="538" cy="22" r="3.5" fill="#22d3ee"/>
+          <circle class="hv3-logo-spark hv3-logo-spark--2" cx="548" cy="42" r="2.5" fill="#a78bfa"/>
+          <circle class="hv3-logo-spark hv3-logo-spark--3" cx="528" cy="54" r="2" fill="#f0abfc"/>
+        </svg>
+      </div>
+      <p class="hv3-kicker">
+        <span class="hv3-kicker-dot" aria-hidden="true"></span>
+        Premium digital gaming store
+      </p>
+
+      <h1 class="hv3-title sr-only">GameGlitz premium digital gaming store</h1>
+
+      <!-- TWO CTAs -->
+      <div class="hv3-ctas">
+        <a href="store.html" class="hv3-btn hv3-btn--primary" data-magnetic>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span>Browse the Store</span>
+        </a>
+        <a href="categories.html" class="hv3-btn hv3-btn--ghost" data-magnetic>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          <span>Explore Categories</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN — FLOATING PEDESTAL -->
+    <div class="hv2-right" aria-label="Featured games showcase">
+      <div class="hv2-stage">
+        <div class="hv2-halo" aria-hidden="true"></div>
+        <div class="hv2-pedestal" aria-hidden="true">
+          <div class="hv2-pedestal-disc hv2-pedestal-disc--outer"></div>
+          <div class="hv2-pedestal-disc hv2-pedestal-disc--inner"></div>
+          <div class="hv2-pedestal-ticks"></div>
+        </div>
+        <div class="hv2-featured" role="region" aria-live="polite"></div>
+        <a class="hv2-satellite hv2-satellite--a" href="#" aria-label="Featured game" aria-hidden="true" tabindex="-1"></a>
+        <a class="hv2-satellite hv2-satellite--b" href="#" aria-label="Featured game" aria-hidden="true" tabindex="-1"></a>
+        <a class="hv2-satellite hv2-satellite--c" href="#" aria-label="Featured game" aria-hidden="true" tabindex="-1"></a>
+        <div class="hv2-pagination" role="tablist"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- TICKER BAND -->
+<div class="ticker">
+  <div class="ticker-inner" id="ticker-inner">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     2. TRENDING NOW
+     ════════════════════════════════════════════ -->
+<section id="trending" class="section">
+  <!-- Floating decorative shapes for trending section -->
+  <div class="floating-shape ggs-f523b965a7" data-float="large" data-parallax="0.4"></div>
+  <div class="floating-shape floating-shape--hex ggs-5f004a0b85" data-float="medium" data-parallax="0.25"></div>
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="section-header-row">
+        <div>
+          <span class="eyebrow">Trending Now</span>
+          <h2 class="section-title">What Everyone's <span class="gradient-text">Playing</span></h2>
+          <p class="muted ggs-d30717699c">Real-time trending titles based on player activity and sales velocity.</p>
+        </div>
+        <a href="store.html?sort=trending" class="btn btn-secondary btn-sm ggs-6ee0661ec0">View All →</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-track-wrapper" data-spotlight>
+    <div class="scroll-track" id="trending-track" data-stagger>
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     3. FEATURED SPOTLIGHT
+     ════════════════════════════════════════════ -->
+<section id="featured" class="section">
+  <!-- Floating decorative shapes for featured section -->
+  <div class="floating-shape ggs-315cda61b3" data-float="medium" data-parallax="0.2"></div>
+  <div class="floating-shape floating-shape--hex ggs-69a644a3e4" data-float="large" data-parallax="0.35"></div>
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="eyebrow">Editor's Pick</span>
+      <h2 class="section-title">Featured <span class="gradient-text">Spotlight</span></h2>
+    </div>
+    <div class="featured-grid" id="featured-grid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     4. NEW RELEASES
+     ════════════════════════════════════════════ -->
+<section id="new-releases" class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="section-header-row">
+        <div>
+          <span class="eyebrow">Just Dropped</span>
+          <h2 class="section-title">New <span class="gradient-text">Releases</span></h2>
+          <p class="muted ggs-e63f1e231e">Fresh titles that just hit the store — be among the first to play.</p>
+        </div>
+        <a href="store.html?sort=new" class="btn btn-secondary btn-sm ggs-6ee0661ec0">See All New →</a>
+      </div>
+    </div>
+    <div class="new-releases-grid" id="new-releases-grid" data-stagger>
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     5. CATEGORIES
+     ════════════════════════════════════════════ -->
+<section id="categories" class="section">
+  <div class="container">
+    <div class="section-header ggs-91a87015f4" data-reveal>
+      <span class="eyebrow">Browse by Genre</span>
+      <h2 class="section-title">Explore <span class="gradient-text">Categories</span></h2>
+      <p class="muted ggs-4808e1408a">Every genre. Every style. Find your next obsession.</p>
+    </div>
+    <div class="categories-grid" id="categories-grid" data-stagger>
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     6. STATS COUNTER
+     ════════════════════════════════════════════ -->
+<section id="stats" class="spotlight-container section">
+  <div class="aurora-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header ggs-91a87015f4" data-reveal>
+      <span class="eyebrow">By the Numbers</span>
+      <h2 class="section-title">GameGlitz <span class="gradient-text">at a Glance</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card ggs-1530e16d2e" data-reveal="scale">
+        <span class="stat-icon">🎮</span>
+        <span class="stat-number"><span class="stat-val" data-count="100">0</span><span class="stat-suffix">+</span></span>
+        <span class="stat-label">Games in Library</span>
+      </div>
+      <div class="stat-card ggs-7b95c2c744" data-reveal="scale">
+        <span class="stat-icon">👥</span>
+        <span class="stat-number"><span class="stat-val" data-count="50000">0</span><span class="stat-suffix">+</span></span>
+        <span class="stat-label">Active Players</span>
+      </div>
+      <div class="stat-card ggs-afbcd85904" data-reveal="scale">
+        <span class="stat-icon">⚡</span>
+        <span class="stat-number"><span class="stat-val" data-count="99.9">0</span><span class="stat-suffix">%</span></span>
+        <span class="stat-label">Uptime Guaranteed</span>
+      </div>
+      <div class="stat-card ggs-0b2a82e5e7" data-reveal="scale">
+        <span class="stat-icon">🌐</span>
+        <span class="stat-number">24<span class="stat-suffix">/7</span></span>
+        <span class="stat-label">Customer Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     7. PREMIUM
+     ════════════════════════════════════════════ -->
+<section id="premium" class="section">
+  <!-- background orbs -->
+  <div class="bg-orb ggs-3e749b2b30"></div>
+  <div class="bg-orb ggs-7f9d05ec9c"></div>
+
+  <div class="container ggs-ce1f2eb0c7">
+    <div class="premium-grid">
+      <div data-reveal="left">
+        <span class="eyebrow">GameGlitz Premium</span>
+        <h2 class="section-title">Level Up Your<br /><span class="gradient-text">Gaming Life</span></h2>
+        <p class="muted ggs-d8f772a0eb">Get exclusive discounts, early access to releases, cloud saves, and a premium community — all in one subscription.</p>
+        <ul class="premium-features">
+          <li class="premium-feature ggs-1530e16d2e" data-reveal="left">
+            <span class="premium-feat-icon" data-float="small" data-float-rotate>🏷️</span>
+            <div>
+              <div class="premium-feat-title">10% Off All Purchases</div>
+              <div class="premium-feat-desc">Automatic discount on every game, DLC, and bundle in the store.</div>
+            </div>
+          </li>
+          <li class="premium-feature ggs-7b95c2c744" data-reveal="right">
+            <span class="premium-feat-icon" data-float="small" data-float-rotate>🚀</span>
+            <div>
+              <div class="premium-feat-title">Early Access & Beta Keys</div>
+              <div class="premium-feat-desc">Be the first to play — pre-release access to upcoming titles.</div>
+            </div>
+          </li>
+          <li class="premium-feature ggs-afbcd85904" data-reveal="left">
+            <span class="premium-feat-icon" data-float="small" data-float-rotate>☁️</span>
+            <div>
+              <div class="premium-feat-title">Cloud Save Storage</div>
+              <div class="premium-feat-desc">100 GB of secure cloud storage for all your game progress.</div>
+            </div>
+          </li>
+          <li class="premium-feature ggs-0b2a82e5e7" data-reveal="right">
+            <span class="premium-feat-icon" data-float="small" data-float-rotate>🎁</span>
+            <div>
+              <div class="premium-feat-title">Monthly Free Games</div>
+              <div class="premium-feat-desc">Two free games added to your library every month — yours forever.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div data-reveal="right">
+        <div class="premium-card">
+          <span class="eyebrow ggs-210f216977">Most Popular</span>
+          <div class="premium-price-badge">
+            <span class="currency">$</span>
+            <span class="amount gradient-text">9</span>
+            <span class="period">.99 / month</span>
+          </div>
+          <p class="muted ggs-433de30b36">Or $79.99/year — save 33%</p>
+          <ul class="premium-perks">
+            <li class="premium-perk">10% discount on all games</li>
+            <li class="premium-perk">Early access to new releases</li>
+            <li class="premium-perk">100 GB cloud save storage</li>
+            <li class="premium-perk">2 free games per month</li>
+            <li class="premium-perk">Priority customer support</li>
+            <li class="premium-perk">Exclusive badge &amp; profile frame</li>
+            <li class="premium-perk">Cancel anytime</li>
+          </ul>
+          <a href="account.html" class="btn btn-primary ggs-4f1de03991" data-magnetic>
+            Start Free 7-Day Trial
+          </a>
+          <p class="ggs-4e53b21f3b">No credit card required for trial</p>
+          <!-- floating decorations -->
+          <div class="ggs-4ecf473d12"></div>
+          <div class="ggs-ce1dccccfc"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     8. DEALS OF THE WEEK
+     ════════════════════════════════════════════ -->
+<section id="deals" class="section">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <span class="eyebrow">Limited Time</span>
+      <h2 class="section-title">Deals of the <span class="gradient-text">Week</span></h2>
+      <div class="countdown-wrapper" id="countdown-wrapper">
+        <span class="countdown-label">Ends in</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-days">00</span>
+          <span class="countdown-unit">Days</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-hours">00</span>
+          <span class="countdown-unit">Hours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-mins">00</span>
+          <span class="countdown-unit">Mins</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <span class="countdown-num" id="cd-secs">00</span>
+          <span class="countdown-unit">Secs</span>
+        </div>
+      </div>
+    </div>
+    <div class="deals-grid" id="deals-grid" data-stagger>
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     9. COMMUNITY
+     ════════════════════════════════════════════ -->
+<section id="community" class="section">
+  <div class="container">
+    <div class="section-header ggs-91a87015f4" data-reveal>
+      <span class="eyebrow">Join the Community</span>
+      <h2 class="section-title">More Than a <span class="gradient-text">Store</span></h2>
+      <p class="muted ggs-8671b98115">GameGlitz is a living community. Connect, compete, and celebrate gaming culture.</p>
+    </div>
+    <div class="community-grid" data-stagger>
+      <a href="community.html" class="community-card ggs-d314be1345" data-reveal="left">
+        <div class="community-card-bg ggs-c5aa02ee47"></div>
+        <div class="community-card-content">
+          <span class="community-icon">💬</span>
+          <h3 class="community-card-title">Forums</h3>
+          <p class="community-card-desc">Discuss strategies, share reviews, and connect with 50,000+ passionate gamers from around the world.</p>
+          <span class="community-card-link">Explore Forums</span>
+        </div>
+      </a>
+      <a href="esports.html" class="community-card ggs-566d478b47" data-reveal>
+        <div class="community-card-bg ggs-a1ef534f56"></div>
+        <div class="community-card-content">
+          <span class="community-icon">🏆</span>
+          <h3 class="community-card-title">Esports</h3>
+          <p class="community-card-desc">Compete in weekly tournaments, climb leaderboards, and prove you're among the elite.</p>
+          <span class="community-card-link ggs-15434adeae">Enter Tournaments</span>
+        </div>
+      </a>
+      <a href="community.html#events" class="community-card ggs-eb72d373a9" data-reveal="right">
+        <div class="community-card-bg ggs-9ce0550721"></div>
+        <div class="community-card-content">
+          <span class="community-icon">🎪</span>
+          <h3 class="community-card-title">Events</h3>
+          <p class="community-card-desc">Live game launches, community streams, dev AMAs, and seasonal celebrations happening now.</p>
+          <span class="community-card-link ggs-aa0d26fcb5">View Events</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="gradient-line"></div>
+
+<!-- ════════════════════════════════════════════
+     10. NEWSLETTER
+     ════════════════════════════════════════════ -->
+<section id="newsletter" data-morph-blob>
+  <canvas class="newsletter-bg-particles" id="nl-canvas"></canvas>
+  <!-- Floating shapes for newsletter section -->
+  <div class="floating-shape ggs-b52c3feb07" data-float="large" data-parallax="0.3"></div>
+  <div class="floating-shape floating-shape--hex ggs-d31265c792" data-float="medium" data-parallax="0.5"></div>
+  <div class="container">
+    <div class="newsletter-inner" data-reveal>
+      <span class="eyebrow">Stay in the Loop</span>
+      <h2 class="section-title" data-glitch>Never Miss a <span class="gradient-text">Deal</span></h2>
+      <p class="muted ggs-9d159a6cbf">Get weekly deals, new release alerts, and exclusive subscriber discounts straight to your inbox. Unsubscribe anytime.</p>
+      <form class="newsletter-form" id="newsletter-form" data-csp-onsubmit="return handleNewsletter(event)">
+        <input
+          type="email" class="newsletter-input" placeholder="your@email.com" aria-label="Email for newsletter"
+          id="nl-email" required autocomplete="email"
+        />
+        <button type="submit" class="btn btn-primary" data-magnetic data-gradient-border>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Subscribe
+        </button>
+      </form>
+      <p class="ggs-9c7d197bfb">No spam, ever. We respect your inbox.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER PLACEHOLDER -->
+<footer id="glitz-footer"></footer>
+
+<!-- ════════════════════════════════════════════
+     THREE.JS CDN
+     ════════════════════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- ════════════════════════════════════════════
+     GG SCRIPTS
+     ════════════════════════════════════════════ -->
+<script src="js/game-database.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/engine.js"></script>
+
+<script src="js/pages/index-inline-1.js"></script>
+
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

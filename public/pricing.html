@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="description" content="Choose your Game Glitz subscription plan — Free, Glitz Plus, or Glitz Ultimate.">
+  <title>Pricing — Game Glitz</title>
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gameglitz.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/pricing.html">
+  <meta property="og:title" content="Pricing — Game Glitz">
+  <meta property="og:description" content="Choose your Game Glitz plan — Free, Plus, or Ultimate">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing — Game Glitz">
+  <meta name="twitter:description" content="Choose your Game Glitz plan">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "GameGlitz Subscription Plans",
+    "url": "https://gameglitz.com/pricing.html",
+    "description": "Choose your Game Glitz subscription plan — Free, Glitz Plus, or Glitz Ultimate.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "GameGlitz Free",
+          "description": "Get started for free with GameGlitz — access the store, community, and basic features at no cost.",
+          "url": "https://gameglitz.com/pricing.html",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Glitz Plus",
+          "description": "Enhanced gaming experience with 1 free game per month, exclusive discounts, and priority support.",
+          "url": "https://gameglitz.com/pricing.html",
+          "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "9.99",
+              "priceCurrency": "USD",
+              "referenceQuantity": {"@type": "QuantitativeValue", "value": "1", "unitCode": "MON"}
+            }
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Glitz Ultimate",
+          "description": "The ultimate GameGlitz experience with unlimited perks, cloud saves, early access, and premium support.",
+          "url": "https://gameglitz.com/pricing.html",
+          "offers": {
+            "@type": "Offer",
+            "price": "19.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "19.99",
+              "priceCurrency": "USD",
+              "referenceQuantity": {"@type": "QuantitativeValue", "value": "1", "unitCode": "MON"}
+            }
+          }
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/pricing.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <noscript>
+    <div class="ggs-44c3d90601">
+      <div>
+        <div class="ggs-3aec3f38fc">⚡</div>
+        <p class="ggs-eda143dfa4">JavaScript Required</p>
+        <p class="ggs-beaa58dc8b">Game Glitz requires JavaScript to display pricing and features. Please enable it to continue.</p>
+      </div>
+    </div>
+  </noscript>
+
+  <!-- Dynamic nav injection -->
+  <header id="glitz-nav"></header>
+
+  <main id="main-content" class="pricing-page">
+
+    <!-- ══ Hero ══ -->
+    <section class="pricing-hero" data-reveal data-particles>
+      <div class="pricing-hero__eyebrow">
+        <span class="dot"></span>
+        Subscription Plans
+      </div>
+      <h1>Choose Your <span class="gradient-text">Plan</span></h1>
+      <p class="pricing-hero__sub">Start free, upgrade when you're ready. All plans unlock the GameGlitz ecosystem.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period" data-magnetic>
+        <span class="active" id="toggle-monthly" data-csp-onclick="setBilling('monthly')" tabindex="0">Monthly</span>
+        <span id="toggle-annual" data-csp-onclick="setBilling('annual')" tabindex="0" data-csp-onkeydown="if(event.key==='Enter')setBilling('annual')">Annual <span class="save-pill">Save 20%</span></span>
+      </div>
+    </section>
+
+    <!-- ══ Pricing Cards ══ -->
+    <section class="pricing-grid" aria-label="Subscription tiers" data-reveal>
+
+      <!-- Free Tier -->
+      <div class="pricing-card" data-tilt="5" data-glow data-gradient-border>
+        <div class="pricing-card__tier">Free</div>
+        <div class="pricing-card__price">
+          <span class="amount" data-monthly="0" data-annual="0">$0</span>
+          <span class="period">/mo</span>
+        </div>
+        <p class="pricing-card__desc">Everything you need to get started. No credit card required.</p>
+        <button type="button" class="pricing-card__btn pricing-card__btn--secondary" data-csp-onclick="GG.Toast.info('Free plan — sign up to get started!')">Get Started Free</button>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__feature-list" role="list">
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Basic store access</strong> — browse & buy games</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Community forums</strong> access</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Wishlist</strong> — up to 10 games</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Standard support</strong></span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--no" aria-label="Not included">✕</span>
+            <span class="pricing-feature__text">Store discounts</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--no" aria-label="Not included">✕</span>
+            <span class="pricing-feature__text">Cloud saves</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--no" aria-label="Not included">✕</span>
+            <span class="pricing-feature__text">Monthly free game</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Glitz Plus (Featured) -->
+      <div class="pricing-card pricing-card--featured" data-tilt="5" data-glow data-gradient-border>
+        <div class="pricing-card__inner">
+          <div class="featured-badge">
+            <svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 0l1.5 4H12L8.5 6.5 10 11 6 8.5 2 11l1.5-4.5L0 4h4.5z"/></svg>
+            Most Popular
+          </div>
+          <div class="pricing-card__tier">Glitz Plus</div>
+          <div class="pricing-card__price">
+            <span class="currency">$</span>
+            <span class="amount" data-monthly="9.99" data-annual="7.99">9.99</span>
+            <span class="period">/mo</span>
+          </div>
+          <p class="pricing-card__desc">The premium gaming experience — discounts, free games, and priority support.</p>
+          <button type="button" class="pricing-card__btn pricing-card__btn--primary" data-csp-onclick="GG.Toast.info('Glitz Plus — 7-day free trial! No credit card needed.')">Start Free Trial</button>
+          <div class="pricing-card__divider"></div>
+          <ul class="pricing-card__feature-list" role="list">
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text">Everything in <strong>Free</strong>, plus:</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>5% store discount</strong> on all purchases</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>Unlimited wishlist</strong></span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>Priority support</strong></span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>1 free game</strong> every month</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>Cloud saves</strong> across devices</span>
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+              <span class="pricing-feature__text"><strong>Ad-free</strong> experience</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Glitz Ultimate -->
+      <div class="pricing-card" data-tilt="5" data-glow data-gradient-border>
+        <div class="pricing-card__tier">Glitz Ultimate</div>
+        <div class="pricing-card__price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="19.99" data-annual="15.99">19.99</span>
+          <span class="period">/mo</span>
+        </div>
+        <p class="pricing-card__desc">The full power of GameGlitz — for the serious gamer who wants it all.</p>
+        <button type="button" class="pricing-card__btn pricing-card__btn--secondary" data-csp-onclick="GG.Toast.info('Glitz Ultimate — unlocking the full GameGlitz experience!')">Go Ultimate</button>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__feature-list" role="list">
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text">Everything in <strong>Glitz Plus</strong>, plus:</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>15% store discount</strong> on all purchases</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Early access</strong> to new titles</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Exclusive in-game items</strong></span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>VIP support</strong> with dedicated agent</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Beta access</strong> to upcoming games</span>
+          </li>
+          <li class="pricing-feature">
+            <span class="pricing-feature__check pricing-feature__check--yes" aria-label="Included">✓</span>
+            <span class="pricing-feature__text"><strong>Premium esports features</strong></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ Comparison Table ══ -->
+    <section class="comparison-section" data-reveal="up">
+      <div class="comparison-inner">
+        <div class="section-header ggs-a7c88ca818">
+          <div class="eyebrow"><span class="dot"></span>Side by Side</div>
+          <h2 class="section-title">Full Feature Comparison</h2>
+          <p class="section-subtitle">See exactly what each plan includes before you decide.</p>
+        </div>
+
+        <div class="ggs-0ddf068bfb">
+          <table class="comparison-table" role="table">
+            <thead>
+              <tr>
+                <th class="ggs-6be0d8ba2c" scope="col">Feature</th>
+                <th scope="col">Free</th>
+                <th scope="col" class="featured-col">Glitz Plus</th>
+                <th scope="col">Glitz Ultimate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Store access</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="featured-col"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Community forums</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="featured-col"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Wishlist</td>
+                <td>10 games</td>
+                <td class="featured-col">Unlimited</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Store discount</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col">5%</td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <td>Monthly free game</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Cloud saves</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Ad-free</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Support tier</td>
+                <td>Standard</td>
+                <td class="featured-col">Priority</td>
+                <td>VIP Dedicated</td>
+              </tr>
+              <tr>
+                <td>Early access</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Exclusive in-game items</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Beta access</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Premium esports features</td>
+                <td><span class="check-no">—</span></td>
+                <td class="featured-col"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ All Plans Include ══ -->
+    <section class="allplans-section" data-reveal>
+      <div class="ggs-34cf100d7f">
+        <div class="section-header ggs-a7c88ca818">
+          <div class="eyebrow"><span class="dot"></span>Always Included</div>
+          <h2 class="section-title">Every Plan Includes</h2>
+          <p class="section-subtitle">Core features available to every Game Glitz member, no matter which tier.</p>
+        </div>
+        <div class="allplans-grid">
+          <div class="allplan-item">
+            <div class="allplan-icon">🔒</div>
+            <div class="allplan-text">
+              <strong>Secure Checkout</strong>
+              <span>Encrypted connection on all transactions</span>
+            </div>
+          </div>
+          <div class="allplan-item">
+            <div class="allplan-icon">⚡</div>
+            <div class="allplan-text">
+              <strong>Instant Delivery</strong>
+              <span>Game keys delivered immediately after purchase</span>
+            </div>
+          </div>
+          <div class="allplan-item">
+            <div class="allplan-icon">🖥️</div>
+            <div class="allplan-text">
+              <strong>Cross-Platform</strong>
+              <span>PC, console, and mobile access on any device</span>
+            </div>
+          </div>
+          <div class="allplan-item">
+            <div class="allplan-icon">💬</div>
+            <div class="allplan-text">
+              <strong>24/7 Support</strong>
+              <span>Help center available around the clock</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section class="faq-section" data-reveal>
+      <div class="faq-inner">
+        <div class="section-header ggs-a7c88ca818">
+          <div class="eyebrow"><span class="dot"></span>Common Questions</div>
+          <h2 class="section-title">Pricing FAQ</h2>
+        </div>
+
+        <div class="faq-item" id="faq-1">
+          <div class="faq-question" data-csp-onclick="toggleFAQ('faq-1')" aria-expanded="false" tabindex="0" data-csp-onkeydown="if(event.key==='Enter'||event.key===' ')toggleFAQ('faq-1')">
+            Can I cancel my subscription at any time?
+            <span class="faq-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-answer" role="region">
+            <p>Yes, absolutely. You can cancel your Glitz Plus or Glitz Ultimate subscription at any time from your Account Settings. Your subscription benefits will remain active until the end of your current billing period, after which your account will revert to the Free plan — with no data loss.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-2">
+          <div class="faq-question" data-csp-onclick="toggleFAQ('faq-2')" aria-expanded="false" tabindex="0" data-csp-onkeydown="if(event.key==='Enter'||event.key===' ')toggleFAQ('faq-2')">
+            What happens to games I bought with a subscriber discount if I cancel?
+            <span class="faq-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-answer" role="region">
+            <p>Any games you purchased remain yours permanently — your library is never affected by subscription status. Discounts only apply to future purchases made while your subscription is active. You keep everything you bought at the discounted price.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-3">
+          <div class="faq-question" data-csp-onclick="toggleFAQ('faq-3')" aria-expanded="false" tabindex="0" data-csp-onkeydown="if(event.key==='Enter'||event.key===' ')toggleFAQ('faq-3')">
+            How does the monthly free game work?
+            <span class="faq-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-answer" role="region">
+            <p>Glitz Plus and Ultimate subscribers receive one free game credit each month on their billing date. You can claim any eligible game from our rotating monthly selection in the Subscriptions section of your account. Unclaimed monthly games do not roll over to the next month.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-4">
+          <div class="faq-question" data-csp-onclick="toggleFAQ('faq-4')" aria-expanded="false" tabindex="0" data-csp-onkeydown="if(event.key==='Enter'||event.key===' ')toggleFAQ('faq-4')">
+            Is the Glitz Plus free trial really free?
+            <span class="faq-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-answer" role="region">
+            <p>Yes. The 7-day free trial for Glitz Plus requires no credit card information. You'll get full Plus benefits during the trial. At the end of the trial, you can choose to subscribe or stay on the Free plan — we won't charge you automatically without your consent.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-5">
+          <div class="faq-question" data-csp-onclick="toggleFAQ('faq-5')" aria-expanded="false" tabindex="0" data-csp-onkeydown="if(event.key==='Enter'||event.key===' ')toggleFAQ('faq-5')">
+            Can I upgrade or downgrade between paid plans?
+            <span class="faq-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-answer" role="region">
+            <p>Yes, you can switch between Glitz Plus and Glitz Ultimate at any time. Upgrades take effect immediately and you'll be charged the prorated difference. Downgrades take effect at the start of your next billing period — you keep your current tier's benefits until then.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA Banner ══ -->
+    <section class="pricing-cta" data-reveal data-morph-blob>
+      <h2>Ready to <span class="ggs-31d38dab26">Level Up?</span></h2>
+      <p>Join over 2 million gamers who already use Game Glitz. Start free today.</p>
+      <div class="pricing-cta-btns">
+        <button type="button" class="btn btn-primary btn-lg" data-magnetic data-csp-onclick="GG.Toast.info('Sign up — it\'s free!')">Get Started Free</button>
+        <a href="store.html" class="btn btn-secondary btn-lg" data-magnetic>Browse the Store</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic footer injection -->
+  <footer id="glitz-footer"></footer>
+
+  <script src="js/game-database.js"></script>
+  <script src="js/state.js"></script>
+<script src="js/api-client.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/pages/pricing-inline-1.js"></script>
+
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script></body>
+</html>

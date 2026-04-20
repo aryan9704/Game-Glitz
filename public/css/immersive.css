@@ -1,0 +1,702 @@
+/* ═══════════════════════════════════════════════════════════════
+   GAMEGLITZ — IMMERSIVE LAYER v1.0
+   Kinetic type · Glassmorphism · 3D depth · Scroll story nav
+   Smart nav · Gaming atmosphere · Micro interactions · Genre filter
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   1. KINETIC TYPOGRAPHY
+───────────────────────────────────────────────────────────────*/
+
+/* Character-split reveal — data-kinetic on any heading */
+[data-kinetic] .gg-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-right: 0.22em;
+  line-height: 1.15;
+}
+[data-kinetic] .gg-char {
+  display: inline-block;
+  transform: translateY(105%) rotate(6deg);
+  opacity: 0;
+  transition:
+    transform calc(520ms + var(--i, 0) * 22ms) cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity   calc(280ms + var(--i, 0) * 18ms) ease;
+}
+[data-kinetic].gg-in .gg-char {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+}
+
+/* Word-level pop — data-word-pop */
+[data-word-pop] .gg-word {
+  display: inline-block;
+  overflow: visible;
+  margin-right: 0.26em;
+  opacity: 0;
+  transform: scale(0.78) translateY(14px);
+  transition:
+    opacity   calc(420ms + var(--wi, 0) * 70ms) cubic-bezier(0.16, 1, 0.3, 1),
+    transform calc(420ms + var(--wi, 0) * 70ms) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-word-pop].gg-in .gg-word {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Gradient-cycle text — data-gradient-cycle */
+[data-gradient-cycle] {
+  background: linear-gradient(90deg,
+    #8B5CF6 0%,
+    #6366F1 22%,
+    #06B6D4 44%,
+    #a78bfa 66%,
+    #8B5CF6 100%
+  );
+  background-size: 280% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gg-grad-cycle 8s linear infinite;
+}
+[data-gradient-cycle]:hover { animation-duration: 2.5s; }
+
+@keyframes gg-grad-cycle {
+  to { background-position: 280% center; }
+}
+
+/* Pressure / weight shift on hover — variable font */
+[data-text-pressure] {
+  transition: font-variation-settings 300ms ease;
+  font-variation-settings: "wght" 600;
+}
+[data-text-pressure]:hover {
+  font-variation-settings: "wght" 900;
+}
+
+/* Glowing text pulse — data-glow-text */
+[data-glow-text] {
+  text-shadow:
+    0 0 20px rgba(139, 92, 246, 0.5),
+    0 0 60px rgba(139, 92, 246, 0.2);
+  animation: gg-text-glow 3s ease-in-out infinite alternate;
+}
+@keyframes gg-text-glow {
+  from { text-shadow: 0 0 20px rgba(139,92,246,0.4), 0 0 50px rgba(139,92,246,0.15); }
+  to   { text-shadow: 0 0 30px rgba(139,92,246,0.7), 0 0 80px rgba(139,92,246,0.3), 0 0 120px rgba(99,102,241,0.15); }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2. GLASSMORPHISM UPGRADE
+───────────────────────────────────────────────────────────────*/
+
+/* Ultra-glass surface */
+.glass-ultra,
+[data-glass-ultra] {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.02) 60%,
+    rgba(139, 92, 246, 0.04) 100%
+  );
+  backdrop-filter: blur(28px) saturate(1.5) brightness(1.06);
+  -webkit-backdrop-filter: blur(28px) saturate(1.5) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.24),
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(139, 92, 246, 0.06);
+}
+
+/* Frosted panel — sidebar, overlays */
+.glass-panel {
+  background: rgba(10, 7, 22, 0.72);
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Bevel highlight edge on glass cards */
+[data-glass-bevel] {
+  position: relative;
+  overflow: hidden;
+}
+[data-glass-bevel]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Enhanced nav glass */
+#glitz-nav.scrolled .nav-inner {
+  background: rgba(6, 4, 18, 0.82) !important;
+  backdrop-filter: blur(32px) saturate(1.6) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(1.6) !important;
+  box-shadow:
+    0 1px 0 rgba(139, 92, 246, 0.12),
+    0 8px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3. SCROLL STORY NAV (Chapter Dots)
+───────────────────────────────────────────────────────────────*/
+
+.gg-story-nav {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 200;
+  pointer-events: none;
+}
+.gg-story-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.22);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+.gg-story-dot::before {
+  content: attr(data-label);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease;
+  background: rgba(6, 4, 18, 0.85);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  backdrop-filter: blur(8px);
+}
+.gg-story-dot:hover::before,
+.gg-story-dot.active::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-2px);
+}
+.gg-story-dot.active {
+  background: var(--accent-primary, #8B5CF6);
+  border-color: var(--accent-primary, #8B5CF6);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.7);
+  transform: scale(1.5);
+}
+.gg-story-dot:hover:not(.active) {
+  background: rgba(139, 92, 246, 0.45);
+  border-color: rgba(139, 92, 246, 0.7);
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .gg-story-nav { display: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4. SMART NAV — Progress Bar & Active Link
+───────────────────────────────────────────────────────────────*/
+
+/* Scroll progress bar at bottom of nav */
+.gg-nav-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #8B5CF6, #06B6D4, #6366F1);
+  transition: width 80ms linear;
+  pointer-events: none;
+  border-radius: 0 1px 1px 0;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+}
+
+/* Nav link active indicator pill */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #8B5CF6, #06B6D4);
+  border-radius: 2px;
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.nav-link.gg-section-active {
+  color: #c4b5fd !important;
+}
+.nav-link.gg-section-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   5. GAMING ATMOSPHERE
+───────────────────────────────────────────────────────────────*/
+
+/* Subtle CRT scanlines */
+.gg-scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.013) 3px,
+    rgba(0, 0, 0, 0.013) 4px
+  );
+  pointer-events: none;
+  z-index: 9990;
+  will-change: auto;
+}
+
+/* Hexagonal grid background */
+.gg-hex-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zm0 34L0 84V50l28-16 28 16v34z' fill='none' stroke='%238B5CF6' stroke-width='0.8'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient light rays */
+.gg-ray {
+  position: absolute;
+  top: -10%;
+  width: 1px;
+  height: 55vh;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.12) 30%,
+    rgba(99, 102, 241, 0.08) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: gg-ray-drift var(--ray-dur, 14s) ease-in-out infinite;
+  animation-delay: var(--ray-delay, 0s);
+  transform-origin: top center;
+}
+.gg-ray--wide {
+  width: 3px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.06) 40%,
+    transparent 100%
+  );
+}
+@keyframes gg-ray-drift {
+  0%, 100% { opacity: 0; transform: skewX(-8deg) scaleX(1); }
+  25%       { opacity: 1; }
+  50%       { opacity: 0.5; transform: skewX(4deg) scaleX(2.5); }
+  75%       { opacity: 0.2; }
+}
+
+/* Corner vignette for depth */
+.gg-vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 50%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 9980;
+}
+
+/* Noise film-grain texture */
+.gg-noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.022;
+  pointer-events: none;
+  z-index: 9985;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px;
+  animation: gg-noise-anim 0.3s steps(1) infinite;
+}
+@keyframes gg-noise-anim {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-4px, 2px); }
+  50%  { transform: translate(3px, -2px); }
+  75%  { transform: translate(-2px, 4px); }
+  100% { transform: translate(4px, -3px); }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   6. IMMERSIVE 3D DEPTH LAYERS
+───────────────────────────────────────────────────────────────*/
+
+[data-depth-scene] {
+  transform-style: preserve-3d;
+}
+
+/* Mouse-parallax depth — JS sets --scene-mx, --scene-my (0–1) on scene */
+[data-depth] {
+  will-change: transform;
+  transition: transform 120ms linear;
+}
+[data-depth="1"] {
+  transform: translate(
+    calc((var(--scene-mx, 0.5) - 0.5) * -8px),
+    calc((var(--scene-my, 0.5) - 0.5) * -8px)
+  );
+}
+[data-depth="2"] {
+  transform: translate(
+    calc((var(--scene-mx, 0.5) - 0.5) * -18px),
+    calc((var(--scene-my, 0.5) - 0.5) * -18px)
+  );
+}
+[data-depth="3"] {
+  transform: translate(
+    calc((var(--scene-mx, 0.5) - 0.5) * -32px),
+    calc((var(--scene-my, 0.5) - 0.5) * -32px)
+  );
+}
+[data-depth="4"] {
+  transform: translate(
+    calc((var(--scene-mx, 0.5) - 0.5) * -50px),
+    calc((var(--scene-my, 0.5) - 0.5) * -50px)
+  );
+}
+
+/* Floating 3D gem */
+.gg-gem {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: gg-gem-spin 12s linear infinite;
+}
+.gg-gem::before,
+.gg-gem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139,92,246,0.6), rgba(6,182,212,0.4));
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  border-radius: 4px;
+}
+.gg-gem::after {
+  transform: rotateY(60deg);
+  background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(139,92,246,0.3));
+}
+@keyframes gg-gem-spin {
+  to { transform: rotateY(360deg) rotateX(20deg); }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   7. BETTER CATEGORY SELECTION — Genre Filter Chips
+───────────────────────────────────────────────────────────────*/
+
+.gg-genre-bar-wrap {
+  padding: 0 clamp(16px, 5vw, 48px) 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gg-genre-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(163, 160, 200, 0.5);
+  margin-bottom: 12px;
+}
+
+.gg-genre-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.gg-genre-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(139, 92, 246, 0.14);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(177, 174, 199, 0.85);
+  cursor: pointer;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 220ms ease;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.gg-genre-chip .chip-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+.gg-genre-chip .chip-count {
+  font-size: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: rgba(177, 174, 199, 0.4);
+  margin-left: 2px;
+}
+.gg-genre-chip:hover {
+  background: rgba(139, 92, 246, 0.13);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: #c4b5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.18);
+}
+.gg-genre-chip.gg-active {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: rgba(139, 92, 246, 0.65);
+  color: #fff;
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.gg-genre-chip.gg-active .chip-icon {
+  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.7));
+}
+.gg-genre-chip--all.gg-active {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+}
+
+/* Category card genre-color accent bar */
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--genre-color, #8B5CF6), transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 2;
+}
+.category-card:hover::before { opacity: 1; }
+
+/* Category card glass upgrade */
+.category-card {
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   8. MICRO INTERACTIONS
+───────────────────────────────────────────────────────────────*/
+
+/* Press scale — added to buttons, chips */
+[data-press]:active,
+.btn:active,
+.gg-genre-chip:active {
+  transform: scale(0.95) !important;
+  transition: transform 70ms ease-in !important;
+}
+
+/* Underline draw on hover */
+[data-underline-morph] {
+  position: relative;
+  text-decoration: none;
+}
+[data-underline-morph]::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8B5CF6, #06B6D4);
+  border-radius: 1px;
+  transition: width 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+[data-underline-morph]:hover::after { width: 100%; }
+
+/* Icon pop on parent hover */
+.gg-icon-pop {
+  display: inline-block;
+  transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+*:hover > .gg-icon-pop,
+*:hover .gg-icon-pop {
+  transform: scale(1.2) translateY(-2px);
+}
+
+/* Number tick animation */
+.gg-num-tick {
+  display: inline-block;
+  animation: gg-tick 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes gg-tick {
+  0%   { transform: scale(1.4) translateY(-8px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Shimmer on stat cards */
+.stat-card,
+[data-stat-card] {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after,
+[data-stat-card]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0s;
+}
+.stat-card:hover::after,
+[data-stat-card]:hover::after {
+  transform: translateX(100%);
+  transition: transform 600ms ease;
+}
+
+/* Ripple expansion for nav links */
+.nav-link-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.12);
+  transform: scale(0);
+  animation: gg-link-ripple 500ms ease-out forwards;
+  pointer-events: none;
+}
+@keyframes gg-link-ripple {
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* Card content reveal on hover — overlay slides up */
+[data-card-reveal] {
+  position: relative;
+  overflow: hidden;
+}
+[data-card-reveal] .card-reveal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(8, 5, 20, 0.95) 0%,
+    rgba(8, 5, 20, 0.6) 50%,
+    transparent 100%
+  );
+  transform: translateY(101%);
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+[data-card-reveal]:hover .card-reveal-overlay {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   9. SCROLL STORYTELLING — Section Transitions
+───────────────────────────────────────────────────────────────*/
+
+/* Story chapter marker */
+[data-story-section] {
+  position: relative;
+}
+[data-story-section].gg-story-active {
+  /* subtle glow on active story section */
+}
+
+/* Section divider with animated pulse */
+.gg-section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.25), rgba(6,182,212,0.2), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.gg-section-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: gg-divider-sweep 4s ease-in-out infinite;
+}
+@keyframes gg-divider-sweep {
+  0%   { left: -40%; }
+  100% { left: 140%; }
+}
+
+/* Parallax section background */
+[data-parallax-bg] {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   10. REDUCED MOTION
+───────────────────────────────────────────────────────────────*/
+
+@media (prefers-reduced-motion: reduce) {
+  [data-kinetic] .gg-char,
+  [data-word-pop] .gg-word {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  [data-gradient-cycle] { animation: none !important; }
+  [data-glow-text]       { animation: none !important; text-shadow: none; }
+  .gg-gem                { animation: none !important; }
+  .gg-ray                { animation: none !important; opacity: 0.06 !important; }
+  .gg-noise              { animation: none !important; }
+  .gg-section-divider::after { animation: none !important; }
+  [data-depth]           { transform: none !important; transition: none !important; }
+  .card-reveal-overlay   { transform: none !important; background: rgba(8,5,20,0.85); }
+  [data-underline-morph]::after { transition: none !important; }
+}

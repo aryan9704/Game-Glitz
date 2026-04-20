@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/icon-192.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+
+  <!-- SEO: these 7 tags are rewritten server-side when a game slug is matched -->
+  <title data-ssr="title">Game — GameGlitz</title>
+  <meta name="description" data-ssr="description" content="Discover and buy premium games on GameGlitz." />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" data-ssr="canonical" href="https://gameglitz.com/game/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" data-ssr="og:title" content="GameGlitz Game">
+  <meta property="og:description" data-ssr="og:description" content="Premium game on GameGlitz.">
+  <meta property="og:image" data-ssr="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta property="og:url" data-ssr="og:url" content="https://gameglitz.com/game/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" data-ssr="twitter:title" content="GameGlitz Game">
+  <meta name="twitter:description" data-ssr="twitter:description" content="Premium game on GameGlitz.">
+  <meta name="twitter:image" data-ssr="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <script type="application/ld+json" data-ssr="jsonld">{"@context":"https://schema.org","@type":"Product","name":"GameGlitz Game"}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/nav.css" />
+
+  
+  <link rel="stylesheet" href="/css/premium.css">
+  <script src="/js/csp-actions.js"></script>
+  <link rel="stylesheet" href="/css/pages/game.css">
+</head>
+<body>
+<a href="#gd-main" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+
+<header id="glitz-nav"></header>
+
+<main id="gd-main">
+  <section class="gd-hero" aria-labelledby="gd-heading" data-reveal="up">
+    <div class="gd-hero__bg" id="gd-hero-bg" data-parallax="0.12"></div>
+    <div class="gd-hero__overlay"></div>
+    <div class="gd-container">
+      <div class="gd-cover" id="gd-cover" data-tilt="7" data-glow data-gradient-border>
+        <div class="gd-skeleton ggs-61be7c95a4"></div>
+      </div>
+      <div class="gd-details" data-reveal="right">
+        <a href="/store.html" class="gd-back-link">← Back to Store</a>
+        <div class="gd-badges" id="gd-badges"></div>
+        <h1 class="gd-title" id="gd-heading">
+          <div class="gd-skeleton gd-skeleton-title"></div>
+        </h1>
+        <div class="gd-meta" id="gd-meta"></div>
+        <div class="gd-tags" id="gd-tags"></div>
+        <div class="gd-price-row" id="gd-price"></div>
+        <div class="gd-cta-row" id="gd-cta"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gd-body">
+    <section class="gd-section" id="gd-about" data-reveal="up">
+      <h2>About this game</h2>
+      <p class="gd-description" id="gd-description">
+        <span class="gd-skeleton gd-skeleton-text"></span>
+        <span class="gd-skeleton gd-skeleton-text"></span>
+        <span class="gd-skeleton gd-skeleton-text ggs-50379a0182"></span>
+      </p>
+    </section>
+
+    <section class="gd-section" data-reveal="up">
+      <h2>Details</h2>
+      <div class="gd-info-grid" id="gd-info"></div>
+    </section>
+
+    <section class="gd-section ggs-6b99de8b69" id="gd-trailer-section" data-reveal="up" aria-labelledby="gd-trailer-heading">
+      <h2 id="gd-trailer-heading">Trailer</h2>
+      <div class="gd-trailer-wrap" id="gd-trailer"></div>
+    </section>
+
+    <section class="gd-section ggs-6b99de8b69" id="gd-screenshots-section" data-reveal="up" aria-labelledby="gd-screenshots-heading">
+      <h2 id="gd-screenshots-heading">Screenshots</h2>
+      <div class="gd-screenshots" id="gd-screenshots" role="list" aria-label="Game screenshots"></div>
+    </section>
+
+    <section class="gd-section ggs-6b99de8b69" id="gd-sysreq-section" data-reveal="up" aria-labelledby="gd-sysreq-heading">
+      <h2 id="gd-sysreq-heading">System Requirements</h2>
+      <div class="gd-sysreq-grid" id="gd-sysreq"></div>
+    </section>
+
+    <section class="gd-section ggs-6b99de8b69" id="gd-related-section" data-reveal="up" aria-labelledby="gd-related-heading">
+      <h2 id="gd-related-heading">You May Also Like</h2>
+      <div class="gd-related-grid" id="gd-related"></div>
+    </section>
+
+    <section class="gd-section" data-reveal="up">
+      <h2>Reviews</h2>
+      <div id="gd-reviews" class="gd-reviews-list"></div>
+    </section>
+  </div>
+</main>
+
+<div class="gd-toast" id="gd-toast" role="status" aria-live="polite"></div>
+
+<!-- Age gate modal (K21) -->
+<div class="ggs-e5757868c2" id="gd-age-gate" role="dialog" aria-modal="true" aria-labelledby="gd-age-gate-title">
+  <div class="ggs-3227340a08">
+    <div class="ggs-17ab13ecea">🔞</div>
+    <h2 class="ggs-c6197abb58" id="gd-age-gate-title">Age Verification</h2>
+    <p class="ggs-32bff284c8">This game is rated <strong class="ggs-e85027a346" id="gd-age-gate-rating">Mature (18+)</strong>. You must be 18 or older to view this page.</p>
+    <div class="ggs-e12feb99b2">
+      <button class="ggs-5fd22e34ad" type="button" id="gd-age-confirm">I am 18 or older — Continue</button>
+      <a class="ggs-9def84a987" href="/store.html">Leave</a>
+    </div>
+  </div>
+</div>
+
+<footer id="glitz-footer"></footer>
+
+<script src="/js/game-database.js"></script>
+<script src="/js/state.js"></script>
+<script src="/js/api-client.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/engine.js"></script>
+<script src="/js/pages/game-inline-1.js"></script>
+<script src="/js/premium.js" defer></script>
+<script src="/js/hero-v2.js" defer></script></body>
+</html>

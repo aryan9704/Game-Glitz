@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://gameglitz.com/account.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gameglitz.com/account.html">
+  <meta property="og:title" content="Account — Game Glitz">
+  <meta property="og:description" content="Manage your Game Glitz account, library, and orders">
+  <meta property="og:site_name" content="Game Glitz">
+  <meta property="og:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Account — Game Glitz">
+  <meta name="twitter:description" content="Manage your Game Glitz account, library, and orders">
+  <meta name="twitter:image" content="https://gameglitz.com/images/og-cover.png">
+  <meta name="description" content="GameGlitz Account — Manage your profile, library, wishlist, orders, and security settings.">
+  <title>Account — GameGlitz</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Design System & Nav -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/premium.css">
+
+  
+  <script src="js/csp-actions.js"></script>
+  <link rel="stylesheet" href="css/pages/account.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link ggs-1d3670914f">Skip to content</a>
+
+<noscript>
+  <div class="ggs-3cbcc843b5">
+    Game Glitz requires JavaScript to work properly. Please enable JavaScript in your browser settings.
+  </div>
+</noscript>
+
+<!-- Background Scene -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <canvas id="auth-3d-canvas"></canvas>
+  <div class="pg-hero-scene pg-auth-scene">
+    <div class="pg-layer pg-nebula"></div>
+    <div class="pg-layer pg-ring pg-ring--c" data-depth="0.03"></div>
+    <div class="pg-layer pg-ring pg-ring--b" data-depth="0.06"></div>
+    <div class="pg-layer pg-ring pg-ring--a" data-depth="0.1"></div>
+    <div class="pg-layer ggs-106147b60c" data-depth="0.3">
+      <div class="pg-cube"><div class="pg-face f-front"></div><div class="pg-face f-back"></div><div class="pg-face f-right"></div><div class="pg-face f-left"></div><div class="pg-face f-top"></div><div class="pg-face f-bottom"></div></div>
+    </div>
+    <div class="pg-layer ggs-4bc3a4a880" data-depth="0.4">
+      <div class="pg-cube ggs-966b3b73e4"><div class="pg-face f-front"></div><div class="pg-face f-back"></div><div class="pg-face f-right"></div><div class="pg-face f-left"></div><div class="pg-face f-top"></div><div class="pg-face f-bottom"></div></div>
+    </div>
+    <div class="pg-layer ggs-fda2ea68f6" data-depth="0.2">
+      <div class="pg-cube ggs-aa7e61220b"><div class="pg-face f-front"></div><div class="pg-face f-back"></div><div class="pg-face f-right"></div><div class="pg-face f-left"></div><div class="pg-face f-top"></div><div class="pg-face f-bottom"></div></div>
+    </div>
+    <div class="pg-layer ggs-6209ae6950" data-depth="0.35">
+      <div class="pg-cube ggs-d65fc8083f"><div class="pg-face f-front"></div><div class="pg-face f-back"></div><div class="pg-face f-right"></div><div class="pg-face f-left"></div><div class="pg-face f-top"></div><div class="pg-face f-bottom"></div></div>
+    </div>
+    <div class="pg-layer pg-shard ggs-e974d01b40" data-depth="0.25"></div>
+    <div class="pg-layer pg-shard ggs-8a0d87ff4b" data-depth="0.35"></div>
+    <div class="pg-layer pg-shard ggs-2faee68f00" data-depth="0.2"></div>
+    <div class="pg-layer pg-shard ggs-8a09a99fc2" data-depth="0.3"></div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header id="glitz-nav"></header>
+
+<div class="page-wrapper">
+  <main class="account-main" id="main-content">
+
+    <!-- ═══════════════════════════════════
+         AUTH SECTION
+    ═══════════════════════════════════ -->
+    <section id="auth-section" aria-label="Sign in or create account" data-particles>
+      <div class="auth-card" data-reveal="scale">
+        <!-- Page H1 -->
+        <h1 class="ggs-336f000c22">Your Account</h1>
+
+        <!-- Logo -->
+        <div class="auth-logo">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="8" stroke="url(#auth-logo-grad)" stroke-width="2.5"/>
+            <path d="M12 11h8l-3 6h5l-10 10 3-7h-5l2-9z" fill="url(#auth-logo-grad)"/>
+            <defs>
+              <linearGradient id="auth-logo-grad" x1="0" y1="0" x2="36" y2="36">
+                <stop stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#6366F1"/><stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="auth-logo-text">Game<span class="accent">Glitz</span></span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="auth-tabs" role="tablist">
+          <button type="button" class="auth-tab active" role="tab" aria-selected="true" aria-controls="signin-panel" id="signin-tab" data-csp-onclick="switchAuthTab('signin')">Sign In</button>
+          <button type="button" class="auth-tab" role="tab" aria-selected="false" aria-controls="register-panel" id="register-tab" data-csp-onclick="switchAuthTab('register')">Create Account</button>
+        </div>
+
+        <!-- Rate Limit Banner -->
+        <div class="rate-limit-banner" id="rate-limit-banner" role="alert">
+          ⚠ Too many attempts. Please wait before trying again.
+        </div>
+
+        <!-- Sign In Panel -->
+        <div class="auth-panel active" id="signin-panel" role="tabpanel" aria-labelledby="signin-tab">
+          <form id="signin-form" novalidate data-csp-onsubmit="handleSignIn(event)">
+            <div class="form-group">
+              <label class="form-label" for="signin-email">Email, Username, or Phone</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <input type="text" class="form-input" id="signin-email" name="email" placeholder="you@example.com" autocomplete="username" spellcheck="false">
+              </div>
+              <div class="form-error" id="signin-email-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signin-password">Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </span>
+                <input type="password" class="form-input" id="signin-password" name="password" placeholder="••••••••" autocomplete="current-password">
+                <button type="button" class="input-toggle" aria-label="Show password" data-csp-onclick="togglePasswordVisibility('signin-password', this)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="form-error" id="signin-password-error"></div>
+            </div>
+
+            <div class="form-row-split">
+              <label class="form-check">
+                <input type="checkbox" id="remember-me"> Remember me
+              </label>
+              <button type="button" class="form-link" data-csp-onclick="showForgotPanel()">Forgot password?</button>
+            </div>
+
+            <div class="form-general-error" id="signin-general-error" role="alert" aria-live="assertive"></div>
+
+            <button type="submit" class="auth-submit-btn" id="signin-btn">
+              <span class="btn-label">Sign In</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="auth-divider">
+            <div class="auth-divider-line"></div>
+            <span class="auth-divider-text">or continue with</span>
+            <div class="auth-divider-line"></div>
+          </div>
+
+          <!-- Social Login: Full-width labeled buttons -->
+          <div class="social-grid">
+            <!-- Google -->
+            <button type="button" class="social-btn" id="social-google" data-provider="Google" data-csp-onclick="handleSocialLogin(this)" aria-label="Continue with Google">
+              <span class="social-btn-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              </span>
+              <span class="social-btn-label"><span class="social-btn-label-long">Continue with Google</span><span class="social-btn-label-short">Google</span></span>
+              <span class="social-connecting-dots"><span></span><span></span><span></span></span>
+            </button>
+            <!-- Discord -->
+            <button type="button" class="social-btn" id="social-discord" data-provider="Discord" data-csp-onclick="handleSocialLogin(this)" aria-label="Continue with Discord">
+              <span class="social-btn-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              </span>
+              <span class="social-btn-label"><span class="social-btn-label-long">Continue with Discord</span><span class="social-btn-label-short">Discord</span></span>
+              <span class="social-connecting-dots"><span></span><span></span><span></span></span>
+            </button>
+            <!-- Steam -->
+            <button type="button" class="social-btn" id="social-steam" data-provider="Steam" data-csp-onclick="handleSocialLogin(this)" aria-label="Continue with Steam">
+              <span class="social-btn-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#c7d5e0"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.455 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/></svg>
+              </span>
+              <span class="social-btn-label"><span class="social-btn-label-long">Continue with Steam</span><span class="social-btn-label-short">Steam</span></span>
+              <span class="social-connecting-dots"><span></span><span></span><span></span></span>
+            </button>
+          </div>
+
+          <div class="guest-link">
+            <a href="store.html">Continue as Guest →</a>
+          </div>
+        </div>
+
+        <!-- Forgot Password Panel -->
+        <div class="forgot-panel" id="forgot-panel">
+          <button type="button" class="forgot-back-btn" data-csp-onclick="hideForgotPanel()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Sign In
+          </button>
+          <div class="ggs-d520441498">Reset Password</div>
+          <p class="ggs-cb91b5ff9d">Enter the email address linked to your account and we'll send you a reset link.</p>
+          <div class="forgot-notice">
+            ℹ For security, we always show the same confirmation message whether or not the email is registered. Use the newest reset link if you request more than one.
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="forgot-email-panel">Email Address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <input type="email" class="form-input" id="forgot-email-panel" placeholder="you@example.com" autocomplete="email">
+            </div>
+          </div>
+          <button type="button" class="auth-submit-btn ggs-eb812e204a" data-csp-onclick="handleForgotPassword('panel')">
+            <span class="btn-label">Send Reset Link</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <!-- 2FA Verification Panel -->
+        <div class="tfa-panel" id="tfa-panel">
+          <button type="button" class="tfa-back-btn" data-csp-onclick="tfaBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Sign In
+          </button>
+
+          <div class="tfa-icon-wrap" id="tfa-icon-wrap">
+            <svg id="tfa-icon-email" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg class="ggs-6b99de8b69" id="tfa-icon-social" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+
+          <div class="tfa-title" id="tfa-title">Two-Factor Authentication</div>
+          <div class="tfa-subtitle" id="tfa-subtitle">
+            Enter the 6-digit code from your authenticator app (e.g. Google Authenticator, Authy)
+          </div>
+
+          <!-- Session countdown timer -->
+          <div class="tfa-countdown" id="tfa-countdown">
+            Verification session expires in <span class="tfa-countdown-val" id="tfa-countdown-val">5:00</span>
+          </div>
+
+          <!-- 6-digit inputs -->
+          <div class="tfa-digits" id="tfa-digits" role="group" aria-label="6-digit authenticator code">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" autocomplete="one-time-code" data-index="0" aria-label="Digit 1 of 6" id="tfa-digit-0">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" data-index="1" aria-label="Digit 2 of 6" id="tfa-digit-1">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" data-index="2" aria-label="Digit 3 of 6" id="tfa-digit-2">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" data-index="3" aria-label="Digit 4 of 6" id="tfa-digit-3">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" data-index="4" aria-label="Digit 5 of 6" id="tfa-digit-4">
+            <input class="tfa-digit" type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" placeholder="·" data-index="5" aria-label="Digit 6 of 6" id="tfa-digit-5">
+          </div>
+
+          <!-- Error message — aria-live so screen readers announce it automatically -->
+          <div class="tfa-error" id="tfa-error" role="alert" aria-live="assertive">Incorrect code — please try again.</div>
+          <!-- Polite status for success/progress announcements -->
+          <div id="tfa-live" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+          <!-- Refresh code hint -->
+          <div class="tfa-actions">
+            <div>
+              <button type="button" class="tfa-resend-btn" id="tfa-resend-btn" data-csp-onclick="tfaResendCode()" disabled>
+                Code not working?
+              </button>
+              <span class="tfa-resend-timer" id="tfa-resend-timer"> (30s)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Register Panel -->
+        <div class="auth-panel" id="register-panel" role="tabpanel" aria-labelledby="register-tab">
+          <form id="register-form" novalidate data-csp-onsubmit="handleRegister(event)">
+            <div class="form-group">
+              <label class="form-label" for="reg-username">Username</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <input type="text" class="form-input" id="reg-username" placeholder="coolgamer99" autocomplete="username" spellcheck="false">
+              </div>
+              <div class="form-error" id="reg-username-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-display">Display Name</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </span>
+                <input type="text" class="form-input" id="reg-display" placeholder="Cool Gamer" autocomplete="name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </span>
+                <input type="email" class="form-input" id="reg-email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div class="form-error" id="reg-email-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">Phone Number <span class="ggs-5c3fe8d450">(optional)</span></label>
+              <div class="phone-row">
+                <select class="phone-prefix" id="reg-phone-prefix" aria-label="Country code">
+                  <option value="+1">+1 🇺🇸</option>
+                  <option value="+44">+44 🇬🇧</option>
+                  <option value="+91">+91 🇮🇳</option>
+                  <option value="+61">+61 🇦🇺</option>
+                  <option value="+49">+49 🇩🇪</option>
+                  <option value="+33">+33 🇫🇷</option>
+                  <option value="+81">+81 🇯🇵</option>
+                  <option value="+86">+86 🇨🇳</option>
+                  <option value="+55">+55 🇧🇷</option>
+                  <option value="+7">+7 🇷🇺</option>
+                </select>
+                <div class="input-wrapper phone-input">
+                  <span class="input-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17l.92-.08z"/></svg>
+                  </span>
+                  <input type="tel" class="form-input" id="reg-phone" placeholder="555 123 4567" autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-error" id="reg-phone-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </span>
+                <input type="password" class="form-input" id="reg-password" placeholder="Create a strong password" autocomplete="new-password" data-csp-oninput="updatePasswordStrength('reg-password', 'reg-pw-fill', 'reg-pw-checks')">
+                <button type="button" class="input-toggle" aria-label="Show password" data-csp-onclick="togglePasswordVisibility('reg-password', this)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="pw-strength-bar" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="pw-strength-fill" id="reg-pw-fill"></div></div>
+              <div class="pw-checks" id="reg-pw-checks">
+                <div class="pw-check" data-check="length"><span class="pw-check-icon">✓</span> 8+ characters</div>
+                <div class="pw-check" data-check="upper"><span class="pw-check-icon">✓</span> Uppercase</div>
+                <div class="pw-check" data-check="lower"><span class="pw-check-icon">✓</span> Lowercase</div>
+                <div class="pw-check" data-check="number"><span class="pw-check-icon">✓</span> Number</div>
+                <div class="pw-check" data-check="special"><span class="pw-check-icon">✓</span> Special char</div>
+              </div>
+              <div class="form-error" id="reg-password-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm">Confirm Password</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </span>
+                <input type="password" class="form-input" id="reg-confirm" placeholder="••••••••" autocomplete="new-password">
+                <button type="button" class="input-toggle" aria-label="Show password" data-csp-onclick="togglePasswordVisibility('reg-confirm', this)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="form-error" id="reg-confirm-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="terms-check-row">
+                <input type="checkbox" id="reg-terms">
+                <span>I agree to the <a href="legal.html">Terms of Service</a> &amp; <a href="legal.html">Privacy Policy</a></span>
+              </label>
+              <div class="form-error" id="reg-terms-error"></div>
+            </div>
+
+            <div class="form-general-error" id="reg-general-error" role="alert" aria-live="assertive"></div>
+
+            <button type="submit" class="auth-submit-btn" id="register-btn">
+              <span class="btn-label">Create Account</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         DASHBOARD SECTION
+    ═══════════════════════════════════ -->
+    <section id="dashboard-section" aria-label="Account Dashboard">
+
+      <!-- Profile Card -->
+      <div class="profile-card" data-reveal data-tilt="4" data-glow>
+        <div class="profile-header">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar" id="profile-avatar-letter">G</div>
+            <div class="level-badge" id="profile-level-badge">1</div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-name" id="profile-display-name">Gamer</div>
+            <div class="profile-username" id="profile-username">@username</div>
+            <div class="profile-meta" id="profile-meta">Joined recently</div>
+            <div class="profile-badges" id="profile-badges">
+              <span class="badge badge-primary">New Gamer</span>
+            </div>
+            <div class="xp-section">
+              <div class="xp-label">
+                <span id="xp-label-text">XP Progress</span>
+                <span id="xp-label-value">0 / 100 XP</span>
+              </div>
+              <div class="xp-bar"><div class="xp-fill ggs-d2fba0f353" id="xp-fill"></div></div>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button type="button" class="btn btn-secondary btn-sm" data-csp-onclick="GG.UI.showModal('edit-profile-modal')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              Edit Profile
+            </button>
+            <button type="button" class="btn btn-ghost btn-sm ggs-492fb97257" data-csp-onclick="handleLogout()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="stat-library">0</div>
+            <div class="stat-label">Games Owned</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-wishlist">0</div>
+            <div class="stat-label">Wishlist</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-orders">0</div>
+            <div class="stat-label">Orders</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Tabs -->
+      <div class="dash-tabs" role="tablist">
+        <button type="button" class="dash-tab active" role="tab" data-tab="library" data-csp-onclick="switchDashTab('library')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"/></svg>
+          Library
+        </button>
+        <button type="button" class="dash-tab" role="tab" data-tab="wishlist" data-csp-onclick="switchDashTab('wishlist')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Wishlist
+        </button>
+        <button type="button" class="dash-tab" role="tab" data-tab="orders" data-csp-onclick="switchDashTab('orders')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Orders
+        </button>
+        <button type="button" class="dash-tab" role="tab" data-tab="settings" data-csp-onclick="switchDashTab('settings')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </button>
+        <button type="button" class="dash-tab" role="tab" data-tab="security" data-csp-onclick="switchDashTab('security')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Security
+        </button>
+      </div>
+
+      <!-- ── Library Tab ── -->
+      <div class="dash-panel active" id="tab-library">
+        <div class="library-toolbar">
+          <div class="lib-search-wrap">
+            <span class="lib-search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <input type="search" class="lib-search" placeholder="Search your library…" aria-label="Search your library" data-csp-oninput="filterLibrary(this.value)" id="lib-search-input">
+          </div>
+          <select class="lib-filter" data-csp-onchange="sortLibrary(this.value)" aria-label="Sort library">
+            <option value="recent">Recently Added</option>
+            <option value="name">Name A–Z</option>
+            <option value="playtime">Most Played</option>
+            <option value="installed">Installed First</option>
+          </select>
+        </div>
+        <div class="games-grid" id="library-grid" data-stagger></div>
+      </div>
+
+      <!-- ── Wishlist Tab ── -->
+      <div class="dash-panel" id="tab-wishlist">
+        <div class="wishlist-grid" id="wishlist-grid" data-stagger></div>
+      </div>
+
+      <!-- ── Orders Tab ── -->
+      <div class="dash-panel" id="tab-orders">
+        <div class="orders-list" id="orders-list"></div>
+      </div>
+
+      <!-- ── Settings Tab ── -->
+      <div class="dash-panel" id="tab-settings">
+        <div class="settings-grid">
+          <div class="settings-section-card">
+            <div class="settings-section-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Profile
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="settings-display-name">Display Name</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+                </span>
+                <input type="text" class="form-input" id="settings-display-name" placeholder="Your display name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="settings-email">Email Address <span class="opt">(read-only)</span></label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </span>
+                <input type="email" class="form-input ggs-0261fbe768" id="settings-email" aria-label="Email address (read-only)" disabled tabindex="-1" placeholder="your@email.com">
+              </div>
+              <div class="ggs-4984144ca7">To change your email, contact <a class="ggs-607dfff9ce" href="support.html">support</a>.</div>
+            </div>
+            <label class="form-label" for="settings-language">Language</label>
+            <select class="settings-select" id="settings-language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+              <option value="pt">Português</option>
+            </select>
+          </div>
+
+          <div class="settings-section-card">
+            <div class="settings-section-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              Preferences
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <div class="toggle-label">Push Notifications</div>
+                <div class="toggle-sublabel">Game updates & deals</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pref-notifications" checked>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <div class="toggle-label">Newsletter</div>
+                <div class="toggle-sublabel">Weekly gaming news</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pref-newsletter">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <div>
+                <div class="toggle-label">Dark Mode</div>
+                <div class="toggle-sublabel">Always enabled for the best experience</div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pref-darkmode" checked disabled>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-actions">
+          <button type="button" class="settings-save-btn" data-csp-onclick="saveSettings()">Save Changes</button>
+          <button type="button" class="settings-delete-btn" data-csp-onclick="GG.UI.showModal('delete-account-modal')">
+            <svg class="ggs-db2f629c9d" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            Delete Account
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Security Tab ── -->
+      <div class="dash-panel" id="tab-security">
+        <div class="security-grid">
+
+          <!-- Change Password -->
+          <div class="security-card">
+            <div class="security-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Change Password
+            </div>
+            <form id="change-pw-form" novalidate data-csp-onsubmit="handleChangePassword(event)">
+              <div class="form-group">
+                <label class="form-label" for="curr-pw">Current Password</label>
+                <div class="input-wrapper">
+                  <span class="input-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                  <input type="password" class="form-input" id="curr-pw" placeholder="••••••••">
+                  <button type="button" class="input-toggle" data-csp-onclick="togglePasswordVisibility('curr-pw', this)" aria-label="Show"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="new-pw">New Password</label>
+                <div class="input-wrapper">
+                  <span class="input-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                  <input type="password" class="form-input" id="new-pw" placeholder="••••••••" data-csp-oninput="updatePasswordStrength('new-pw', 'sec-pw-fill', 'sec-pw-checks')">
+                  <button type="button" class="input-toggle" data-csp-onclick="togglePasswordVisibility('new-pw', this)" aria-label="Show"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <div class="pw-strength-bar" role="progressbar" aria-label="New password strength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="pw-strength-fill" id="sec-pw-fill"></div></div>
+                <div class="pw-checks" id="sec-pw-checks">
+                  <div class="pw-check" data-check="length"><span class="pw-check-icon">✓</span> 8+ chars</div>
+                  <div class="pw-check" data-check="upper"><span class="pw-check-icon">✓</span> Uppercase</div>
+                  <div class="pw-check" data-check="lower"><span class="pw-check-icon">✓</span> Lowercase</div>
+                  <div class="pw-check" data-check="number"><span class="pw-check-icon">✓</span> Number</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="confirm-new-pw">Confirm New Password</label>
+                <div class="input-wrapper">
+                  <span class="input-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                  <input type="password" class="form-input" id="confirm-new-pw" placeholder="••••••••">
+                </div>
+              </div>
+              <div class="form-error ggs-317a2d7ee5" id="change-pw-error"></div>
+              <button type="submit" class="btn btn-primary ggs-cad980f4b7">Update Password</button>
+            </form>
+          </div>
+
+          <!-- Security Score -->
+          <div class="security-card">
+            <div class="security-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Security Score
+            </div>
+            <div class="score-meter">
+              <svg class="score-svg" width="120" height="120" viewBox="0 0 120 120">
+                <circle class="score-track" cx="60" cy="60" r="50"/>
+                <circle class="score-fill" id="score-circle" cx="60" cy="60" r="50" stroke="url(#score-grad)"/>
+                <defs>
+                  <linearGradient id="score-grad" x1="0" y1="0" x2="1" y2="0">
+                    <stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="score-label">
+                <div class="score-value gradient-text" id="score-value">40</div>
+                <div class="score-text">/ 100</div>
+              </div>
+            </div>
+            <div class="score-checks" id="score-checks">
+              <div class="score-check-item">
+                <div class="score-check-dot ok">✓</div>
+                <span>Account registered</span>
+              </div>
+              <div class="score-check-item" id="sc-password">
+                <div class="score-check-dot warn">!</div>
+                <span>Strong password</span>
+              </div>
+              <div class="score-check-item" id="sc-2fa">
+                <div class="score-check-dot bad">✕</div>
+                <span>Two-factor authentication</span>
+              </div>
+              <div class="score-check-item" id="sc-email">
+                <div class="score-check-dot ok">✓</div>
+                <span>Recovery email set</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2FA -->
+          <div class="security-card">
+            <div class="security-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Two-Factor Authentication
+            </div>
+            <div class="tfa-status" id="tfa-status">
+              <div class="tfa-icon off" id="tfa-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </div>
+              <div>
+                <div class="ggs-7763bc497a" id="tfa-status-title">2FA Disabled</div>
+                <div class="ggs-50ea7feb8e" id="tfa-status-sub">Protect your account with an authenticator app</div>
+              </div>
+            </div>
+            <div class="qr-placeholder" id="qr-placeholder">
+              <div>
+                <div class="ggs-0e7d326fa9">📱</div>
+                <div>Scan with<br>authenticator app</div>
+              </div>
+            </div>
+            <button type="button" class="tfa-btn tfa-enable-btn" id="tfa-toggle-btn" data-csp-onclick="toggleTFA()">Enable 2FA</button>
+            <div class="ggs-d4f8cd0e5c">
+              <div class="ggs-fcc09cfa56">Recovery Codes</div>
+              <div class="recovery-codes" id="recovery-codes">
+                <div class="recovery-code">••••-••••</div>
+                <div class="recovery-code">••••-••••</div>
+                <div class="recovery-code">••••-••••</div>
+                <div class="recovery-code">••••-••••</div>
+                <div class="recovery-code">••••-••••</div>
+                <div class="recovery-code">••••-••••</div>
+              </div>
+              <button class="ggs-2a71f7ee32" type="button" data-csp-onclick="generateRecoveryCodes()">↻ Generate new codes</button>
+            </div>
+          </div>
+
+          <!-- Active Sessions -->
+          <div class="security-card">
+            <div class="security-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Active Sessions
+            </div>
+            <div class="session-item">
+              <div class="session-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="session-info">
+                <div class="session-device" id="session-device">Web Browser</div>
+                <div class="session-meta" id="session-meta">127.0.0.1 · Just now</div>
+              </div>
+              <span class="session-current-badge">Current</span>
+            </div>
+            <button type="button" class="signout-all-btn" data-csp-onclick="signOutAll()">Sign Out All Devices</button>
+          </div>
+
+          <!-- Login History -->
+          <div class="security-card full-width">
+            <div class="security-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+              Login History
+            </div>
+            <div class="table-scroll">
+              <table class="login-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>IP Address</th>
+                    <th>Device</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="login-history-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════
+     MODALS
+═══════════════════════════════════ -->
+
+<!-- Forgot Password -->
+<div class="modal-overlay" id="forgot-password-modal" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="forgot-pw-title" data-csp-onclick="closeModalOnBackdrop(event, 'forgot-password-modal')">
+  <div class="modal-box">
+    <button type="button" class="modal-close" data-csp-onclick="GG.UI.hideModal('forgot-password-modal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="ggs-6ee93a914d">🔑</div>
+    <h2 class="modal-title ggs-dac4fe6c9b" id="forgot-pw-title">Reset Password</h2>
+    <p class="modal-subtitle ggs-dac4fe6c9b">Enter your email address and we'll send you a reset link.</p>
+    <div class="form-group">
+      <label class="form-label" for="forgot-email-modal">Email Address</label>
+      <div class="input-wrapper">
+        <span class="input-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </span>
+        <input type="email" class="form-input" id="forgot-email-modal" placeholder="you@example.com" aria-label="Email address">
+      </div>
+      <div class="form-error" id="forgot-email-modal-error"></div>
+    </div>
+    <button type="button" class="btn btn-primary ggs-ad9512ef64" data-csp-onclick="handleForgotPassword('modal')">Send Reset Link</button>
+    <div class="ggs-dac4fe6c9b">
+      <button type="button" class="form-link" data-csp-onclick="GG.UI.hideModal('forgot-password-modal')">← Back to Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Profile -->
+<div class="modal-overlay" id="edit-profile-modal" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="edit-profile-title" data-csp-onclick="closeModalOnBackdrop(event, 'edit-profile-modal')">
+  <div class="modal-box wider">
+    <button type="button" class="modal-close" data-csp-onclick="GG.UI.hideModal('edit-profile-modal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2 class="modal-title" id="edit-profile-title">Edit Profile</h2>
+    <p class="modal-subtitle">Update your display name and profile settings.</p>
+    <div class="form-group">
+      <label class="form-label" for="edit-display-name">Display Name</label>
+      <div class="input-wrapper">
+        <span class="input-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+        </span>
+        <input type="text" class="form-input" id="edit-display-name" placeholder="Your display name" aria-label="Display name">
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary ggs-cad980f4b7" data-csp-onclick="saveEditProfile()">Save Changes</button>
+  </div>
+</div>
+
+<!-- Delete Account Confirmation -->
+<div class="modal-overlay" id="delete-account-modal" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="delete-account-title" data-csp-onclick="closeModalOnBackdrop(event, 'delete-account-modal')">
+  <div class="modal-box">
+    <button type="button" class="modal-close" data-csp-onclick="GG.UI.hideModal('delete-account-modal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="ggs-6ee93a914d">⚠️</div>
+    <h2 class="modal-title ggs-dac4fe6c9b" id="delete-account-title">Delete Account</h2>
+    <p class="modal-subtitle ggs-dac4fe6c9b">This action cannot be undone.</p>
+    <div class="delete-warning">
+      Deleting your account will permanently remove your profile, library, orders, and all associated data. This cannot be reversed.
+    </div>
+    <div class="form-group" id="delete-password-group">
+      <label class="form-label" for="delete-password-input">Current password</label>
+      <input type="password" class="form-input ggs-0093d52613" id="delete-password-input" placeholder="Enter your password" autocomplete="current-password">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="delete-confirm-input">Type <strong>DELETE</strong> to confirm</label>
+      <input type="text" class="form-input ggs-0093d52613" id="delete-confirm-input" placeholder="DELETE" autocomplete="off">
+    </div>
+    <div id="delete-account-error" class="form-error ggs-7389f0476f" role="alert" aria-live="assertive"></div>
+    <div class="ggs-9df7760934">
+      <button type="button" class="btn btn-secondary ggs-7623f05545" data-csp-onclick="GG.UI.hideModal('delete-account-modal')">Cancel</button>
+      <button type="button" class="btn ggs-d251660d38" id="delete-account-btn" data-csp-onclick="handleDeleteAccount()">Delete Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Checkout Success -->
+<div class="modal-overlay" id="checkout-success-modal" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="checkout-success-title" data-csp-onclick="closeModalOnBackdrop(event, 'checkout-success-modal')">
+  <div class="modal-box ggs-87db227580">
+    <div class="confetti-container" id="confetti-container"></div>
+    <button type="button" class="modal-close" data-csp-onclick="GG.UI.hideModal('checkout-success-modal')" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="checkout-success-icon">🎮</div>
+    <h2 class="modal-title ggs-dac4fe6c9b" id="checkout-success-title">Order Confirmed!</h2>
+    <p class="modal-subtitle ggs-dac4fe6c9b">Your games are now in your library.</p>
+    <div class="checkout-order-id" id="checkout-order-id">ORD-XXXXXXXX</div>
+    <div class="checkout-items" id="checkout-items-list"></div>
+    <div class="checkout-total">
+      <span class="checkout-total-label">Total Paid</span>
+      <span class="checkout-total-value" id="checkout-total-value">$0.00</span>
+    </div>
+    <button type="button" class="btn btn-primary ggs-cad980f4b7" data-csp-onclick="GG.UI.hideModal('checkout-success-modal'); switchDashTab('orders');">View Order History</button>
+  </div>
+</div>
+
+<!-- Site footer (populated by nav.js) -->
+<footer id="glitz-footer"></footer>
+
+<!-- Scripts -->
+<script src="js/game-database.js"></script>
+<script src="js/state.js?v=20260416-authfix"></script>
+<script src="js/api-client.js?v=20260416-authfix"></script>
+<script src="js/nav.js?v=20260416-authfix"></script>
+<script src="js/engine.js?v=20260416-authfix"></script>
+
+<script src="js/pages/account-inline-1.js"></script>
+
+<script src="js/dynamic-bg.js"></script><script src="js/premium.js" defer></script>
+<script src="js/hero-v2.js" defer></script>
+<script src="js/pages/account-inline-2.js"></script>
+</body>
+</html>
