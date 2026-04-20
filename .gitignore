@@ -10,6 +10,7 @@ server/*.db-wal
 
 # JWT secret file (auto-generated, machine-specific)
 server/.jwt-secret
+server/.jwt-secret-auto
 server/.mail-previews/
 server/.tmp_*
 server/*.log

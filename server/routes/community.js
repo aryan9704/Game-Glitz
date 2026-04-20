@@ -48,9 +48,12 @@ module.exports = function createCommunityRouter({ db, requireAuth, optionalAuth,
       if (description && String(description).length > 500) return res.status(400).json({ error: 'Group description must be 500 characters or fewer.' });
       const id = uuid();
       let slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || `group-${Date.now().toString(36)}`;
-      // Handle slug collision by appending a short suffix
-      const existingSlug = await db.prepare('SELECT id FROM groups WHERE slug = ?').get(slug);
-      if (existingSlug) slug = `${slug}-${Date.now().toString(36).slice(-4)}`;
+      // Handle slug collision by appending a random suffix (retry up to 3 times)
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const existingSlug = await db.prepare('SELECT id FROM groups WHERE slug = ?').get(slug);
+        if (!existingSlug) break;
+        slug = `${slug.slice(0, 52)}-${Math.random().toString(36).slice(2, 8)}`;
+      }
       await db.transaction(async () => {
         await db.prepare('INSERT INTO groups (id, name, slug, description, owner_id) VALUES (?, ?, ?, ?, ?)').run(id, name, slug, description || '', req.user.id);
         await db.prepare('INSERT INTO group_members (group_id, user_id, role) VALUES (?, ?, ?)').run(id, req.user.id, 'owner');

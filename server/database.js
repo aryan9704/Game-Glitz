@@ -377,7 +377,9 @@ function createDatabase() {
   // Migration: add category column if missing
   const ticketColumns = db.prepare('PRAGMA table_info(support_tickets)').all().map(col => col.name);
   if (!ticketColumns.includes('category')) {
-    try { db.exec('ALTER TABLE support_tickets ADD COLUMN category TEXT DEFAULT NULL'); } catch { /* already exists */ }
+    try { db.exec('ALTER TABLE support_tickets ADD COLUMN category TEXT DEFAULT NULL'); } catch (err) {
+      if (!String(err.message).includes('duplicate column')) console.warn('Migration warning (support_tickets.category):', err.message);
+    }
   }
 
   // PASSWORD RESET + EMAIL VERIFICATION TOKENS
